@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OMPDischargeVoucher" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0daf7995-a8e7-4777-a55a-d43314bdd5ea">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="insuredName" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.insuredPatient.insuredName]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="intimationId" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.intimationId]]></fieldDescription>
+	</field>
+	<field name="insuredAge" class="java.lang.Double">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.insuredPatient.insuredAge]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.policy.productName]]></fieldDescription>
+	</field>
+	<field name="finalApprovedAmtDollor" class="java.lang.Double">
+		<fieldDescription><![CDATA[finalApprovedAmtDollor]]></fieldDescription>
+	</field>
+	<field name="deduction" class="java.lang.Double">
+		<fieldDescription><![CDATA[deduction]]></fieldDescription>
+	</field>
+	<field name="policyFromDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.policy.policyFromDate]]></fieldDescription>
+	</field>
+	<field name="policyToDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.policy.policyToDate]]></fieldDescription>
+	</field>
+	<field name="amountInWords" class="java.lang.String">
+		<fieldDescription><![CDATA[amountInWords]]></fieldDescription>
+	</field>
+	<field name="finalApprovedAmtInr" class="java.lang.Double">
+		<fieldDescription><![CDATA[finalApprovedAmtInr]]></fieldDescription>
+	</field>
+	<field name="disVoucherRemarks" class="java.lang.String">
+		<fieldDescription><![CDATA[disVoucherRemarks]]></fieldDescription>
+	</field>
+	<field name="tpaIntimationNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.tpaIntimationNumber]]></fieldDescription>
+	</field>
+	<field name="nonHospitalisationFlag" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.nonHospitalisationFlag]]></fieldDescription>
+	</field>
+	<field name="isCashless" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[claimProcessorDTO.isCashless]]></fieldDescription>
+	</field>
+	<field name="lossOfDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimProcessorDTO.lossOfDate]]></fieldDescription>
+	</field>
+	<field name="sumInsured" class="java.lang.Double">
+		<fieldDescription><![CDATA[claimProcessorDTO.sumInsured]]></fieldDescription>
+	</field>
+	<field name="conversionValue" class="java.lang.Double">
+		<fieldDescription><![CDATA[conversionValue]]></fieldDescription>
+	</field>
+	<field name="billAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[billAmt]]></fieldDescription>
+	</field>
+	<field name="dateOfIntimation" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.newIntimationDto.dateOfIntimation]]></fieldDescription>
+	</field>
+	<field name="admissionDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimProcessorDTO.admissionDate]]></fieldDescription>
+	</field>
+	<field name="eventdescription" class="java.lang.String">
+		<fieldDescription><![CDATA[claimProcessorDTO.eventdescription]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0503cea4-0888-4717-ba33-591cbc4203b7" x="146" y="1" width="409" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[STAR HEALTH AND ALLIED INSURANCE CO.Ltd.,]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="5e7a8682-f0bb-43b4-97ca-e14857f4cd04" x="0" y="1" width="146" height="69"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{resourcePath}+"StarLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="dd83e37f-bfa0-485e-ad95-53ec245d0c28" x="146" y="21" width="409" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Regd & Corporate ofice : 1, New Tank Street, Valluvar Kottam High Road, Nungambakkam, Chennai - 600 034.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="345ea726-276c-4799-958c-d5fca869217f" x="146" y="52" width="410" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Toll Free No :  1800 102 4477 / 1800 425 2255 , <u>www.starhealth.in</u>]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="649" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="fdf33efb-adbf-4c5c-98af-0a3685a44c7a" x="13" y="40" width="29" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="321cab04-bc6c-4a7b-9369-b2402af9ce89" x="42" y="40" width="113" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="9dd67257-18b1-479d-bf59-2dd028c9a2ee" positionType="Float" x="229" y="81" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{insuredName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5257a959-76e9-4550-9cb1-5dabae10328e" positionType="Float" x="14" y="81" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Name of the insured]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="544b813f-8172-4437-b886-142865871376" positionType="Float" x="229" y="150" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c7316f6c-4e24-4071-98e7-e64887b1d93c" positionType="Float" x="14" y="150" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Policy number]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="fbdee0a1-bf1d-4090-a6a7-352a6d9d9e5e" positionType="Float" x="229" y="127" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{intimationId}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d3ca1eb1-eb25-44c4-8d85-44d050dd54d7" positionType="Float" x="14" y="127" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim number]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="71d27d57-8549-4104-b59f-bbd17295de1c" positionType="Float" x="229" y="104" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tpaIntimationNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="47e8ed54-123a-4bcc-a72e-7cb5dfe563c7" positionType="Float" x="14" y="104" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TPA Reference number]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="313de2a3-de26-46fa-99ae-0c11f6afa1f5" positionType="Float" x="229" y="173" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonHospitalisationFlag}.equalsIgnoreCase( "N" ) ?( $F{admissionDate}!= null ? (new SimpleDateFormat("dd-MMM-yyyy").format($F{admissionDate})).toUpperCase() : "" ):( $F{lossOfDate} != null ? (new SimpleDateFormat("dd-MMM-yyyy").format($F{lossOfDate})).toUpperCase() : "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d849c47c-0138-4c39-9e95-a86e18fbc2c1" positionType="Float" x="229" y="196" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MMM-yyyy").format(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").parse($F{dateOfIntimation}))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="33e069f8-f930-476d-9f2e-40cf97b6b779" positionType="Float" x="14" y="196" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date of Intimation]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="44ddf808-b160-4107-b8f7-a9dc9a0c0a30" positionType="Float" x="229" y="219" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonHospitalisationFlag}.equalsIgnoreCase( "N" ) ?( $F{isCashless} == true?"Cashless":"Reimbursement"):"Non Medical"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5be171b7-6dcd-4095-a807-0e04de17ab91" positionType="Float" x="14" y="219" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Nature of Claim]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="de6dda6e-cada-4fe2-9bdf-6c79bb2712b8" positionType="Float" x="229" y="242" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eventdescription}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a59bf542-af77-45b1-a2fa-016df6078d52" positionType="Float" x="14" y="242" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Event Description]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8a879ed0-71fa-45b4-bd6f-3610da30bae3" positionType="Float" x="229" y="265" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sumInsured}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0779d3c2-ef87-45c3-a25e-2c5caebb629c" positionType="Float" x="14" y="265" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Event Sum Insured]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="aade8606-0064-4efc-9103-4215f5c7ed29" positionType="Float" x="229" y="311" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deduction}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b38c69e6-83c9-4aa5-b314-5fe903eb98ec" positionType="Float" x="14" y="311" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Less Deductions]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="de4fee4b-adcc-48f1-a198-3fc5b950e0ea" positionType="Float" x="229" y="288" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{billAmt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9cdcc80b-7aa0-4edc-9cd4-6a32c7e12665" positionType="Float" x="14" y="288" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Total Claim Submitted]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="04dc0b40-dd36-4653-9568-ece9332fa4cd" positionType="Float" x="229" y="334" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalApprovedAmtDollor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8d481d0d-5baa-488f-b1e6-b4effaf62dfc" positionType="Float" x="14" y="334" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Claim settled]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="ba6f6be7-ff7e-4281-89e6-1462c08e9e92" positionType="Float" x="229" y="357" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{conversionValue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c4f84144-dd8a-4e65-8390-3dfa705b91a9" positionType="Float" x="14" y="357" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Conversion rate  @ 1 USD]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a148fba9-57c6-423a-8ce4-bc22ada09aef" positionType="Float" x="229" y="380" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalApprovedAmtDollor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a544999a-c789-4ce2-b9e4-5f4fa8046eff" positionType="Float" x="14" y="380" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Approved amount in USD]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="efb0a35f-2933-4243-b94c-e1943234b186" positionType="Float" x="229" y="403" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{finalApprovedAmtInr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d46f4789-ae5a-4e6f-874a-fb65cfb20933" positionType="Float" x="14" y="403" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Approved amount in INR]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d57b878f-16d7-47ec-9f31-823e27e1ae44" positionType="Float" x="229" y="426" width="271" height="23"/>
+				<box topPadding="1" leftPadding="6" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountInWords}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d6c31cb5-8385-4ad6-9167-0449949390dd" positionType="Float" x="14" y="426" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Approved amount in Words]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9311f260-4ae8-47e4-bcc8-565153f8c1b6" x="219" y="10" width="159" height="21"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DISCHARGE VOUCHER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79d1366c-4111-4dc7-854c-fbe55205dae7" positionType="Float" x="355" y="587" width="190" height="20"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="11" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Signature of the claimant ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9455fb9b-1a06-495a-8cf2-4a02c1748da8" positionType="Float" x="346" y="630" width="205" height="19"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[(Please sign across the rev. stamp) ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement uuid="076d78ee-c7be-424e-bf74-e9d0e75a2a89" positionType="Float" x="13" y="510" width="518" height="30"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Accepted the above approved amount of Rs." + $F{finalApprovedAmtInr} +"/-  as full and final settlement of my claim as detailed above."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement uuid="3bdb3d82-b1c6-4f51-bf67-aea617f999b9" positionType="Float" x="12" y="463" width="519" height="30"/>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disVoucherRemarks}!=null?$F{disVoucherRemarks}:""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c48ded23-0322-47e3-8912-11d2058f6d93" positionType="Float" x="14" y="173" width="215" height="23"/>
+				<box topPadding="1" leftPadding="4" bottomPadding="1" rightPadding="1">
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false" pdfFontName="Times-Roman" pdfEncoding="" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonHospitalisationFlag}.equalsIgnoreCase( "N" ) ?"Date Of Admission":"Date Of Loss"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<staticText>
+				<reportElement uuid="4faffe26-8911-48f3-b60c-3169a395116d" x="22" y="0" width="509" height="40"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="false" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[IRDA Regn.No.129<br>
+Corporate Identity Number U66010TN2005P1C056649<br>
+Email ID : info@starhealth.in
+]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

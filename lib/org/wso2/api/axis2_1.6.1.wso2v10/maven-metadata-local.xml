@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.wso2.api</groupId>
+  <artifactId>axis2_1.6.1.wso2v10</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209071912</lastUpdated>
+  </versioning>
+</metadata>

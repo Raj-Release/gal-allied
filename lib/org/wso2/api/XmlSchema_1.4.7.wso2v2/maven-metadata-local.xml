@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.wso2.api</groupId>
+  <artifactId>XmlSchema_1.4.7.wso2v2</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209072101</lastUpdated>
+  </versioning>
+</metadata>

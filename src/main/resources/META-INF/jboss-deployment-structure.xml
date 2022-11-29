@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.1">
+	<deployment>
+		<dependencies>
+			<system export="true">
+				<paths>
+					<path name="sun/security/action" />
+				</paths>
+			</system>
+			<module name="org.apache.commons.collections" />
+			<module name="org.hibernate.commons-annotations" />
+			<module name="org.dom4j" />
+			<module name="org.javassist" />
+			<module name="org.hibernate" />
+			<module name="oracle.jdbc" />
+		</dependencies>
+	</deployment>
+	<deployment>
+		<exclusions>
+			<module name="org.apache.log4j" />
+			<module name="org.slf4j" />
+			<module name="org.jboss.resteasy.resteasy-atom-provider" />
+			<module name="org.jboss.resteasy.resteasy-cdi" />
+			<module name="org.jboss.resteasy.resteasy-jaxrs" />
+			<module name="org.jboss.resteasy.resteasy-jaxb-provider" />
+			<module name="org.jboss.resteasy.resteasy-jackson-provider" />
+			<module name="org.jboss.resteasy.resteasy-jsapi" />
+			<module name="org.jboss.resteasy.resteasy-multipart-provider" />
+			<module name="org.jboss.resteasy.async-http-servlet-30" />
+			<!--  <module name="org.apache.xerces" />  -->
+		</exclusions>
+	</deployment>
+</jboss-deployment-structure>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.1//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.5.1/distro-source/core/src/gwt-module.dtd">
+<module>
+	<inherits name="com.vaadin.DefaultWidgetSet" />
+	<inherits name="org.vaadin.hene.popupbutton.widgetset.PopupbuttonWidgetset" />
+    
+    <inherits name="org.vaadin.csvalidation.widgetset.CSValidationWidgetset" />
+
+    <inherits name="com.zybnet.autocomplete.AutocompleteWidgetSet" />
+    
+    
+     <inherits name="com.zybnet.autocomplete.AutocompleteWidgetSet" />
+
+    <inherits name="org.vaadin.virkki.carousel.CarouselWidgetSet" />
+
+    <inherits name="org.vaadin.tokenfield.TokenfieldWidgetset" />
+
+    <inherits name="ch.meemin.pmtable.widgetset.PMTableWidgetSet" />
+
+    <inherits name="org.vaadin.hene.flexibleoptiongroup.widgetset.FlexibleOptionGroupWidgetset" />
+
+    <inherits name="de.steinwedel.messagebox.WidgetSet" />
+
+    
+
+    <inherits name="org.vaadin.addons.comboboxmultiselect.WidgetSet" />
+
+    <inherits name="org.vaadin.addon.ewopener.WidgetSet" />
+    
+    <inherits name="com.vaadin.grid.gwt.Grid2Widgetset" />
+
+    <inherits name="com.alert.util.WidgetSet" />
+
+    <inherits name="com.vaadin.v7.Vaadin7WidgetSet" />
+</module>

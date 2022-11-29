@@ -1,0 +1,1569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BillSummary" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fb89ad20-4345-46af-b214-2850d14b2f2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1464"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyType.value]]></fieldDescription>
+	</field>
+	<field name="dischargeDate" class="java.util.Date">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.dischargeDate]]></fieldDescription>
+	</field>
+	<field name="admissionDate" class="java.util.Date">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.admissionDate]]></fieldDescription>
+	</field>
+	<field name="noOfDays" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.noOfDays]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="tdsAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.tdsAmt]]></fieldDescription>
+	</field>
+	<field name="preauthAppAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.preauthAppAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="payableToHospitalAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToHospitalAmt]]></fieldDescription>
+	</field>
+	<field name="payableToHospitalAftTDSAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToHospitalAftTDSAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="netPayableAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.netPayableAmt]]></fieldDescription>
+	</field>
+	<field name="amountConsidered" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.amountConsidered]]></fieldDescription>
+	</field>
+	<field name="copayAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.copayAmt]]></fieldDescription>
+	</field>
+	<field name="netPayable" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.netPayable]]></fieldDescription>
+	</field>
+	<field name="payableAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableAmt]]></fieldDescription>
+	</field>
+	<field name="availableSIAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.availableSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="restrictedSIAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.restrictedSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="amountConsidered_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.amountConsidered]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="billEntryDetailsDTO" class="java.util.List">
+		<fieldDescription><![CDATA[billEntryDetailsDTO]]></fieldDescription>
+	</field>
+	<field name="prehospitalizationDTO" class="java.util.List">
+		<fieldDescription><![CDATA[prehospitalizationDTO]]></fieldDescription>
+	</field>
+	<field name="postHospitalizationDTO" class="java.util.List">
+		<fieldDescription><![CDATA[postHospitalizationDTO]]></fieldDescription>
+	</field>
+	<field name="diagnosisProcedureDtoList" class="java.util.List">
+		<fieldDescription><![CDATA[diagnosisProcedureDtoList]]></fieldDescription>
+	</field>
+	<field name="amountPayable" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.amountPayable]]></fieldDescription>
+	</field>
+	<field name="eligibleAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.eligibleAmt]]></fieldDescription>
+	</field>
+	<field name="netAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.netAmount]]></fieldDescription>
+	</field>
+	<field name="copayAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.copayAmt]]></fieldDescription>
+	</field>
+	<field name="netPayable_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.netPayable]]></fieldDescription>
+	</field>
+	<field name="maxPayable" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.maxPayable]]></fieldDescription>
+	</field>
+	<field name="avaliableSumInsuredAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.avaliableSumInsuredAftHosp]]></fieldDescription>
+	</field>
+	<field name="restrictedSIAftHosp_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.restrictedSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableAmt]]></fieldDescription>
+	</field>
+	<field name="previousRodPostHospamt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.previousRodPostHospamt]]></fieldDescription>
+	</field>
+	<field name="amountConsidedAfterCoPay" class="java.lang.Double">
+		<fieldDescription><![CDATA[amountConsidedAfterCoPay]]></fieldDescription>
+	</field>
+	<field name="balanceSI" class="java.lang.Double">
+		<fieldDescription><![CDATA[balanceSI]]></fieldDescription>
+	</field>
+	<field name="balanceSumInsuredAfterCoPay" class="java.lang.Double">
+		<fieldDescription><![CDATA[balanceSumInsuredAfterCoPay]]></fieldDescription>
+	</field>
+	<field name="amountConsidered_2" class="java.lang.String">
+		<fieldDescription><![CDATA[amountConsidered]]></fieldDescription>
+	</field>
+	<field name="coPayValue" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coPayValue]]></fieldDescription>
+	</field>
+	<field name="sublimitAndSIAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[sublimitAndSIAmt]]></fieldDescription>
+	</field>
+	<field name="totalClaimedAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalClaimedAmt]]></fieldDescription>
+	</field>
+	<field name="totalApprovedAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalApprovedAmt]]></fieldDescription>
+	</field>
+	<field name="toatlNonPayableAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[toatlNonPayableAmt]]></fieldDescription>
+	</field>
+	<field name="intimationId" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.intimationId]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="proposerAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerAddress]]></fieldDescription>
+	</field>
+	<field name="smCode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.smCode]]></fieldDescription>
+	</field>
+	<field name="smName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.smName]]></fieldDescription>
+	</field>
+	<field name="totalSumInsured" class="java.lang.Double">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.totalSumInsured]]></fieldDescription>
+	</field>
+	<field name="value_1" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyType.value]]></fieldDescription>
+	</field>
+	<field name="policyFromDate" class="java.util.Date">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyFromDate]]></fieldDescription>
+	</field>
+	<field name="policyToDate" class="java.util.Date">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyToDate]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="agentCode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.agentCode]]></fieldDescription>
+	</field>
+	<field name="agentName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.agentName]]></fieldDescription>
+	</field>
+	<field name="cummulativeBonus" class="java.lang.Double">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.cummulativeBonus]]></fieldDescription>
+	</field>
+	<field name="insuredDateOfBirth" class="java.util.Date">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredDateOfBirth]]></fieldDescription>
+	</field>
+	<field name="insuredAge" class="java.lang.Double">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredAge]]></fieldDescription>
+	</field>
+	<field name="insuredName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredName]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.name]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.address]]></fieldDescription>
+	</field>
+	<field name="billingApprovedDate" class="java.util.Date">
+		<fieldDescription><![CDATA[billingApprovedDate]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<image>
+				<reportElement uuid="c5a21de6-9861-43c9-bbf1-21d2e32c24e9" x="7" y="0" width="548" height="50"/>
+				<imageExpression><![CDATA[$P{resourcePath} + "Star_BillAssessment_Logo.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="668" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2df35f71-ecc9-4140-8969-26945aaaddb9" x="289" y="60" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Policy Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8353c45c-bf0a-4349-8381-a359fdfc54d6" x="0" y="20" width="126" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Intimation No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="89021cd1-69ce-4f56-8521-5b48e27877eb" x="289" y="255" width="99" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DOA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fcd83647-5ff9-41bf-a273-b0c4edd20890" x="289" y="275" width="99" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DOD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f58ca87a-bcc9-4ea7-90c5-d34b3779d47f" x="0" y="349" width="100" height="20"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>A </style>Table]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad7f7b0a-c6c3-41ec-a3e1-d5ba51ebf636" x="0" y="379" width="126" height="20"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>Hospitalisation Expenses</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5dbd0e22-b2a2-4ecc-a27e-c0cd4646e986" positionType="Float" x="0" y="541" width="220" height="20"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>C</style> Sub limits, Package and SI Restriction Table]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="0499da41-e3bd-4c6c-9146-afff250c822c" x="0" y="400" width="555" height="100"/>
+				<subreportParameter name="totalApprovedAmt">
+					<subreportParameterExpression><![CDATA[$F{totalApprovedAmt} != null ? $F{totalApprovedAmt}.intValue() : ""]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalDeductableAmt">
+					<subreportParameterExpression><![CDATA[$F{toatlNonPayableAmt} != null ? $F{toatlNonPayableAmt}.intValue() : ""]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="totalClaimedAmt">
+					<subreportParameterExpression><![CDATA[$F{totalClaimedAmt} != null ? $F{totalClaimedAmt}.intValue() : ""]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{billEntryDetailsDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Hospital_Expenses_Other_Products_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="85f3c209-cdcc-4844-8b60-600f90a21878" positionType="Float" x="0" y="568" width="555" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{diagnosisProcedureDtoList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Sublimits_Package_SI_Restriction_SubReport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="bd3b6fec-939f-4efc-b899-8b6584b6f28e" x="389" y="60" width="162" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value_1} != null ? $F{value_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f5b454da-2fd6-49a2-b395-08471ce08628" x="126" y="20" width="139" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{intimationId} != null ? $F{intimationId}  : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4637e97f-d69c-44ae-b5cc-07d5c441381c" x="388" y="255" width="167" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{admissionDate} != null ? new SimpleDateFormat("dd-MM-yyyy").format($F{admissionDate}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9ce035a-e8b2-4bc6-b5f7-f08d7725c034" x="388" y="275" width="167" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dischargeDate} != null ? new SimpleDateFormat("dd-MM-yyyy").format($F{dischargeDate}) : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2deeb4ec-0e7a-4551-bb97-67c20e39bf55" x="0" y="40" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Insured Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9f25c78d-ff6d-47fe-beff-f51c20aa24db" x="0" y="60" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Claimant Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4529c229-26cb-4641-8b2e-a986823adeed" x="0" y="80" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[DOB/Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25eaa67d-a853-438b-8138-685950d30bfe" x="0" y="100" width="126" height="115"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b45b150c-2b1e-41a4-9a35-b464620bdd72" x="0" y="215" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Sum Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d80bdfd-1457-48d5-b9b4-fdd19551c196" x="0" y="235" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Bonus]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70f2c29c-6a47-4576-bfc3-5d6eb5c8cb7f" x="0" y="255" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Copay %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a242e9a6-cb4a-49d6-ac65-731fb986335e" x="0" y="275" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[SM Code / Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d34f9d3c-eaf1-4e7e-91cc-3e6c1100301d" x="0" y="295" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Intermediary Code / Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="903d905f-95b5-429c-966b-e2e70dcf4542" x="289" y="20" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Bill Approved Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c0a7cf71-7281-437d-b834-4bddd7b3c08a" x="289" y="40" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Policy No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7b1bdd44-9c0f-4411-805d-4c1351664b7e" x="289" y="80" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Policy start Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20e7b9dd-9628-4aae-a270-18306759dfcf" x="289" y="100" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Policy End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f6bbecc0-9e82-46db-bd7f-b768e1189804" x="289" y="120" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Hospital Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d826e4c-aacd-4b5f-96aa-5dd888457fb8" x="289" y="140" width="100" height="115"/>
+				<textElement/>
+				<text><![CDATA[Hospital Address]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c67d202d-8613-4cb7-ae87-491b4a84d4c9" x="126" y="40" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerFirstName} != null ? $F{proposerFirstName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c23eee3e-5615-4e6f-a048-f08d0d358cf0" x="126" y="60" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{insuredName} != null ? $F{insuredName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5e201375-145f-44ed-a1ed-0f5cbc33e09b" x="126" y="80" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[($F{insuredDateOfBirth} != null ? new SimpleDateFormat("dd/MM/yyyy").format($F{insuredDateOfBirth}) : "" ) + ( $F{insuredAge} != null ? ( " / " + $F{insuredAge}.intValue() ): "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a3dac133-8b13-42cd-b0c3-5ef0fde109c5" x="126" y="100" width="139" height="115"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerAddress} != null ? $F{proposerAddress} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5589ede5-9a19-4c61-8306-bcf77c3fdb3c" x="126" y="215" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{totalSumInsured} != null ? $F{totalSumInsured}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a23704b1-3233-4bc5-906f-0c71b79cc120" x="126" y="235" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{cummulativeBonus} != null ? $F{cummulativeBonus} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab018089-b7d2-4868-abf6-5f0f45299cc1" x="126" y="255" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{coPayValue} != null ? ( $F{coPayValue} + "%" ) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="be44d368-3533-4b0a-8df7-e6468dadc8c7" x="126" y="275" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[( $F{smCode}  != null ? $F{smCode} : "" ) + ( $F{smName} != null ? ( " / " + $F{smName} ) : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="12507358-9eea-44bb-88bc-2939888599e0" x="126" y="295" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[( $F{agentCode} != null ? $F{agentCode} : "" ) + ( $F{agentName} != null ? ( " / " + $F{agentName} ) : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="48575fb7-5efb-4a7c-892d-3da7aef01794" x="388" y="20" width="156" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{billingApprovedDate} != null ? new SimpleDateFormat("dd-MM-yyyy").format($F{billingApprovedDate}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="212ad909-6739-4396-aa17-9c90ba265766" x="388" y="40" width="156" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{policyNumber} != null ? $F{policyNumber} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb9d6777-fbac-4c92-989e-0ea0cea6c46d" x="389" y="80" width="155" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{policyFromDate} != null ? new SimpleDateFormat("dd-MM-yyyy").format($F{policyFromDate}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="848568e4-72ac-478b-ae33-7cbaa7d980d7" x="389" y="100" width="155" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{policyToDate} != null ? new SimpleDateFormat("dd-MM-yyyy").format($F{policyToDate}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3bf0934f-b520-4cbc-a976-49a4cb0e8fbc" x="389" y="120" width="155" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{name} != null ? $F{name} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="73bbdb1e-c0c7-480e-9c34-a91b82001fa8" x="389" y="140" width="155" height="115"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{address} != null ? $F{address} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="452" splitType="Prevent">
+			<staticText>
+				<reportElement uuid="c574de7d-2fcf-490d-b206-b2adf1e3ae2c" positionType="Float" x="7" y="25" width="78" height="30"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>A.</style> Amount Claimed Table]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca27a870-6695-4133-a750-b28f746dee8d" positionType="Float" x="7" y="125" width="78" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="acb3f9de-331e-49f8-a484-4204451766d5" positionType="Float" x="7" y="145" width="78" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="96a38c65-873c-4486-91a9-7268f9c59244" positionType="Float" x="197" y="25" width="86" height="40"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>B.</style> Available Balance Sum Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abaedda0-37f9-48dc-849f-79bd1e10a97f" positionType="Float" x="203" y="65" width="80" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3f5d5d9-6d1e-4c42-9537-8c779c87a147" positionType="Float" x="203" y="85" width="80" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a191bc1-0c6d-464c-ae17-a8fa26cb6ac2" positionType="Float" x="389" y="25" width="85" height="60"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true' pdfFontName='Times-Bold'>C.</style> Sub limits, Package and SI Restriction amount after Co-pay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="91a1eab5-cd63-40e8-92a7-41ff472fbc42" positionType="Float" x="7" y="195" width="78" height="28" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Final Approved amount ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f1968bd-e042-4bfb-b8be-edf8546fa74a" x="55" y="238" width="165" height="28" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable/Eligible amount  after copay ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d5ce834-6ea0-4f8e-a992-fba50b096472" x="55" y="266" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim Restriction Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3d267e1-13f5-4b32-aeb5-920e937252fe" x="55" y="286" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Preauth approved amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75a996f9-0200-4be2-afe1-8a0b45cb5ccc" x="55" y="306" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Paid/Payable to Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c61df175-df2c-488e-9567-f248a7787feb" x="55" y="326" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99c2eabb-79f3-41a6-aa2c-ae667fbbf91e" x="55" y="346" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TDS Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="72b9aa58-6d99-4f34-8f00-6271c484968a" x="55" y="366" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to Hospital after TDS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c064fd36-2293-4d57-babc-7ae6e5544da6" x="55" y="386" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Balance premium to be collected]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29ea2523-33ef-45b4-a906-dd477d1c9728" x="55" y="406" width="165" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to Insured after premium]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d2ede34e-48aa-415f-9605-2b6e4b779112" positionType="Float" x="85" y="125" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coPayValue} != null ? $F{coPayValue}.toString() + "%" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bd515e66-79df-4af9-a429-ba7f34424c9e" positionType="Float" x="85" y="145" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{amountConsidered_2} != null && $F{amountConsidedAfterCoPay} != null && $F{amountConsidedAfterCoPay}.intValue() < Integer.parseInt($F{amountConsidered_2}) ) ? ( Integer.parseInt($F{amountConsidered_2}) - $F{amountConsidedAfterCoPay}.intValue() ): ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f9385549-ac68-4b3e-9af5-06bcaf3c6830" positionType="Float" x="85" y="195" width="100" height="28" isPrintInFirstWholeBand="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netPayableAmt} != null ? $F{netPayableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e80eb90-47ce-4065-8d7d-11accb3d1854" positionType="Float" x="220" y="238" width="100" height="28" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netPayableAmt} != null ? $F{netPayableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8679bb33-eee0-4dee-b6d5-6516a45e5377" positionType="Float" x="220" y="266" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt} != null ? $F{claimRestrictionAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="90e9697e-95b1-42e8-9155-15fc1af0b986" positionType="Float" x="220" y="286" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preauthAppAmt} != null ? $F{preauthAppAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cb627148-3b81-4b77-9d85-bc4e115bd5c5" positionType="Float" x="220" y="306" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToHospitalAmt} != null ? $F{payableToHospitalAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ac705f5-173c-498a-99d7-3804339c5b0d" positionType="Float" x="220" y="326" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt} != null ? $F{payableToInsAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="230bb15b-3d67-4126-ba8a-39effac67912" positionType="Float" x="220" y="346" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tdsAmt} != null ? $F{tdsAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b5cb198a-2581-4d19-b14c-3f48198ba4aa" positionType="Float" x="220" y="366" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToHospitalAftTDSAmt} != null ? $F{payableToHospitalAftTDSAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7aa7487-c752-4b97-a2f9-dbe2d17fcce3" positionType="Float" x="220" y="386" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt} != null ? $F{balancePremiumAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c04e88d0-1a16-496b-af9a-968ab17b7342" positionType="Float" x="220" y="406" width="100" height="20" isPrintInFirstWholeBand="true"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt} != null ? $F{payableToInsuredAftPremiumAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="edab9b0e-4d4f-40a9-9add-eeefd7d3c082" positionType="Float" x="283" y="85" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{balanceSI} != null && $F{balanceSumInsuredAfterCoPay} != null && $F{balanceSI}.intValue() > $F{balanceSumInsuredAfterCoPay}.intValue() ) ? ( $F{balanceSI}.intValue() - $F{balanceSumInsuredAfterCoPay}.intValue() ) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7c9edd39-b57d-4dc5-854c-896e89bd34ad" positionType="Float" x="85" y="165" width="100" height="30"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountConsidedAfterCoPay} != null ? $F{amountConsidedAfterCoPay} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0c3d7277-a276-4c29-a5b7-08a49e3e0fdb" positionType="Float" x="283" y="105" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balanceSumInsuredAfterCoPay} != null ? $F{balanceSumInsuredAfterCoPay}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="289230f1-6881-467b-9331-7df63ab7a879" positionType="Float" x="85" y="25" width="100" height="30"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountConsidered_2} != null ? $F{amountConsidered_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b3748423-58b7-49d8-b915-facc44887230" positionType="Float" x="474" y="25" width="70" height="60"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sublimitAndSIAmt} != null ? $F{sublimitAndSIAmt}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="437fb397-323e-4a2c-981a-5add51e3019a" positionType="Float" x="283" y="25" width="100" height="40"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balanceSI} != null ? $F{balanceSI}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e4a0c944-3ac2-46d6-8070-bb4dd985979e" positionType="Float" x="283" y="65" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coPayValue} != null ? $F{coPayValue}.toString() + "%" : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0fbd55bb-09c6-4549-b7a8-9f9e158fcca1" x="7" y="55" width="78" height="40"/>
+				<textElement/>
+				<text><![CDATA[Less: Amount settled by other Insurer ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0577f395-cd0a-407c-9a92-0c914813af7f" x="85" y="55" width="100" height="40"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="420e87b7-c25b-4464-9358-e449f8120e36" x="7" y="95" width="78" height="30"/>
+				<textElement/>
+				<text><![CDATA[Amount considered]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9e9dc9aa-5d7c-474e-aaa5-13dfa8e5bfd1" x="85" y="95" width="100" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6c15a716-9f42-4026-b248-190da8bed04f" x="7" y="165" width="78" height="30"/>
+				<textElement/>
+				<text><![CDATA[Amount considered]]></text>
+			</staticText>
+		</band>
+		<band height="427" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a5b45b22-5ee4-471d-b6a0-7f12d98e577a" x="0" y="20" width="143" height="15">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Pre Hospitalisation Expenses]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="945b2eb1-9780-479f-a864-579c92f1f03b" x="0" y="37" width="555" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{prehospitalizationDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Pre_Hospital_Bill_Other_Products_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="b8e5c112-b7df-422a-8e2a-cf886a892422" positionType="Float" x="25" y="223" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01457d52-607b-4dca-9c66-d221c8436b1c" positionType="Float" x="25" y="323" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim Restriction (As per Policy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ed2c0692-a927-4316-8455-524ceac7288e" positionType="Float" x="25" y="283" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Restricted Sum Insured after Hospitalisation  & Post hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="24faa92a-0a4d-4430-95c2-6d086b1499a0" positionType="Float" x="25" y="303" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable / Eligible  Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd4ef435-8531-4995-ba4e-d0b22e331734" positionType="Float" x="25" y="383" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to insured (after premium)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8b52e2ee-a2d1-4360-a281-1b24d53f9299" positionType="Float" x="25" y="343" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="995c4695-ab47-4306-b338-b0df494f26ed" positionType="Float" x="25" y="263" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Available Sum insured after Hospitalisation& Post Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a2640cf0-0e6b-4906-bfa5-a5921b37c0b6" positionType="Float" x="25" y="363" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Bal premium to be deducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b8ac5902-db93-4de8-81a6-ef57a233f68c" positionType="Float" x="25" y="159" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amount Considered]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d68946d-2136-4fac-84bb-21344d9a6800" positionType="Float" x="25" y="243" width="318" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable / Eligible  Amt * (After Co-pay)]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="891c4b82-3cb1-46bf-b838-d0f49033b987" positionType="Float" x="343" y="159" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountConsidered_1} != null ? $F{amountConsidered_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f99916d-6760-499e-a6c3-a4d7514703bd" positionType="Float" x="343" y="223" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{copayAmt} != null ? $F{copayAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4ebd2954-e582-43af-855b-86dcacc3b28f" positionType="Float" x="343" y="243" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netPayable} != null ? $F{netPayable} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="829d8243-de95-4952-a79a-bca624f06456" positionType="Float" x="343" y="263" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{availableSIAftHosp} != null ? $F{availableSIAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cb2052a9-c9e4-4572-b116-6ab90a91e456" positionType="Float" x="343" y="283" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{restrictedSIAftHosp} != null ? $F{restrictedSIAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d97944de-c393-4ce5-85e9-0d5bb79ad58d" positionType="Float" x="343" y="303" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableAmt} != null ? $F{payableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ae6ead08-aab8-47d5-aeb4-3fbef7a5b9a4" positionType="Float" x="343" y="323" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt_1} != null ? $F{claimRestrictionAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e57678b-350a-4e7a-a6b8-c0ac17b12388" positionType="Float" x="343" y="343" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt_1} != null ? $F{payableToInsAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e43f5d62-a638-44a3-9731-fcd5ad544c7f" positionType="Float" x="343" y="363" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt_1} != null ? $F{balancePremiumAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="57df61b3-2270-4629-8b97-a6d1476d3427" positionType="Float" x="343" y="383" width="159" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt_1} != null ? $F{payableToInsuredAftPremiumAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8a81108a-da04-43b7-a96b-e593f2f53ec5" positionType="Float" x="343" y="179" width="159" height="24">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dfbdb8ae-8678-4744-8f98-af7e110f9deb" positionType="Float" x="25" y="179" width="318" height="24">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Less: Amount settled by other Insurer ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d03d0bcc-f2c7-4fb4-8368-c59d6941556e" positionType="Float" x="25" y="203" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount after  settlement  by other Insurer]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="17f69469-187f-4486-93af-bd8de42d0943" positionType="Float" x="343" y="203" width="159" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="474" splitType="Prevent">
+			<staticText>
+				<reportElement uuid="3b617e7a-0d69-4b84-beec-d6698cb7608f" x="0" y="10" width="143" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Post Hospitalisation Expenses]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="f7da3eb8-e21e-48b2-a638-072d519a552a" x="0" y="35" width="555" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{postHospitalizationDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Post_Hospital_Bill_Other_Products_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="2f28c7e5-62be-44b8-8064-978aa5ab5b41" positionType="Float" x="9" y="287" width="209" height="27" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable / Eligible  Amt * (After Co-pay)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e545dca-ce53-4211-828d-410d2c821007" positionType="Float" x="9" y="394" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim Restriction (As per Policy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="19c02e68-1ba3-4256-a6ce-1ee53c101fda" positionType="Float" x="345" y="144" width="103" height="30" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Post Hospitalisation Amt already Claimed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="96e4a6e1-3d5a-4564-b723-8f181ae14c3f" positionType="Float" x="9" y="314" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Maximum Payable as per Policy Limit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c300e25e-83e8-4d36-9639-8ee9367c181a" positionType="Float" x="9" y="192" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amount payable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e6fd45f-28be-48dd-99e4-df62b02d24c3" positionType="Float" x="9" y="414" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d5036d13-8d48-455b-a76a-aacf409e4873" positionType="Float" x="9" y="454" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Payable to insured (after premium)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="948e7aee-85f7-4b18-818d-ec0a86adf155" positionType="Float" x="9" y="354" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Restricted Sum Insured after Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5f821534-ef05-4de2-ae53-54109b08eee6" positionType="Float" x="9" y="267" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Co-Pay Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="778562f1-5d6f-492c-8bc8-d25da7390624" positionType="Float" x="9" y="164" width="209" height="28" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Eligible Amt (As per Policy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c41cb545-0cd4-45fe-a05c-8b285de5aa89" positionType="Float" x="9" y="334" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Available Sum insured after Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6512195c-c503-41e2-a76d-e3e2a37fd5d4" positionType="Float" x="9" y="434" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Bal premium to be deducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ef5f156c-7a4a-4281-98b5-044be8f7df51" positionType="Float" x="9" y="374" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable / Eligible  Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ee141d0a-8d93-4e61-a2d6-b08ec3f2841e" positionType="Float" x="9" y="144" width="209" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="540bc36c-a738-4892-a3dc-bae7ea44db8b" positionType="Float" x="218" y="144" width="110" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netAmount} != null ? $F{netAmount} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="729a7c79-b1a9-4da2-ad0b-9b6e373598e7" positionType="Float" x="218" y="164" width="110" height="28" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{eligibleAmt} != null ? $F{eligibleAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="466d032a-2602-401d-b29e-68a24530f7c2" positionType="Float" x="218" y="192" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountPayable} != null ? $F{amountPayable} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fed792b3-6d27-42cf-ab02-27b67bbdda7d" positionType="Float" x="218" y="267" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{copayAmt_1} != null ? $F{copayAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7820a04d-384a-42d1-9f40-13f017f123f0" positionType="Float" x="218" y="287" width="322" height="27" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netPayable_1} != null ? $F{netPayable_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fa2736ac-6a1b-4059-bf9f-cdd7379f90ae" positionType="Float" x="218" y="314" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{maxPayable} != null ? $F{maxPayable} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e4b15f02-18ed-411d-97a4-ab6e18cff4ff" positionType="Float" x="218" y="334" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avaliableSumInsuredAftHosp} != null ? $F{avaliableSumInsuredAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3f6b77d6-a788-4ec0-8db5-19cc517a2109" positionType="Float" x="218" y="354" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{restrictedSIAftHosp_1} != null ? $F{restrictedSIAftHosp_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3f819105-dbd7-409d-9961-acbd52b843c2" positionType="Float" x="218" y="374" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableAmt_1} != null ? $F{payableAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="927356b2-a39a-4b59-9fb1-c806396d7284" positionType="Float" x="218" y="394" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt_2} != null ? $F{claimRestrictionAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ad66352f-5853-4554-8fae-511900fafa63" positionType="Float" x="218" y="414" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt_2} != null ? $F{payableToInsAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6bd58876-7fe2-4547-85e5-a00d8b95c037" positionType="Float" x="218" y="434" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt_2} != null ? $F{balancePremiumAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1ca598ac-c4b4-40f0-8e3a-ddf1f28825db" positionType="Float" x="218" y="454" width="322" height="20" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt_2} != null ? $F{payableToInsuredAftPremiumAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="420fae93-08de-4036-8612-a2a3200f9b1a" positionType="Float" x="448" y="144" width="92" height="30" isPrintInFirstWholeBand="true">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{previousRodPostHospamt} != null ? $F{previousRodPostHospamt} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="39d45ebd-fe4f-45dd-a36c-c2ba5bc7e0a1" positionType="Float" x="328" y="144" width="17" height="30">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a9a63898-88a4-4a52-94dd-5d23f82f4e8a" positionType="Float" x="328" y="174" width="212" height="18">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e2897ae8-2558-4a24-b7bb-38ce8431ca28" positionType="Float" x="9" y="212" width="209" height="24">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Less: Amount settled by other Insurer ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="126f6526-f488-42a7-8302-8e3f823f9132" positionType="Float" x="218" y="212" width="322" height="24">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="775adeb6-a232-499c-9808-05db317d06ec" positionType="Float" x="218" y="236" width="322" height="31">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f4651be2-52e4-479e-b77f-c54c24b6cd6f" positionType="Float" x="9" y="236" width="209" height="31">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Amount payable after  settlement  by other Insurer]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

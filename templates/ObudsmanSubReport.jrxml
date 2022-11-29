@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ObudsmanSubReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="560" leftMargin="0" rightMargin="35" topMargin="0" bottomMargin="10" uuid="8b00608d-f8ef-487e-af20-b8b46db590b8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ombName" class="java.lang.String">
+		<fieldDescription><![CDATA[ombName]]></fieldDescription>
+	</field>
+	<field name="ombAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[ombAddress1]]></fieldDescription>
+	</field>
+	<field name="ombAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[ombAddress2]]></fieldDescription>
+	</field>
+	<field name="ombAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[ombAddress3]]></fieldDescription>
+	</field>
+	<field name="ombAddress4" class="java.lang.String">
+		<fieldDescription><![CDATA[ombAddress4]]></fieldDescription>
+	</field>
+	<field name="ombFax" class="java.lang.String">
+		<fieldDescription><![CDATA[ombFax]]></fieldDescription>
+	</field>
+	<field name="ombMail" class="java.lang.String">
+		<fieldDescription><![CDATA[ombMail]]></fieldDescription>
+	</field>
+	<field name="ombTelephone" class="java.lang.String">
+		<fieldDescription><![CDATA[ombTelephone]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="120" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="dfec61f8-1d47-4ef7-8895-da003881e49b" positionType="Float" x="0" y="0" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombName} != null ? $F{ombName} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a18264cb-efc9-4adc-a6dd-b73a81e4489c" positionType="Float" x="0" y="15" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombAddress1} != null ? $F{ombAddress1} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0daa3d16-2182-4847-979d-a87d48fc24c0" positionType="Float" x="0" y="30" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombAddress2} != null ? $F{ombAddress2} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3df23b0e-4547-4f85-9e6d-939ccb526566" positionType="Float" x="0" y="45" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombAddress3} != null ? $F{ombAddress3} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="5c06e489-f77b-4643-8af0-524258704c0a" positionType="Float" x="0" y="60" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombAddress4} != null ? $F{ombAddress4} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="42bb368d-9b3a-4c9f-8a7b-39b74833997d" positionType="Float" x="0" y="75" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombTelephone} != null ? ("Tel : " +  $F{ombTelephone}) : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b5f0d447-e524-4529-88b1-e592332753e7" positionType="Float" x="0" y="90" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombFax} != null ? ("Fax : " + $F{ombFax}) : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="2a9eda5d-54ce-427c-bdb5-90afe69cc021" positionType="Float" x="0" y="105" width="461" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombMail} != null ? $F{ombMail} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,1783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EnhancementWithDrawAndRejectionLetter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb4a66b2-aebb-4431-b540-d2d7c118d9a4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2440"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<field name="intimationId" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.intimationId]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="insuredName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredName]]></fieldDescription>
+	</field>
+	<field name="insuredAge" class="java.lang.Double">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredAge]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.insuredGender.value]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.name]]></fieldDescription>
+	</field>
+	<field name="admissionDate" class="java.util.Date">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.admissionDate]]></fieldDescription>
+	</field>
+	<field name="diagnosis" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.diagnosis]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.city]]></fieldDescription>
+	</field>
+	<field name="initialTotalApprovedAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.initialTotalApprovedAmt]]></fieldDescription>
+	</field>
+	<field name="totalApprAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.totalApprAmt]]></fieldDescription>
+	</field>
+	<field name="value_1" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.treatmentType.value]]></fieldDescription>
+	</field>
+	<field name="createdBy" class="java.lang.String">
+		<fieldDescription><![CDATA[createdBy]]></fieldDescription>
+	</field>
+	<field name="cpuAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.cpuAddress]]></fieldDescription>
+	</field>
+	<field name="value_2" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.withdrawReason.value]]></fieldDescription>
+	</field>
+	<field name="strUserName" class="java.lang.String">
+		<fieldDescription><![CDATA[strUserName]]></fieldDescription>
+	</field>
+	<field name="withdrawRemarks" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.withdrawRemarks]]></fieldDescription>
+	</field>
+	<field name="medicalRemarks" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.medicalRemarks]]></fieldDescription>
+	</field>
+	<field name="createDate" class="java.util.Date">
+		<fieldDescription><![CDATA[createDate]]></fieldDescription>
+	</field>
+	<field name="rejectionRemarks" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.rejectionRemarks]]></fieldDescription>
+	</field>
+	<field name="doctorName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.doctorName]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.address]]></fieldDescription>
+	</field>
+	<field name="productName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.productName]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="gmcMainMemberName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.gmcMainMemberName]]></fieldDescription>
+	</field>
+	<field name="employeeCode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.employeeCode]]></fieldDescription>
+	</field>
+	<field name="relationShipWithEmployee" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.relationShipWithEmployee]]></fieldDescription>
+	</field>
+	<field name="key_1" class="java.lang.Long">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.productType.key]]></fieldDescription>
+	</field>
+	<field name="value_3" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.roomCategory.value]]></fieldDescription>
+	</field>
+	<field name="roomCategory" class="com.shaic.arch.fields.dto.SelectValue">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.roomCategory]]></fieldDescription>
+	</field>
+	<field name="value_4" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.roomCategory.value]]></fieldDescription>
+	</field>
+	<field name="key" class="java.lang.Long">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.product.key]]></fieldDescription>
+	</field>
+	<field name="paPatientName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.paPatientName]]></fieldDescription>
+	</field>
+	<field name="ombudsManAddressList" class="java.util.List">
+		<fieldDescription><![CDATA[claimDTO.ombudsManAddressList]]></fieldDescription>
+	</field>
+	<field name="agentCode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.agentCode]]></fieldDescription>
+	</field>
+	<field name="agentName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.agentName]]></fieldDescription>
+	</field>
+	<field name="smCode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.smCode]]></fieldDescription>
+	</field>
+	<field name="smName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.smName]]></fieldDescription>
+	</field>
+	<field name="organizationUnitName" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.organizationUnit.organizationUnitName]]></fieldDescription>
+	</field>
+	<field name="address_1" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.organizationUnit.address]]></fieldDescription>
+	</field>
+	<field name="registeredMobileNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.registeredMobileNumber]]></fieldDescription>
+	</field>
+	<field name="proposerState" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerState]]></fieldDescription>
+	</field>
+	<field name="proposerPinCode" class="java.lang.Long">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerPinCode]]></fieldDescription>
+	</field>
+	<field name="proposerDist" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerDist]]></fieldDescription>
+	</field>
+	<field name="proposerCity" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerCity]]></fieldDescription>
+	</field>
+	<field name="proposerAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerAddress3]]></fieldDescription>
+	</field>
+	<field name="proposerAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerAddress2]]></fieldDescription>
+	</field>
+	<field name="proposerAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.proposerAddress1]]></fieldDescription>
+	</field>
+	<field name="remarksForInsured" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.remarksForInsured]]></fieldDescription>
+	</field>
+	<field name="withdrawReason" class="com.shaic.arch.fields.dto.SelectValue">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.withdrawReason]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Long">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.withdrawReason.id]]></fieldDescription>
+	</field>
+	<field name="rejectionCategory" class="com.shaic.arch.fields.dto.SelectValue">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.rejectionCategory]]></fieldDescription>
+	</field>
+	<field name="id_1" class="java.lang.Long">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.rejectionCategory.id]]></fieldDescription>
+	</field>
+	<field name="withDrawRemarksForInsured" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthMedicalDecisionDetails.withDrawRemarksForInsured]]></fieldDescription>
+	</field>
+	<field name="isJioPolicy" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[newIntimationDTO.isJioPolicy]]></fieldDescription>
+	</field>
+	<field name="healthCardNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.healthCardNumber]]></fieldDescription>
+	</field>
+	<field name="isPaayasPolicy" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[newIntimationDTO.isPaayasPolicy]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.state]]></fieldDescription>
+	</field>
+	<field name="pincode" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.hospitalDto.registedHospitals.pincode]]></fieldDescription>
+	</field>
+	<field name="parentAge" class="java.lang.Double">
+		<fieldDescription><![CDATA[newIntimationDTO.parentAge]]></fieldDescription>
+	</field>
+	<field name="address1" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.address1]]></fieldDescription>
+	</field>
+	<field name="address2" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.address2]]></fieldDescription>
+	</field>
+	<field name="address3" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.address3]]></fieldDescription>
+	</field>
+	<field name="city_1" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.insuredPatient.city]]></fieldDescription>
+	</field>
+	<field name="isTataPolicy" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[newIntimationDTO.isTataPolicy]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d827af25-b5d8-483a-80b2-8ef37e921f93" x="144" y="0" width="411" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[STAR HEALTH AND ALLIED INSURANCE CO LTD]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="2d29c49d-27e8-4669-9ecc-f8fefecc20d2" x="0" y="0" width="144" height="73"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{resourcePath}+"StarLogo.jpg"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="94b09a74-b80f-419a-a501-805b585c9e77" x="144" y="24" width="411" height="49"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cpuAddress} != null ? $F{cpuAddress} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="487" splitType="Immediate">
+			<staticText>
+				<reportElement uuid="b0ad0845-994a-49bf-bf0e-fe045284fbf9" positionType="Float" x="1" y="254" width="154" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Admission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aced3bd1-f87c-4819-bad5-12ef9ef3761f" positionType="Float" x="1" y="274" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Room Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4d10bb83-50f6-4702-872a-a7c246e420ce" positionType="Float" x="1" y="290" width="154" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Line Of Management]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c4aeffa5-ee3c-4cb4-a32d-ea357536a371" positionType="Float" x="1" y="195" width="153" height="18" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Relationship with Member" : "Relationship with Employee"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a0c9fe17-2e57-4a20-84fa-c72d757480d5" positionType="Float" x="1" y="379" width="554" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Hence authorization is withdrawn and stands null and void]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="c445cd02-4518-491d-8b0d-a5b6877bbcc2" positionType="Float" x="155" y="143" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{gmcMainMemberName} != null ? $F{gmcMainMemberName} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b62f1b36-a3d9-4f2c-b93b-bf08ce4d9bd2" positionType="Float" x="0" y="316" width="127" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Dear Sirs,]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="fb8e3986-d5e9-49d6-9207-7fc164da0060" positionType="Float" x="155" y="159" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + (($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) ? ($F{healthCardNumber} != null ? $F{healthCardNumber} : "") : ( $F{employeeCode} != null ? $F{employeeCode} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6314fd19-87c2-46e5-b33a-b7c9061b1496" positionType="Float" x="155" y="274" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " +( $F{roomCategory} != null && $F{value_4} != null ? $F{value_4} : ( $F{value_3} != null ? $F{value_3} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10960473-5dd5-4469-a4e2-9662663bd3f8" positionType="Float" x="155" y="233" width="400" height="21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{diagnosis} != null ? $F{diagnosis}.toUpperCase() : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ecad0745-f97d-4c50-bfe2-f7ad68dcf384" positionType="Float" x="1" y="413" width="307" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strUserName} != null ? $F{strUserName} : ""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="843e12f7-8cd4-4e59-bb54-a6fe5c76d821" positionType="Float" x="154" y="195" width="401" height="18" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{relationShipWithEmployee} != null ? $F{relationShipWithEmployee} : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7e26be95-e939-493d-9a70-71dc7414a30c" positionType="Float" x="1" y="453" width="128" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yy hh:mm a").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c5dc9056-d1d7-46ad-acde-bf41f208936f" x="397" y="21" width="37" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5aeb555c-5278-453d-8f8a-c8180d02dbd2" positionType="Float" x="155" y="290" width="401" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{value_1} != null ? $F{value_1} : "" )]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="0104d0f0-dae8-4103-9416-d7a48a8ca76d" positionType="Float" x="155" y="127" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="764d1562-5f88-4a83-88ca-52eee6d4cc35" positionType="Float" x="137" y="104" width="274" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{intimationId} != null ? $F{intimationId} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8db7452c-c721-44d3-8b96-5219624f0031" positionType="Float" x="1" y="175" width="154" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e0a50310-9607-4fb0-89cd-76a104149d77" positionType="Float" x="127" y="104" width="10" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a4331b88-9b89-4dd6-a615-931d9ae02880" positionType="Float" x="74" y="73" width="473" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{city} != null ? $F{city}.trim() : "") +
+($F{pincode} != null ? (" - " + $F{pincode}.trim()): "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="369a419a-78c1-40e1-8c9a-59a88cb5f139" positionType="Float" x="155" y="213" width="202" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{policyNumber} != null ? $F{policyNumber} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e450a1bc-24ab-45b0-88fe-39690287f1f9" positionType="Float" x="1" y="213" width="154" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Policy No]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="35ae775b-4e06-426b-bdcf-a4fb917b0999" x="67" y="43" width="200" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{name} != null ? $F{name} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1ae77721-2fe9-4cb0-baa9-1ccfd16d59e2" positionType="Float" x="1" y="127" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Name of the Insured ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="de2230dc-fd3c-490b-9410-6ceb655a9d97" x="67" y="59" width="476" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{address} != null ? $F{address}.trim() : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f69429bb-11fc-4269-b4e2-9892c9ecb00e" x="0" y="43" width="67" height="16"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[HOSPITAL]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="64d19793-1236-4050-bb1d-73634fe9b1ac" x="434" y="21" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( new SimpleDateFormat("dd/MM/yyyy").format(new Date()) )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="69c3eff4-a1ea-425f-bead-316a4106ab24" positionType="Float" x="0" y="104" width="127" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim Intimation No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b0d395fc-fe93-444b-8673-73b9a727cd1f" x="0" y="59" width="67" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="01edc354-41e9-48d1-851a-d5e89c2b20cf" positionType="Float" x="155" y="254" width="202" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{admissionDate} != null ?  new SimpleDateFormat("dd/MM/yyyy").format($F{admissionDate}) : "" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d9667240-903e-4663-b9b0-5ecfaa345521" positionType="Float" x="74" y="87" width="473" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{state} != null ? $F{state}.trim() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c9c96d92-6acc-4931-8d7a-487152a5de78" positionType="Float" x="155" y="175" width="401" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ($F{key} != null && ($F{key}.intValue() == 111 || $F{key}.intValue() == 163) ? ($F{paPatientName} != null ? $F{paPatientName} : "" ) : ( $F{insuredName} != null ? $F{insuredName}.toUpperCase() : "" ))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="88dcb4a2-55b0-4762-b2c1-9a7d7195790d" positionType="Float" x="0" y="473" width="100" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Encl : As above]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7f844934-462c-44f9-950e-f8627e9a4923" positionType="Float" x="1" y="233" width="154" height="21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Final diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2b5a5549-49d4-49dd-8df6-e15e1b966592" x="0" y="1" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[WITHDRAWAL OF AUTHORISATION LETTER]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="185d844e-104e-4f9e-9955-dd6a107f5b08" positionType="Float" x="1" y="159" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Membership Id" : "Emp.Id"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e6961c70-974d-445f-a450-11768b51e059" positionType="Float" x="0" y="340" width="553" height="32"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{withdrawRemarks} != null ? ( "<style>" + $F{withdrawRemarks}.replace("-----,",  ( $F{diagnosis} != null ? $F{diagnosis} : "" )).replaceAll("&","and") + "</style>" ): ""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="2c0f0a2f-db14-4821-8007-42205e20e80a" positionType="Float" x="1" y="143" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Member Name" : "Name of the employee"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5460f390-5fb1-42ef-89ac-cd4530ec0b80" positionType="Float" x="1" y="433" width="448" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Authorized Signatory / M.O. -  CLAIMS]]></text>
+			</staticText>
+		</band>
+		<band height="484" splitType="Prevent">
+			<staticText>
+				<reportElement uuid="68316033-1533-44aa-b516-203d10bcb444" x="388" y="28" width="37" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af9dfb70-f01e-4d16-b254-70d3f976a235" positionType="Float" x="1" y="125" width="144" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF THE INSURED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e62d3e98-a889-4a73-8744-d8e5e1ff077d" positionType="Float" x="1" y="208" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE OF ADMISSION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79b08f53-1e3e-47dc-a7b6-565a298cbfef" positionType="Float" x="311" y="281" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TREATING DOCTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ceb4c71a-dc7c-45ce-a778-3940bb64a4df" positionType="Float" x="145" y="141" width="156" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{gmcMainMemberName} != null ? $F{gmcMainMemberName} : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="07d9036d-e019-413e-ace4-b55a5427c447" positionType="Float" x="1" y="405" width="128" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yyyy hh:mm a").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="46b15e49-26a7-451f-b577-4a9140c275ee" positionType="Float" x="311" y="227" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ROOM CATEGORY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ee5fad37-e860-4176-9d52-4d9d47afc98b" positionType="Float" x="311" y="157" width="100" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[AGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="230f54cb-0007-4b35-9f09-774e6d485311" positionType="Float" x="145" y="227" width="6" height="34"/>
+				<textElement/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b61d2d39-cb27-46b6-9993-8fce247126ad" positionType="Float" x="1" y="181" width="144" height="26" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904 ? (($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "RELATIONSHIP WITH MEMBER" : "RELATIONSHIP WITH EMPLOYEE") : " "]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0bab95dc-3855-4a1c-8819-bdd3eb40ded3" x="1" y="76" width="60" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="87891b28-dea3-49fb-883b-f8ab3e2150c3" positionType="Float" x="145" y="181" width="302" height="26" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relationShipWithEmployee} != null && $F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904 ? ( " : " + $F{relationShipWithEmployee}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e00aed78-bd03-4956-9f8f-fe1ad8619497" positionType="Float" x="411" y="141" width="138" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + (($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) ? ($F{healthCardNumber} != null ? $F{healthCardNumber} : "") : ( $F{employeeCode} != null ? $F{employeeCode} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="88909559-0e90-434d-89c8-76c30e76cabc" positionType="Float" x="145" y="157" width="156" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ($F{key} != null && ($F{key}.intValue() == 111 || $F{key}.intValue() == 163) ? ($F{paPatientName} != null ? $F{paPatientName} : "" ) : ( $F{insuredName} != null ? $F{insuredName}.toUpperCase() : "" ))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0bceb173-2fdf-4f08-84b0-4fea36f25f9d" positionType="Float" x="411" y="245" width="6" height="35"/>
+				<textElement/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<textField pattern="dd-MMM-yyyy">
+				<reportElement uuid="4ed0ee4d-152c-445f-b6ca-2305a4f89112" positionType="Float" x="145" y="208" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{admissionDate} != null ? ( (new SimpleDateFormat("dd-MMM-yyyy").format($F{admissionDate})).toUpperCase() ) : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="3c272744-1918-471a-808e-73ac9c4ff4e9" positionType="Float" x="311" y="208" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[SEX]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="174cfb9b-a47f-49bb-8bb2-362f016a75c6" positionType="Float" x="411" y="157" width="138" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{key} != null && ($F{key}.intValue() == 111 || $F{key}.intValue() == 163) ? ($F{parentAge} != null ? ($F{parentAge}.intValue() + "years") : "") : ($F{insuredAge} != null ? ($F{insuredAge}.intValue() + "years") : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b44a650b-ca8f-451e-ab5b-8d81bde8b72e" positionType="Float" x="151" y="227" width="150" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productName} != null ? $F{productName} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8db1f564-102d-42e3-8fdf-23da98328b5a" positionType="Float" x="1" y="261" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[POLICY NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36b0c7ee-c545-4082-9973-819e3263fcc7" positionType="Float" x="1" y="385" width="127" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Authorized Signatory]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3a9e176f-77e8-44ff-a8da-bf7a493139e3" positionType="Float" x="1" y="365" width="222" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strUserName} != null ? $F{strUserName} :""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f039a938-c5a1-4336-968c-4ab630781168" x="1" y="54" width="60" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[HOSPITAL]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="428d9cfc-bdcd-4744-b193-65813d18a7f9" positionType="Float" x="74" y="104" width="468" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{state} != null ? $F{state}.trim() : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0e9c09a3-6de6-4c7f-8151-e11adcf1abd5" positionType="Float" x="0" y="307" width="127" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Dear Sirs,]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="90f40a5b-2a2c-4ade-84d3-a444f3797944" x="61" y="76" width="482" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{address} != null ? $F{address}.trim() : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e5df8d63-3c01-43d8-9b39-03a22e09b0a3" positionType="Float" x="409" y="208" width="134" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{value} != null ? $F{value} : "" )]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="48b04236-b45a-4ca8-a3d4-aa996e25a9cc" positionType="Float" x="1" y="141" width="144" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "MEMBER NAME" : "NAME OF THE EMPLOYEE"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4122d39f-20c3-49bf-8d25-7ecb90b9fa6a" positionType="Float" x="145" y="281" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{intimationId} != null ? $F{intimationId} : "" )]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="d1c06089-bcae-4861-87f0-0a48f55c3bf4" x="425" y="28" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yyyy").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40a25ac3-b55b-41f2-b863-c77f3aa9de2d" positionType="Float" x="411" y="281" width="132" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{doctorName} != null ? $F{doctorName} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="089decd9-733e-4343-9086-90153fbb769f" positionType="Float" x="1" y="227" width="144" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF POLICY]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fb0fa2a4-eca0-406c-bdb1-afff8b8740c2" positionType="Float" x="0" y="335" width="554" height="23"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rejectionRemarks} != null ? ( "<style>" + $F{rejectionRemarks}.replace("-----,",  ( $F{diagnosis} != null ? $F{diagnosis} : "" )).replaceAll("&"," and ") + "</style>" ) : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="13b0eb2c-fc86-4bf4-a0ee-f38c78a3193b" positionType="Float" x="74" y="90" width="468" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{city} != null ? $F{city}.trim() : "") +
+($F{pincode} != null ? (" - " + $F{pincode}.trim()): "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cf18eb30-23ab-4709-96ff-8d671c387ac1" positionType="Float" x="417" y="246" width="126" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diagnosis} != null ? $F{diagnosis}.toUpperCase() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5cb1566c-ab4e-4808-9918-11d9788329af" positionType="Float" x="410" y="227" width="133" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " +( $F{roomCategory} != null && $F{value_4} != null ? $F{value_4} : ( $F{value_3} != null ? $F{value_3} : "" ))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="f30e20d3-3c11-4542-bc13-5ddb50a752ff" x="1" y="28" width="40" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TO,]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="5f91130d-2018-446d-b25f-9a0d88ffeb14" positionType="Float" x="311" y="141" width="100" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "MEMBERSHIP ID" : "EMP.ID"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5ff09478-609a-4e1a-ae16-bc1f03a46dab" positionType="Float" x="1" y="281" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[CLAIM INTIMATION NO.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="85f5056f-e4ec-46c3-ada4-d2f048e3ca95" positionType="Float" x="145" y="125" width="404" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5747692f-7d78-4752-b7c3-10f2a8992754" x="1" y="2" width="554" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[REJECTION OF PRE-AUTHORIZATION FOR CASHLESS TREATMENT]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2761484f-a954-4cec-983b-a667c3e56a0f" x="61" y="54" width="200" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{name} != null ? $F{name} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8c947442-b08b-4303-80eb-b2cbc063ee8e" positionType="Float" x="311" y="246" width="100" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62d16d4e-21f4-4b1c-9dda-653dbf14590c" positionType="Float" x="1" y="157" width="144" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF INSURED-PATIENT]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="aedccbd7-40a9-4d89-81d9-a13f1e215819" positionType="Float" x="145" y="261" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{policyNumber} != null ? $F{policyNumber} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b8e938c0-5bfe-4df9-a9eb-7ce2f646f9a8" positionType="Float" x="0" y="431" width="99" height="18"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Encl : As above]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="579d2f70-030e-484c-ae4e-a8af3b709b94" positionType="Float" x="19" y="452" width="508" height="29"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style>PS:\nIn case you are not satisfied with the above decision, you may wish to represent to our Grievance Department at the following address: </style>"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="377" splitType="Prevent">
+			<textField>
+				<reportElement uuid="a7fc7798-d3ee-4ead-9016-8d7cb67e7035" positionType="Float" x="68" y="319" width="331" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{organizationUnitName} != null ? $F{organizationUnitName} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1c70c6f5-9b1c-4d94-bb7d-51d9d0f088b8" positionType="Float" x="19" y="299" width="347" height="16"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Intermediary Code / Name :     " + ($F{agentCode} != null ? $F{agentCode} : "" ) +
+( $F{agentName} != null ? $F{agentName}.toUpperCase() :"" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ac959730-8231-40b5-9d33-59c596a326e9" positionType="Float" x="19" y="283" width="347" height="16"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SM Code / Name   :    " + ( $F{smCode} != null ? $F{smCode} : "" )+
+($F{smName}  != null ? $F{smName}.toUpperCase() : "" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="265e66de-831f-4a97-82b0-2d3dbd91f6a1" positionType="Float" x="1" y="339" width="400" height="38"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STAR HEALTH AND ALLIED INSURANCE CO.LTD.<br>"
++ $F{address_1} != null ? $F{address_1} : ""]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="0d763262-2dfc-4260-ac49-af8a58dfee04" positionType="Float" x="19" y="196" width="484" height="87" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{ombudsManAddressList} != null && !$F{ombudsManAddressList}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{ombudsManAddressList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "ObudsmanSubReport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="0f5173e6-147a-470c-b111-682a08977c1d" positionType="Float" x="19" y="163" width="508" height="33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombudsManAddressList} == null || $F{ombudsManAddressList}.isEmpty() ? "Thereafter if you wish to pursue the matter further, you may represent to the Office of the Insurance Ombudsman in your State." :
+"Thereafter if you wish to pursue the matter further, you may represent to the Office of the Insurance Ombudsman whose address is given below:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9ec06443-b100-4d84-bf28-08013a40c08b" positionType="Float" x="1" y="319" width="67" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[COPY TO : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="050c001b-2038-4647-b85a-e1e981425374" positionType="Float" x="20" y="5" width="510" height="158"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Mrs.Radha Vijayaraghavan,<br>
+Grievance Redressal Officer,<br>
+Corporate Grievance Department,<br>
+Star Health & Allied Insurance Company,<br>
+MKM Chambers,<br>
+5th Floor,<br>
+No.42, Kodambakkam High Road,<br>
+Nungambakkam,<br>
+Chennai-600034<br>
+Tel. No.: 044-2824 3925<br>
+E-mail id:- <u>gro@starhealth.in</u>]]></text>
+			</staticText>
+		</band>
+		<band height="503" splitType="Prevent">
+			<printWhenExpression><![CDATA[($F{withdrawReason} != null && $F{id} != null && $F{id} != 1865)]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="c98301e0-4e6d-4e83-a6ea-c53dc57a74ce" positionType="Float" x="0" y="194" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Name of the Insured ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="46f8418f-fd1d-45dd-9b21-f5ef5a9f6900" positionType="Float" x="10" y="83" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? ($F{address2} != null ? $F{address2}.toUpperCase() : "") : ($F{proposerAddress2} != null ? $F{proposerAddress2}.toUpperCase() : "")) : ($F{proposerAddress2} != null ? $F{proposerAddress2}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="36eaa540-7927-448f-aea4-e9cc8678dde3" positionType="Float" x="154" y="357" width="401" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{value_1} != null ? $F{value_1} : "" )]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="d8435c82-1dbc-4ce7-a126-30c852fc89b7" positionType="Float" x="154" y="194" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="5c455767-c286-48c8-b2b3-f21ab4b5fce2" positionType="Float" x="0" y="407" width="553" height="32"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{withDrawRemarksForInsured} != null ? ( "<style>" + $F{withDrawRemarksForInsured}.replace("-----,",  ( $F{diagnosis} != null ? $F{diagnosis} : "" )).replaceAll("&"," and ") + "</style>" ): ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="26e6b1f0-5cf3-441b-aba3-9d03bdb466ca" positionType="Float" x="10" y="59" width="375" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{key} != null && $F{key}.intValue() == 401) || ($F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904)) ? ($F{gmcMainMemberName} != null ? $F{gmcMainMemberName}.toUpperCase() : "") :( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : " " )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c7e25f34-a568-4f86-8561-771301004de9" positionType="Float" x="10" y="143" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? "" : ($F{proposerState} != null ? $F{proposerState}.toUpperCase() : "")) : ($F{proposerState} != null ? $F{proposerState}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9c0ae269-7b76-4f86-9dea-c8f85f6a9db3" positionType="Float" x="10" y="119" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? "" : ($F{proposerPinCode} != null ? ("Pincode : " + $F{proposerPinCode} ): "")): ($F{proposerPinCode} != null ? ("Pincode : " + $F{proposerPinCode} ): "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="007cabeb-6e3a-4650-8139-a2b65aecdce5" positionType="Float" x="10" y="71" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? $F{address1} : ($F{proposerAddress1} != null ? $F{proposerAddress1}.toUpperCase() : "")) : ($F{proposerAddress1} != null ? $F{proposerAddress1}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e2507df6-b29d-4a22-b048-4a274aba0403" positionType="Float" x="10" y="95" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? ($F{address3} != null ? $F{address3}.toUpperCase() : "") : ($F{proposerAddress3} != null ? $F{proposerAddress3}.toUpperCase() : "") ) : ($F{proposerAddress3} != null ? $F{proposerAddress3}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d35bf02f-1dbf-4419-94aa-0416772f84e5" positionType="Float" x="0" y="485" width="128" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yy hh:mm a").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="2ed8a368-5652-4283-bc77-0f603dd1a32d" positionType="Float" x="0" y="226" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Membership Id" : "Emp.Id"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c1698d13-c910-40d9-a880-b335d4755593" positionType="Float" x="10" y="131" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? "" : ($F{proposerDist} != null ? $F{proposerDist}.toUpperCase() : "") ) : ($F{proposerDist} != null ? $F{proposerDist}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f113e86c-e2b6-4398-a7b7-a0279b7f054b" positionType="Float" x="154" y="242" width="401" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ($F{key} != null && ($F{key}.intValue() == 111 || $F{key}.intValue() ==163)  ? ($F{paPatientName} != null ? $F{paPatientName}.toUpperCase() : "" ) : ( $F{insuredName} != null ? $F{insuredName}.toUpperCase() : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a8395c84-5aa4-4ec2-bdfc-e0d6fdf558ba" positionType="Float" x="154" y="341" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " +( $F{roomCategory} != null && $F{value_4} != null ? $F{value_4} : ( $F{value_3} != null ? $F{value_3} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="96554229-df0b-4de3-907d-75ec9a9fc04c" positionType="Float" x="137" y="171" width="274" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{intimationId} != null ? $F{intimationId} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="916769f3-ca3f-45e3-854a-9a2159242ce5" positionType="Float" x="0" y="171" width="127" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claim Intimation No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3f882bb-eb25-444d-8113-171d2d48990c" positionType="Float" x="0" y="300" width="154" height="21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Final diagnosis]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ce486bf1-db9c-4965-9dac-a8b8d6eb878c" positionType="Float" x="154" y="280" width="202" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{policyNumber} != null ? $F{policyNumber} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="b5a39a4e-a6f6-4675-8561-81e41a8906c0" positionType="Float" x="0" y="357" width="154" height="20"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Line Of Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b763b875-7dae-4544-93ce-c34188dad297" x="396" y="35" width="37" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0b85206e-7344-4c69-b936-5a4961021b2e" positionType="Float" x="127" y="171" width="10" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa7175d8-bd1d-40bc-a95e-41a9f0bb2386" positionType="Float" x="0" y="341" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Room Category]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="25603741-791b-4953-9954-dbb909afa413" positionType="Float" x="0" y="445" width="307" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strUserName} != null ? $F{strUserName} : ""]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="c2b58b41-283d-455b-ac36-77438a5c767b" positionType="Float" x="0" y="210" width="154" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Member Name" : "Name of the employee"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="33e47be7-6d4f-43c2-8667-df0f24fb2455" positionType="Float" x="10" y="107" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? ($F{city_1} != null ? $F{city_1}.toUpperCase() : "") : ($F{proposerCity} != null ? $F{proposerCity}.toUpperCase() : "") ) : ($F{proposerCity} != null ? $F{proposerCity}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="cfe5d65c-7831-48f1-9c02-180950750191" positionType="Float" x="154" y="226" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + (($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) ? ($F{healthCardNumber} != null ? $F{healthCardNumber} : "") : ( $F{employeeCode} != null ? $F{employeeCode} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="ee5c3852-1572-4814-95b6-441944702139" positionType="Float" x="0" y="262" width="153" height="18" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "Relationship with Member" : "Relationship with Employee"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2e9412de-b198-48a8-bfee-b7586750e5d5" positionType="Float" x="0" y="321" width="154" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Admission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c994fb83-0d06-4aa2-abcb-0df9d71a8b5a" x="1" y="45" width="40" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TO,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c18e53c-01d9-40e1-ba2f-21e59fc5db33" x="0" y="1" width="555" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[WITHDRAWAL OF AUTHORISATION LETTER]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="6008ae4a-420a-4d6b-9f5c-c20e7c70064a" positionType="Float" x="10" y="155" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? "" : ($F{registeredMobileNumber} != null ? ( "Telephone : " +$F{registeredMobileNumber} ) : "")) : ($F{registeredMobileNumber} != null ? ( "Telephone : " +$F{registeredMobileNumber} ) : "")]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="380e4392-4d87-4d65-9988-57728f2b17ad" x="433" y="35" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( new SimpleDateFormat("dd/MM/yyyy").format(new Date()) )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="62c452b9-782f-4bb0-b304-827b6e4a050b" positionType="Float" x="0" y="242" width="154" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Patient Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dabc3564-39be-4bd8-9ab8-8eb3fd92d0e4" positionType="Float" x="0" y="280" width="154" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Policy No]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="d064507c-1bde-4476-bc87-050277b46507" positionType="Float" x="153" y="262" width="401" height="18" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{relationShipWithEmployee} != null ? $F{relationShipWithEmployee} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="bd04610e-c60d-4abd-b513-208bdd8031b1" positionType="Float" x="0" y="465" width="448" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Authorized Signatory / M.O. -  CLAIMS]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="f3241ec3-66cf-4793-ab81-5f88e09591e6" positionType="Float" x="154" y="210" width="400" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{gmcMainMemberName} != null ? $F{gmcMainMemberName} : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7fdb4702-9d75-4fa5-8c4c-745c8beb55f3" positionType="Float" x="154" y="321" width="202" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{admissionDate} != null ?  new SimpleDateFormat("dd/MM/yyyy").format($F{admissionDate}) : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7e82599-80a7-4a5c-9411-aa61fabd6b93" positionType="Float" x="154" y="300" width="400" height="21"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{diagnosis} != null ? $F{diagnosis}.toUpperCase() : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6228f81d-8f82-48eb-aa00-8bb347dae435" positionType="Float" x="0" y="382" width="395" height="19" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dear Sir / Madam,"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="511" splitType="Prevent">
+			<printWhenExpression><![CDATA[($F{rejectionCategory} != null && $F{id} != null && $F{id}.intValue() != 7351)]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="17f37e9e-ca0d-4898-95d2-2f25c04ac92d" positionType="Float" x="417" y="292" width="126" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{diagnosis} != null ? $F{diagnosis}.toUpperCase() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6883ba83-7143-4f05-b4c3-36285f53424a" positionType="Float" x="411" y="187" width="140" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + (($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) ? ($F{healthCardNumber} != null ? $F{healthCardNumber} : "") : ( $F{employeeCode} != null ? $F{employeeCode} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="200c659f-8e97-4994-92ef-4fd02451ff82" positionType="Float" x="11" y="90" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? ($F{address3} != null ? $F{address3}.toUpperCase() : "") : ($F{proposerAddress3} != null ? $F{proposerAddress3}.toUpperCase() : "") ) : ($F{proposerAddress3} != null ? $F{proposerAddress3}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="efd83a7c-68dc-40a9-8ee4-c3c4f80dd0d3" positionType="Float" x="1" y="227" width="144" height="26" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904 ? (($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "RELATIONSHIP WITH MEMBER" : "RELATIONSHIP WITH EMPLOYEE") : " "]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yyyy">
+				<reportElement uuid="5b895868-ce8b-49d1-bbf7-28594f949db6" positionType="Float" x="145" y="254" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{admissionDate} != null ? ( (new SimpleDateFormat("dd-MMM-yyyy").format($F{admissionDate})).toUpperCase() ) : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="bdac46e7-2f42-47f9-9552-80f568bc10e5" positionType="Float" x="1" y="254" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE OF ADMISSION]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="3b6784fa-d448-42ee-94d6-619eddc22f65" positionType="Float" x="1" y="187" width="143" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "MEMBER NAME" : "NAME OF THE EMPLOYEE"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a564bb75-2a6b-42bc-bcdb-7a03a36d4686" positionType="Float" x="0" y="416" width="222" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strUserName} != null ? $F{strUserName} :""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51a84317-69b7-4701-80b7-6ad7569031fb" positionType="Float" x="145" y="203" width="156" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ($F{key} != null && ($F{key}.intValue() == 111 || $F{key}.intValue() == 163) ? ($F{paPatientName} != null ? $F{paPatientName}.toUpperCase() : "" ) : ( $F{insuredName} != null ? $F{insuredName}.toUpperCase() : "" ))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8e5d8bea-3f24-4e81-b8dc-84a3e78eb7bf" positionType="Float" x="1" y="307" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[POLICY NUMBER]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="cfddc86d-ea4e-45a7-bca6-6cacc7b70060" positionType="Float" x="11" y="66" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? $F{address1} : ($F{proposerAddress1} != null ? $F{proposerAddress1}.toUpperCase() : "")) : ($F{proposerAddress1} != null ? $F{proposerAddress1}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8e797a12-7aaf-44d0-ac6a-06a1c2c968f0" x="2" y="40" width="40" height="14"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TO,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5124dd52-1d33-40c1-9a5e-24849f240102" x="0" y="1" width="554" height="30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[REJECTION OF PRE-AUTHORIZATION FOR CASHLESS TREATMENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="56585454-5f96-43d6-85bd-23cad38294ee" positionType="Float" x="411" y="291" width="6" height="35"/>
+				<textElement/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="afc2a80e-8fcb-4b50-bd0e-1463dddab09b" positionType="Float" x="311" y="203" width="100" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[AGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d65ed938-2f7f-4ee9-8ad1-16f701eff31e" positionType="Float" x="1" y="273" width="144" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF POLICY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="015402f2-7bac-40e0-b96d-b9b1a109896d" positionType="Float" x="1" y="171" width="144" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF THE INSURED]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7cdfd12e-6ec8-4979-9ab8-92cb3c0d313f" positionType="Float" x="145" y="307" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{policyNumber} != null ? $F{policyNumber} : "" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9323b42e-4c0a-4442-9966-c49179a59c48" positionType="Float" x="11" y="78" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? ($F{address2} != null ? $F{address2}.toUpperCase() : "") : ($F{proposerAddress2} != null ? $F{proposerAddress2}.toUpperCase() : "")) : ($F{proposerAddress2} != null ? $F{proposerAddress2}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c70354f0-e5a0-4d03-9105-e341111ba12e" positionType="Float" x="0" y="456" width="128" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yyyy hh:mm a").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="88241c01-1904-406b-a320-05c8a60867ba" positionType="Float" x="1" y="436" width="127" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Authorized Signatory]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ea6bce4d-f784-4c45-81d5-2bd82bc1f914" positionType="Float" x="411" y="327" width="132" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{doctorName} != null ? $F{doctorName} : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="68cdcd35-75bf-4a4b-b50a-cc5d9b24a29c" positionType="Float" x="411" y="203" width="138" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " +(($F{key}.intValue() == 111 || $F{key}.intValue() == 163) ? ($F{parentAge} != null ? ($F{parentAge}.intValue() + "years") : "") : ( $F{insuredAge} != null ? $F{insuredAge}.intValue() + "years" : "" ))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b7fdd0dc-fb7e-43d5-9e26-b6da186937db" positionType="Float" x="11" y="150" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? "" : ($F{registeredMobileNumber} != null ? ( "Telephone : " +$F{registeredMobileNumber} ) : "")) : ($F{registeredMobileNumber} != null ? ( "Telephone : " +$F{registeredMobileNumber} ) : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1cb4228c-96e8-4777-bbbe-12a575cacfef" positionType="Float" x="11" y="54" width="375" height="12"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{key} != null && $F{key}.intValue() == 401) || ($F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904)) ? ($F{gmcMainMemberName} != null ? $F{gmcMainMemberName}.toUpperCase() : "") :( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : " " )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="912714e9-14c6-4ca6-8a3c-7ff7cfd4e81f" positionType="Float" x="11" y="102" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? ($F{city_1} != null ? $F{city_1}.toUpperCase() : "") : ($F{proposerCity} != null ? $F{proposerCity}.toUpperCase() : "") ) : ($F{proposerCity} != null ? $F{proposerCity}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7c826355-36e9-4b70-9a23-03243db9bab6" positionType="Float" x="311" y="292" width="100" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DIAGNOSIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="90fb3095-99a8-4b7d-9241-8482fc920719" positionType="Float" x="311" y="327" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[TREATING DOCTOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="8e96ad92-ca93-43d7-9c12-2bb2a413316c" positionType="Float" x="410" y="273" width="133" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " +( $F{roomCategory} != null && $F{value_4} != null ? $F{value_4} : ( $F{value_3} != null ? $F{value_3} : "" ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="faeb9c97-fd56-4973-b2a0-1e88f4b1c380" positionType="Float" x="145" y="327" width="156" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{intimationId} != null ? $F{intimationId} : "" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c33b54be-c86f-43be-bab7-5d0988ec9d47" positionType="Float" x="11" y="114" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? "" : ($F{proposerPinCode} != null ? ("Pincode : " + $F{proposerPinCode} ): "")): ($F{proposerPinCode} != null ? ("Pincode : " + $F{proposerPinCode} ): "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ba1d860c-63c4-40d2-b32c-8eb1d608cc90" positionType="Float" x="0" y="383" width="554" height="23"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remarksForInsured} != null ? ( "<style>" + $F{remarksForInsured}.replace("-----,",  ( $F{diagnosis} != null ? $F{diagnosis} : "" )).replaceAll("&"," and ") + "</style>" ): ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="70a91b9f-3043-4247-985b-d10111c39472" positionType="Float" x="145" y="171" width="404" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{proposerFirstName} != null ? $F{proposerFirstName}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49d62b06-caf9-44ec-87b3-fa7adc9a7cc7" positionType="Float" x="151" y="273" width="150" height="34"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productName} != null ? $F{productName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7d20c03e-32f7-467f-9171-45dba618295e" positionType="Float" x="409" y="254" width="134" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{value} != null ? $F{value} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0eaf31db-cebe-4356-b96a-725204851c68" positionType="Float" x="1" y="203" width="144" height="24"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[NAME OF INSURED-PATIENT]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement uuid="ecb963c5-2462-4ef6-ad10-b3edf0eee0e5" positionType="Float" x="311" y="187" width="100" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{isJioPolicy} != null && $F{isJioPolicy}) || ($F{isPaayasPolicy} != null && $F{isPaayasPolicy}) || ($F{isTataPolicy} != null && $F{isTataPolicy}) ? "MEMBERSHIP ID" : "EMP.ID"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="17576ea2-7628-4fd3-81d2-63aaa68143b9" positionType="Float" x="145" y="187" width="156" height="16" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" : " + ( $F{gmcMainMemberName} != null ? $F{gmcMainMemberName} : "" )]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="85c4a750-417f-4dc6-b4f5-96a8cd100e48" x="431" y="31" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new SimpleDateFormat("dd-MMM-yyyy").format(new Date())).toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="67450b96-bacd-40cb-aac1-0ca91a629e78" positionType="Float" x="1" y="327" width="144" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[CLAIM INTIMATION NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e045f85-55db-41ed-b141-9a81ebb9f468" positionType="Float" x="145" y="273" width="6" height="34"/>
+				<textElement/>
+				<text><![CDATA[ : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44a865db-8ba2-4fe8-940c-cc8d501a9e69" positionType="Float" x="311" y="273" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ROOM CATEGORY]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="df1be9c7-fe67-4855-acdf-0841239368dc" positionType="Float" x="11" y="126" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ( $F{address1} != null ? "" : ($F{proposerDist} != null ? $F{proposerDist}.toUpperCase() : "") ) : ($F{proposerDist} != null ? $F{proposerDist}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c076345-a727-4e6e-9d3d-2c5a75f3641b" positionType="Float" x="145" y="227" width="302" height="26" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{relationShipWithEmployee} != null && $F{key} != null && ($F{key}.intValue() == 401 || $F{key}.intValue() == 402) && $F{key_1} != null && $F{key_1}.intValue() == 2904 ? ( " : " + $F{relationShipWithEmployee}) : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6ee4af47-2eb7-451f-a2d5-6e519607a9d8" x="394" y="31" width="37" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DATE : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="058cbac7-b56d-4305-b5fe-3d7197240bd6" positionType="Float" x="11" y="138" width="192" height="12" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{key_1} != null && ($F{key_1}.intValue() == 2904 || $F{key_1}.intValue() == 2904) ? ($F{address1} != null ? "" : ($F{proposerState} != null ? $F{proposerState}.toUpperCase() : "")) : ($F{proposerState} != null ? $F{proposerState}.toUpperCase() : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dfad980a-b393-4952-9106-45260f37e559" positionType="Float" x="311" y="254" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[SEX]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fae1b942-2576-45a4-b7e5-72c0d0be0085" positionType="Float" x="20" y="479" width="508" height="29"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style>PS:\nIn case you are not satisfied with the above decision, you may wish to represent to our Grievance Department at the following address: </style>"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dd7cd3b5-fd75-4e58-9370-fbc512549a4d" positionType="Float" x="0" y="359" width="462" height="19" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{key} != null && $F{key}.intValue() == 401 && $F{key_1} != null && $F{key_1}.intValue() == 2904]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dear Sir / Madam,"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="383">
+			<printWhenExpression><![CDATA[($F{rejectionCategory} != null && $F{id} != null && $F{id}.intValue() != 7351)]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="e6adab81-d6ad-49f8-90ec-c53c83ec6597" positionType="Float" x="68" y="322" width="331" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{organizationUnitName} != null ? $F{organizationUnitName} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d813d688-66fd-46ea-ac4d-2f7040f67694" positionType="Float" x="1" y="342" width="400" height="38"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STAR HEALTH AND ALLIED INSURANCE CO.LTD.<br>"
++ $F{address_1} != null ? $F{address_1} : ""]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="44f8212d-c114-4ee4-9b27-217f3de5c647" positionType="Float" x="20" y="209" width="484" height="76" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{ombudsManAddressList} != null && !$F{ombudsManAddressList}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{ombudsManAddressList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "ObudsmanSubReport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="ecbad70c-0b54-4441-8053-ae107fdca893" positionType="Float" x="20" y="164" width="508" height="33"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ombudsManAddressList} == null || $F{ombudsManAddressList}.isEmpty() ? "Thereafter if you wish to pursue the matter further, you may represent to the Office of the Insurance Ombudsman in your State." :
+"Thereafter if you wish to pursue the matter further, you may represent to the Office of the Insurance Ombudsman whose address is given below:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7f5d4bb1-1c8e-4152-89b2-ddc4a5aa6539" positionType="Float" x="1" y="322" width="67" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[COPY TO : ]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="f84f2ea2-faf7-4b89-9020-bd8cea4911bc" positionType="Float" x="20" y="301" width="347" height="16"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Intermediary Code / Name :     " + ($F{agentCode} != null ? $F{agentCode} : "" ) +
+( $F{agentName} != null ? $F{agentName}.toUpperCase() :"" )]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8bbf5abf-da20-4896-99c8-43df892dfd9a" positionType="Float" x="20" y="285" width="347" height="16"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SM Code / Name   :    " + ( $F{smCode} != null ? $F{smCode} : "" )+
+($F{smName}  != null ? $F{smName}.toUpperCase() : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6e57d582-9b18-47cc-8573-f1b9121a6708" positionType="Float" x="20" y="4" width="510" height="160"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Mrs.Radha Vijayaraghavan,<br>
+Grievance Redressal Officer,<br>
+Corporate Grievance Department,<br>
+Star Health & Allied Insurance Company,<br>
+MKM Chambers,<br>
+5th Floor,<br>
+No.42, Kodambakkam High Road,<br>
+Nungambakkam,<br>
+Chennai-600034<br>
+Tel. No.: 044-2824 3925<br>
+E-mail id:- <u>gro@starhealth.in</u>]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5a376109-8fe4-4386-9ea6-7bf29c44faf1" x="1" y="0" width="554" height="54"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[IRDA Regn.No.129<br>
+Corporate Identity Number U66010TN2005PLC056649<br>
+Email ID : info@starhealth.in
+]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

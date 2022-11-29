@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.wso2.api</groupId>
+  <artifactId>js_1.7.0.R4wso2v1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20141209072003</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-SNAPSHOT</value>
+        <updated>20141209072003</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-SNAPSHOT</value>
+        <updated>20141209072003</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

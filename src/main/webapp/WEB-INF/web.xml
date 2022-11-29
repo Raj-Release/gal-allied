@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="vaadin-uitest" version="3.0">
+	<display-name>Vaadin</display-name>
+	<description>IMS Vaadin UI</description>
+
+	<context-param>
+		<param-name>resteasy.scan</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+		<init-param>
+			<param-name>resteasy.servlet.mapping.prefix</param-name>
+			<param-value>/rest</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>resteasy-servlet2</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+		<init-param>
+			<param-name>resteasy.servlet.mapping.prefix</param-name>
+			<param-value>/api</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>resteasy-servlet2</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>rodstatus</servlet-name>
+		<servlet-class>com.shaic.main.RODStatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>rodstatus</servlet-name>
+		<url-pattern>/rodstatus</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>claimstatus</servlet-name>
+		<servlet-class>com.shaic.main.ClaimStatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>claimstatus</servlet-name>
+		<url-pattern>/claimstatus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>claimstatus</servlet-name>
+		<url-pattern>/Portal</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>claimrejectionstatus</servlet-name>
+		<servlet-class>com.shaic.main.ClaimRejectionStatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>claimrejectionstatus</servlet-name>
+		<url-pattern>/rejectionclaimstatus</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>claimrejectionstatus</servlet-name>
+		<url-pattern>/queryclaimstatus</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>documentview</servlet-name>
+		<servlet-class>com.shaic.main.DocumentViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>documentview</servlet-name>
+		<url-pattern>/documentToken</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<!-- <session-timeout>30</session-timeout> -->
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	<servlet>
+		<servlet-name>ForwardingServlet</servlet-name>
+		<servlet-class>com.shaic.main.ForwardingServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ForwardingServlet</servlet-name>
+		<url-pattern>/samlsso</url-pattern>
+		<url-pattern>/openid</url-pattern>
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>viewclaimstatus</servlet-name>
+		<servlet-class>com.shaic.main.ViewClaimStatusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewclaimstatus</servlet-name>
+		<url-pattern>/viewclaimstatus</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>claimsDMSView</servlet-name>
+		<servlet-class>com.shaic.main.ClaimsDMSServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>claimsDMSView</servlet-name>
+		<url-pattern>/intimation_number</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>claimsDMSView</servlet-name>
+		<url-pattern>/ClaimsDMSServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>revisedClaimsDMSView</servlet-name>
+		<servlet-class>com.shaic.main.RevisedClaimsDMSServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>revisedClaimsDMSView</servlet-name>
+		<url-pattern>/intimation_no</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>claimsDMSView</servlet-name>
+		<url-pattern>/viewcashlessDocument</url-pattern>
+	</servlet-mapping>
+	<!-- URL Shoretener redirect view -->
+	<servlet>
+		<servlet-name>ViewDoc</servlet-name>
+		<servlet-class>com.shaic.main.ViewDMSDocServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewDoc</servlet-name>
+		<url-pattern>/docview</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>revisedClaimsDMSView</servlet-name>
+		<url-pattern>/RevisedClaimsDMSServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ViewProposalServlet</servlet-name>
+		<servlet-class>com.shaic.main.ViewProposalServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewProposalServlet</servlet-name>
+		<url-pattern>/ViewProposalServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CRCPortalServlet</servlet-name>
+		<servlet-class>com.shaic.main.CRCPortalServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CRCPortalServlet</servlet-name>
+		<url-pattern>/crcportal</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>SamplePortalServlet</servlet-name>
+    	<servlet-class>com.shaic.main.SamplePortalServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>SamplePortalServlet</servlet-name>
+    	<url-pattern>/sampleportal</url-pattern>
+  	</servlet-mapping>
+  	
+  	<!-- <servlet>
+    	<servlet-name>CreateIntimationServlet</servlet-name>
+    	<servlet-class>com.shaic.main.CreateIntimationServlet</servlet-class>
+  	</servlet>
+  	<servlet-mapping>
+    	<servlet-name>CreateIntimationServlet</servlet-name>
+    	<url-pattern>/createIntimation</url-pattern>
+  	</servlet-mapping> -->
+  	
+  	<servlet>
+	<servlet-name>MergeClaimsDMSServlet</servlet-name>
+	<servlet-class>com.shaic.main.MergeClaimsDMSServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MergeClaimsDMSServlet</servlet-name>
+		<url-pattern>/mergeClaimsDMSServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>KnowledgeBot</servlet-name>
+		<url-pattern>/knowledgeBot</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>KnowledgeBot</servlet-name>
+		<servlet-class>com.shaic.main.KnowledgeBotServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>PowerBIController</servlet-name>
+		<servlet-class>com.shaic.claim.reports.powerbi.PowerBIController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>PowerBIController</servlet-name>
+		<url-pattern>/reports/powerbicontroller</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>powerbiui</servlet-name>
+		<servlet-class>com.shaic.claim.reports.powerbi.PowerBIReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>powerbiui</servlet-name>
+		<url-pattern>/reports/powerbiui</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>Keycloak Filter</filter-name>
+		<filter-class>org.keycloak.adapters.servlet.KeycloakOIDCFilter</filter-class>
+		<init-param>
+			<param-name>keycloak.config.file</param-name>
+			<param-value>${jboss.server.data.dir}/keycloak.json</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>Keycloak Filter</filter-name>
+		<url-pattern>/ClaimDetailErrorPage.jsp</url-pattern>
+		<url-pattern>/ClaimDetailPage.jsp</url-pattern>
+		<url-pattern>/ClaimsDMSErrorPage.jsp</url-pattern>
+		<url-pattern>/ClaimsDMSView.jsp</url-pattern>
+		<url-pattern>/DocumentViewJsp.jsp</url-pattern>
+		<url-pattern>/CashlessDocumentsView.jsp</url-pattern>
+		<url-pattern>/errors.jsp</url-pattern>
+		<url-pattern>/Frame1.jsp</url-pattern>
+		<url-pattern>/HospitalDiscount.jsp</url-pattern>
+		<url-pattern>/index.jsp</url-pattern>
+		<url-pattern>/MenuButton.jsp</url-pattern>
+		<url-pattern>/openid-home.jsp</url-pattern>
+		<url-pattern>/premiaclaimsview.jsp</url-pattern>
+		<url-pattern>/samlsso-home.jsp</url-pattern>
+		<url-pattern>/ViewCashlessDocument.jsp</url-pattern>
+		<url-pattern>/ViewCashlessLetters.jsp</url-pattern>
+		<url-pattern>/ViewClaimDetailPage.jsp</url-pattern>
+		<url-pattern>/ViewPolicySchedule.jsp</url-pattern>
+		<url-pattern>/ViewQueryDetails.jsp</url-pattern>
+		<url-pattern>/ViewRejectionDetails.jsp</url-pattern>
+		<url-pattern>/OMPPaymentReport.jsp</url-pattern>
+		<url-pattern>/MetaDataViewPage.jsp</url-pattern>
+		<url-pattern>/samlsso</url-pattern>
+		<url-pattern>/openid</url-pattern>
+		<url-pattern>/logout</url-pattern>
+	</filter-mapping>
+</web-app>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HpEnhancementReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8c8ca5a-7f51-4a29-ad05-fb7cb6a421ac">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="97"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="diaganosisDTO" class="java.util.List">
+		<fieldDescription><![CDATA[diaganosisDTO]]></fieldDescription>
+	</field>
+	<field name="procedureDTO" class="java.util.List">
+		<fieldDescription><![CDATA[procedureDTO]]></fieldDescription>
+	</field>
+	<field name="requestAmountTableDTO" class="com.shaic.hp.preauthorisation.createpreauth.wizard.dto.HPRequestAmountTableDTO">
+		<fieldDescription><![CDATA[requestAmountTableDTO]]></fieldDescription>
+	</field>
+	<field name="intrimFinal" class="java.lang.String">
+		<fieldDescription><![CDATA[intrimFinal]]></fieldDescription>
+	</field>
+	<field name="dateOfDischarge" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfDischarge]]></fieldDescription>
+	</field>
+	<field name="alreadyApprovedAmount" class="java.lang.String">
+		<fieldDescription><![CDATA[alreadyApprovedAmount]]></fieldDescription>
+	</field>
+	<field name="balanceAmountRequested" class="java.lang.String">
+		<fieldDescription><![CDATA[balanceAmountRequested]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[roomType.value]]></fieldDescription>
+	</field>
+	<field name="noOfDay" class="java.lang.String">
+		<fieldDescription><![CDATA[noOfDay]]></fieldDescription>
+	</field>
+	<field name="claimedDetailsList" class="java.util.List">
+		<fieldDescription><![CDATA[requestAmountTableDTO.claimedDetailsList]]></fieldDescription>
+	</field>
+	<field name="value_4" class="java.lang.String">
+		<fieldDescription><![CDATA[patientName.value]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="proposerAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.proposerAddress]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="registeredMobileNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.registeredMobileNumber]]></fieldDescription>
+	</field>
+	<field name="healthCardNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[insured.healthCardNumber]]></fieldDescription>
+	</field>
+	<field name="changeInDiagnosis" class="java.lang.String">
+		<fieldDescription><![CDATA[changeInDiagnosis]]></fieldDescription>
+	</field>
+	<field name="changeInProcedure" class="java.lang.String">
+		<fieldDescription><![CDATA[changeInProcedure]]></fieldDescription>
+	</field>
+	<field name="claimedAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[claimedAmt]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<image>
+				<reportElement uuid="28e5fe78-8a45-471f-b5a9-9acc87e39126" x="0" y="0" width="144" height="69"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{resourcePath}+"StarLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="d451efc1-097c-416e-91b5-9026264dbf94" x="144" y="66" width="370" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Enhancement Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="462101de-c5bb-4c9e-b45d-20d7ac286a87" x="144" y="26" width="411" height="20"/>
+				<textElement/>
+			</textField>
+			<textField>
+				<reportElement uuid="b6b8b66c-cc29-4578-a2cb-46b499a06ad1" x="144" y="47" width="411" height="19"/>
+				<textElement/>
+			</textField>
+			<staticText>
+				<reportElement uuid="6b56bb32-1924-43a7-bd25-798d29029046" x="144" y="6" width="411" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[STAR HEALTH AND ALLIED INSURANCE CO.Ltd.,]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="551" splitType="Stretch">
+			<textField>
+				<reportElement uuid="53f11dde-ba97-4a26-94da-5746a0dfd56c" x="0" y="87" width="126" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Type : " + ( $F{intrimFinal} != null ? $F{intrimFinal} : "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="4272149b-d917-4694-8c17-d41f14d4b231" x="142" y="87" width="86" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Discharge]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="e9c98126-3765-427a-87ec-c313952d2588" x="228" y="87" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfDischarge} != null ? new SimpleDateFormat("dd/MM/yyyy").format($F{dateOfDischarge}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e60c3d56-1423-4cf3-ac30-3656105495f3" x="328" y="87" width="212" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Change/Add in Diagnosis  : " +( $F{changeInDiagnosis} != null ? $F{changeInDiagnosis} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4f926e16-213c-4ab1-bef9-33d0139bd604" x="328" y="107" width="212" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Change/Add in Procedure : " + ( $F{changeInProcedure} != null ? $F{changeInProcedure} : "" )]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="e2d096a0-2ea3-4b41-b111-02276098d58b" x="0" y="130" width="260" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{diaganosisDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath}+"HpdiagnoSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="ccb48938-e82a-4434-a122-7cb14d490a7a" x="276" y="130" width="279" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{procedureDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath}+"HpProcedureSubReport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="95a30e5f-c518-4e2d-9200-7762eacb788f" x="39" y="250" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[No. of Days : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c030d1c2-e533-418c-916b-17f053517da8" x="99" y="250" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{noOfDay} != null ? $F{noOfDay} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0ad21b47-8fd9-4b9f-a9f0-2ba360058e51" x="424" y="250" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value} != null ? $F{value} : ""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ca5e6107-bcc2-4cbd-b7f4-90acef2ad906" x="358" y="250" width="66" height="20"/>
+				<textElement/>
+				<text><![CDATA[Room Type :]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="fa1e86c2-46a6-4ba5-aecd-8bfa2f2e4bde" x="39" y="284" width="485" height="190"/>
+				<subreportParameter name="totalClaimedAmt">
+					<subreportParameterExpression><![CDATA[$F{claimedAmt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{claimedDetailsList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "HpRequestAmtSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="3cd30cd3-100d-43f2-9832-85852f50f1fa" positionType="Float" x="70" y="493" width="144" height="20"/>
+				<textElement/>
+				<text><![CDATA[Already Approved Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69c5ac69-5f6d-4059-91af-14fc87b7359f" positionType="Float" x="70" y="531" width="144" height="20"/>
+				<textElement/>
+				<text><![CDATA[Balance  Amount Requested]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ccb60c4c-e123-4e8e-bce2-54a7f9568970" positionType="Float" x="324" y="493" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{alreadyApprovedAmount} != null ? $F{alreadyApprovedAmount} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="205c0f27-e451-45ed-b45a-5294f03407c7" positionType="Float" x="324" y="531" width="135" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{balanceAmountRequested} != null ? $F{balanceAmountRequested} : ""]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="dba61432-b901-4d56-b311-805e91097a80" x="0" y="4" width="555" height="72"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="2679218a-d7d6-4d13-ad90-1cd3fecb113d" x="253" y="7" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerFirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dfc18717-254b-49bd-9a74-5d639c73911a" x="379" y="7" width="29" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_4}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="21caf1b8-ecb3-49a9-a60e-f852ad59a88d" x="9" y="7" width="75" height="20"/>
+				<textElement/>
+				<text><![CDATA[Policy Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9ee86a19-b21c-4f9a-ab39-158687ad9179" x="6" y="42" width="58" height="32"/>
+				<textElement/>
+				<text><![CDATA[Insured ID Card No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="da987fb4-ac36-4fc2-be85-e1599585fada" x="311" y="7" width="68" height="20"/>
+				<textElement/>
+				<text><![CDATA[Insured Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="03e93430-0757-4394-a161-61d250b12765" x="408" y="42" width="41" height="32"/>
+				<textElement/>
+				<text><![CDATA[Regd.Mobile No.(RMN)]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7c6f8c1a-3fef-4f3f-b28e-6cd99170eab6" x="449" y="42" width="100" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{registeredMobileNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="456b2c1a-6aec-40df-b2b8-ff3e88f777a4" x="408" y="7" width="41" height="20"/>
+				<textElement/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="95bf73ae-9e50-4aca-a5b1-f2e92ce3c614" x="269" y="42" width="70" height="20"/>
+				<textElement/>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b42e9b03-7ecf-4642-8c2a-1457c91a72f5" x="64" y="42" width="80" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{healthCardNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8222c069-e7a7-4d5e-921e-e429d9098d2e" x="179" y="42" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Employee ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="4dcd7640-ccd4-4965-b13d-77d057a025c0" x="449" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="49cb49b0-4660-41df-8937-c12b3c46dd09" x="339" y="42" width="69" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2e462659-8a69-4432-b46d-92233a28e0fa" x="84" y="7" width="84" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{policyNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5565deeb-85b4-4e6c-932c-af52f04fbd61" x="179" y="7" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[Proposer Name]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

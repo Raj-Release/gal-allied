@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.wso2.api</groupId>
+  <artifactId>axis2-transport-jms_1.1.0.wso2v9</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209071935</lastUpdated>
+  </versioning>
+</metadata>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PackageRateSubReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="20" uuid="2b0b53b6-0cf8-4126-98d4-224e7e11a4b0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="deluxRoom" class="java.lang.String">
+		<fieldDescription><![CDATA[deluxRoom]]></fieldDescription>
+	</field>
+	<field name="generalWard" class="java.lang.String">
+		<fieldDescription><![CDATA[generalWard]]></fieldDescription>
+	</field>
+	<field name="maxDays" class="java.lang.String">
+		<fieldDescription><![CDATA[maxDays]]></fieldDescription>
+	</field>
+	<field name="minDays" class="java.lang.String">
+		<fieldDescription><![CDATA[minDays]]></fieldDescription>
+	</field>
+	<field name="procedureName" class="java.lang.String">
+		<fieldDescription><![CDATA[procedureName]]></fieldDescription>
+	</field>
+	<field name="semiPrivateRoomAc" class="java.lang.String">
+		<fieldDescription><![CDATA[semiPrivateRoomAc]]></fieldDescription>
+	</field>
+	<field name="sharingOccupancySingleRoomNonAc" class="java.lang.String">
+		<fieldDescription><![CDATA[sharingOccupancySingleRoomNonAc]]></fieldDescription>
+	</field>
+	<field name="sharingSemiPrivateRoomNonAc" class="java.lang.String">
+		<fieldDescription><![CDATA[sharingSemiPrivateRoomNonAc]]></fieldDescription>
+	</field>
+	<field name="singleRoomAC" class="java.lang.String">
+		<fieldDescription><![CDATA[singleRoomAC]]></fieldDescription>
+	</field>
+	<field name="singleRoomNonAc" class="java.lang.String">
+		<fieldDescription><![CDATA[singleRoomNonAc]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.String">
+		<fieldDescription><![CDATA[sno]]></fieldDescription>
+	</field>
+	<field name="specialRoomNonAc" class="java.lang.String">
+		<fieldDescription><![CDATA[specialRoomNonAc]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8eeefa7b-b2be-41df-9f15-6bd87143c0d1" x="0" y="0" width="25" height="67"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7dc7168-8a57-4502-bb61-c027f72c45c3" x="25" y="0" width="108" height="67"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Procedure Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d583d6ad-c48d-4cf8-b107-09166cd0c5d8" x="133" y="0" width="47" height="67"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Maximum Duration of Stay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0a59ca0f-ef5f-4721-8fbd-1db660117d2c" x="180" y="0" width="382" height="16"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="50"/>
+				</textElement>
+				<text><![CDATA[Star Package Rates]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c99e969-26a6-4f44-8db2-c7fca9e3e50f" x="180" y="16" width="62" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Single Room
+A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abde04a7-caf9-4716-bbcc-dcca96860b34" x="242" y="16" width="57" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Sharing
+Occupancy/
+Single room
+non A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="415fbeb9-1c0e-46f9-af52-9d8544b1a184" x="299" y="16" width="40" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[General
+Ward]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6c015dbf-296f-4e51-8b38-f12ffb35f9af" x="339" y="16" width="40" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Semi
+Private
+Room
+A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2c69a35-0069-4235-82ee-1c543b069096" x="379" y="16" width="41" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Special
+Room
+Non A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34a5037e-adf1-4030-8a07-41672d00389a" x="420" y="16" width="40" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Single
+Room
+Non A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b87a442f-82e5-4b1f-a9b5-6a52de4d260e" x="460" y="16" width="68" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Sharing/Semi
+Private Room
+Non A/C]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f9deb52-bd31-4c35-a7cf-60b1327f3241" x="528" y="16" width="34" height="51"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Deluxe
+Room]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement uuid="f607295e-3706-4550-a30f-06d03dc37f75" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sno} != null ? $F{sno} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="a5b55722-c01c-45d8-b5b1-8ab61d5cc0db" x="25" y="0" width="108" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{procedureName} != null ? $F{procedureName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="63958add-8162-4d54-87ba-b674b8193df6" stretchType="RelativeToBandHeight" x="133" y="0" width="47" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{minDays} == null || $F{minDays}.equals("0") ? ( $F{maxDays} != null ? $F{maxDays} : "") : ( $F{maxDays} != null && $F{minDays} != null && !$F{minDays}.equals("0") ? ( $F{minDays} + " to " + $F{maxDays}) : "" )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="87ac2ad0-9c6b-43db-ba39-e65a50d77b17" stretchType="RelativeToBandHeight" x="180" y="0" width="62" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{singleRoomAC} != null ? $F{singleRoomAC} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d3198d7c-95f9-4236-bc9a-62e9246343d7" stretchType="RelativeToBandHeight" x="242" y="0" width="57" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sharingOccupancySingleRoomNonAc} != null ? $F{sharingOccupancySingleRoomNonAc} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2c366a0-b813-47ef-a669-34436a82c6eb" stretchType="RelativeToBandHeight" x="299" y="0" width="40" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{generalWard} != null ? $F{generalWard} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c3fd9a2a-fc67-417a-9333-cbb750056617" stretchType="RelativeToBandHeight" x="339" y="0" width="40" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semiPrivateRoomAc} != null ? $F{semiPrivateRoomAc} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6124abf6-898d-467b-b0e5-f6ccedadc3ba" stretchType="RelativeToBandHeight" x="379" y="0" width="41" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{specialRoomNonAc} != null ? $F{specialRoomNonAc} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="43626212-1a5d-438e-8604-e6c14d93d85f" stretchType="RelativeToBandHeight" x="420" y="0" width="40" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{singleRoomNonAc} != null ? $F{singleRoomNonAc} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="40421fe4-b412-4a47-8cfd-12445cfb1be4" stretchType="RelativeToBandHeight" x="460" y="0" width="68" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sharingSemiPrivateRoomNonAc} != null ? $F{sharingSemiPrivateRoomNonAc} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="847a8841-e51a-4ee0-b16f-71c48eb38d0e" stretchType="RelativeToBandHeight" x="528" y="0" width="34" height="26" isPrintInFirstWholeBand="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="2" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deluxRoom} != null ? $F{deluxRoom} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="314">
+			<staticText>
+				<reportElement uuid="b5247218-5f6c-4b6f-b65c-be6f138274f2" x="104" y="10" width="451" height="284"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Note:<br>
+* The Package Charges are maximum payable rates for END TO END TREATMENT, including Room Rent / Nursing / Operation theater charges , Doctor 's /
+Surgeon's Charges, Asst Surgeon,Anaesthetist charges, relevant Investigations, Blood & Blood products, Medicines & Consumables, Implants / Mesh / Prosthesis wherever applicable for the specified duration of stay, unless specified otherwise.<br>
+* If the customer develops complications during hospitalization, payable amount shall be modified, provided sufficient documentary proof of the same is submitted.<br>
+* For procedures requiring implant / mesh / prosthesis - please submit specification, implant sticker and invoice to corroborate the actual usage of particular implant
+/ mesh / prosthesis.<br>
+* Please note that we have sublimit for cataract surgery.<br>
+* All Claims shall be settled as per the individual policy terms and conditions.<br>
+* The package rates are subject to revision as and when required, when mutually agreed by both parties.<br>
+No deviation from package: The hospital is not supposed to charge anything extra from the patient; if the hospital is found to charge extra from the patient over and
+above the package, the same will be deducted from the amount payable to the hospital.<br> Disclaimer: This information is private and confidential for the exclusive use
+of Star Health and Allied Insurance Company Pvt Ltd.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="37150b3a-6e10-49a5-aeb1-2a59cffe5b52" x="0" y="10" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Standard Disclaimer:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6980cd0a-8625-4343-b8d1-5128b46f2bea" x="0" y="294" width="104" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Specific Disclaimer :]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

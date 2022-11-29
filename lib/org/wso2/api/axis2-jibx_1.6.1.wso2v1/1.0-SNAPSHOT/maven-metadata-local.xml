@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>org.wso2.api</groupId>
+  <artifactId>axis2-jibx_1.6.1.wso2v1</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20141209071933</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-SNAPSHOT</value>
+        <updated>20141209071933</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-SNAPSHOT</value>
+        <updated>20141209071933</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

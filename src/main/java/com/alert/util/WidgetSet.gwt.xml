@@ -1,0 +1,42 @@
+<module>
+	<!--
+	    This file is automatically updated based on new dependencies by the
+	    goal "vaadin:update-widgetset".
+	-->
+
+	<!-- Inherit DefaultWidgetSet -->
+	<inherits name="com.vaadin.DefaultWidgetSet" /> 
+
+
+    
+
+    <inherits name="org.vaadin.tokenfield.TokenfieldWidgetset" />
+
+    <inherits name="org.vaadin.hene.flexibleoptiongroup.widgetset.FlexibleOptionGroupWidgetset" />
+
+    
+
+    <inherits name="ch.meemin.pmtable.widgetset.PMTableWidgetSet" />
+
+    <inherits name="org.vaadin.hene.popupbutton.widgetset.PopupbuttonWidgetset" />
+
+    
+
+    <inherits name="org.vaadin.csvalidation.widgetset.CSValidationWidgetset" />
+
+    <inherits name="com.zybnet.autocomplete.AutocompleteWidgetSet" />
+
+    <inherits name="org.vaadin.virkki.carousel.CarouselWidgetSet" />
+
+    <inherits name="com.shaic.WidgetSet.imsWidgetset" />
+
+    <inherits name="org.vaadin.addons.comboboxmultiselect.WidgetSet" />
+
+    <inherits name="de.steinwedel.messagebox.WidgetSet" />
+
+    <inherits name="com.vaadin.grid.gwt.Grid2Widgetset" />
+
+    <inherits name="org.vaadin.addon.ewopener.WidgetSet" />
+
+    <inherits name="com.vaadin.v7.Vaadin7WidgetSet" />
+</module>

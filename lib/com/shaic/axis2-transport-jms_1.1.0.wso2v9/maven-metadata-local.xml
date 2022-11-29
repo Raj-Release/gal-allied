@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.shaic</groupId>
+  <artifactId>axis2-transport-jms_1.1.0.wso2v9</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209072948</lastUpdated>
+  </versioning>
+</metadata>

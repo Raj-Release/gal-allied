@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LumenLetter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c7747df3-0631-4b44-b50d-03fd84fdb701">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="toPerson" class="java.lang.String">
+		<fieldDescription><![CDATA[toPerson]]></fieldDescription>
+	</field>
+	<field name="addressLine1" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.addressLine1]]></fieldDescription>
+	</field>
+	<field name="addressLine2" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.addressLine2]]></fieldDescription>
+	</field>
+	<field name="addressLine3" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.addressLine3]]></fieldDescription>
+	</field>
+	<field name="city" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.city]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[addressDetails.class]]></fieldDescription>
+	</field>
+	<field name="pincode" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.pincode]]></fieldDescription>
+	</field>
+	<field name="state" class="java.lang.String">
+		<fieldDescription><![CDATA[addressDetails.state]]></fieldDescription>
+	</field>
+	<field name="subject" class="java.lang.String">
+		<fieldDescription><![CDATA[subject]]></fieldDescription>
+	</field>
+	<field name="letterContent" class="java.lang.String">
+		<fieldDescription><![CDATA[letterContent]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<image scaleImage="RealSize" hAlign="Center" vAlign="Middle">
+				<reportElement uuid="49f0759c-a42e-44ce-8d88-08a5edea30cd" stretchType="RelativeToBandHeight" x="10" y="0" width="100" height="95"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{resourcePath}+"StarLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="5b329266-227c-4aac-b3c9-62bf77e381e4" x="110" y="10" width="429" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[STAR HEALTH AND ALLIED INSURANCE CO.Ltd.,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8c7cd3ab-dcd5-4c3d-8698-1c54af879f87" x="110" y="72" width="429" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Toll Free No :  1800 102 4477 / 1800 425 2255 , Website: www.starhealth.in]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="754dff94-76a3-42f6-b253-ebb5154dcfdc" x="110" y="30" width="429" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[REGD & Corporate office: No.1, New Tank Street, ValluvarKottam High Road.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6af779a3-3b38-4699-b64b-db17fda0720d" x="110" y="48" width="429" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Nungambakkam, Chennai -600034]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="454" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2a06dad3-7f34-4b47-a327-e988529e403b" x="0" y="23" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[To]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="163accf8-9d14-41fd-b337-15d6f717e1fd" positionType="Float" x="0" y="43" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{toPerson}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1b21b17b-e805-41c1-9563-f41e5362cc2a" positionType="Float" x="0" y="63" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{addressLine1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e350abe5-b8fc-4574-a8a2-0ee4be3f9585" positionType="Float" x="0" y="83" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{addressLine2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="11647455-071d-42bf-81bb-0ba9f6c69285" positionType="Float" x="0" y="103" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{addressLine3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fc468ad5-a613-4542-8e2c-8f2e64b581a2" positionType="Float" x="0" y="123" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="91051040-a491-4b14-9871-7287f5e39438" positionType="Float" x="0" y="143" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="2540683b-fc12-4c54-8d09-c721141f1ed8" positionType="Float" x="0" y="278" width="555" height="95"/>
+				<textElement textAlignment="Left" markup="styled">
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style>" + $F{letterContent}.replaceAll("&","and") + "</style>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="76d8ebbe-06f4-4872-9df1-c892352af237" positionType="Float" x="0" y="389" width="67" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Yours Truly,]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="fc1b8ed0-1498-4661-8ffc-238a1698d8d2" positionType="Float" x="0" y="248" width="519" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dear "+$F{toPerson}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0a1f109d-da74-42d1-a00e-76a869519fc5" positionType="Float" x="0" y="409" width="240" height="17"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Dr S.PRAKASH, M.S., FRCS(Glasg), FAIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f1c89457-6d30-4fe5-977d-77a983024d13" positionType="Float" x="0" y="426" width="240" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Chief Operating Officer]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="f45f133f-4b84-4439-9a2c-81706813f61a" x="421" y="3" width="118" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="b2309f62-b657-4372-8898-63901ce6b7fa" positionType="Float" x="67" y="205" width="415" height="27"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sub :"+$F{subject}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="1c1de124-ef5b-4921-8880-5929affbc9f1" positionType="Float" x="0" y="163" width="204" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pincode - " + $F{pincode}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="72">
+			<staticText>
+				<reportElement uuid="e590425c-e793-41fb-9469-87b54430e673" x="0" y="10" width="555" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[IRDA Regn.No.129]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ea7300b6-b8b2-4515-b26d-c19d0d77d7cd" x="0" y="30" width="555" height="18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Corporate Identity Number  U66010TN2005PLC056649]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44940ff2-a1a0-432f-91c0-3c1c93f29f46" x="0" y="48" width="555" height="24"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Email ID : info@starhealth.in]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

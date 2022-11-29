@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BillDetailsSubReport" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="5" uuid="acaa03c8-d4f5-44f4-bdf6-8ac33af95693">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="claimdeAmtTotal" class="java.lang.String"/>
+	<parameter name="amountTotal" class="java.lang.String"/>
+	<parameter name="nonpayableProdTotal" class="java.lang.String"/>
+	<parameter name="nonpayableTotal" class="java.lang.String"/>
+	<parameter name="propDecutTotal" class="java.lang.String"/>
+	<parameter name="reasonableDeducTotal" class="java.lang.String"/>
+	<parameter name="DisallowanceTotal" class="java.lang.String"/>
+	<parameter name="netPayableAmtTotal" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="itemNo" class="java.lang.Long">
+		<fieldDescription><![CDATA[itemNo]]></fieldDescription>
+	</field>
+	<field name="itemName" class="java.lang.String">
+		<fieldDescription><![CDATA[itemName]]></fieldDescription>
+	</field>
+	<field name="itemNoForView" class="java.lang.Double">
+		<fieldDescription><![CDATA[itemNoForView]]></fieldDescription>
+	</field>
+	<field name="itemValue" class="java.lang.Double">
+		<fieldDescription><![CDATA[itemValue]]></fieldDescription>
+	</field>
+	<field name="noOfDaysAllowed" class="java.lang.Double">
+		<fieldDescription><![CDATA[noOfDaysAllowed]]></fieldDescription>
+	</field>
+	<field name="noOfDays" class="java.lang.Double">
+		<fieldDescription><![CDATA[noOfDays]]></fieldDescription>
+	</field>
+	<field name="perDayAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[perDayAmt]]></fieldDescription>
+	</field>
+	<field name="perDayAmtProductBased" class="java.lang.Double">
+		<fieldDescription><![CDATA[perDayAmtProductBased]]></fieldDescription>
+	</field>
+	<field name="nonPayableProductBased" class="java.lang.Double">
+		<fieldDescription><![CDATA[nonPayableProductBased]]></fieldDescription>
+	</field>
+	<field name="nonPayable" class="java.lang.Double">
+		<fieldDescription><![CDATA[nonPayable]]></fieldDescription>
+	</field>
+	<field name="proportionateDeduction" class="java.lang.Double">
+		<fieldDescription><![CDATA[proportionateDeduction]]></fieldDescription>
+	</field>
+	<field name="reasonableDeduction" class="java.lang.Double">
+		<fieldDescription><![CDATA[reasonableDeduction]]></fieldDescription>
+	</field>
+	<field name="totalDisallowances" class="java.lang.Double">
+		<fieldDescription><![CDATA[totalDisallowances]]></fieldDescription>
+	</field>
+	<field name="netPayableAmount" class="java.lang.Double">
+		<fieldDescription><![CDATA[netPayableAmount]]></fieldDescription>
+	</field>
+	<field name="deductibleOrNonPayableReason" class="java.lang.String">
+		<fieldDescription><![CDATA[deductibleOrNonPayableReason]]></fieldDescription>
+	</field>
+	<field name="amountAllowableAmount" class="java.lang.Double">
+		<fieldDescription><![CDATA[amountAllowableAmount]]></fieldDescription>
+	</field>
+	<variable name="sno" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 ) ? 1 : 0]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="40">
+			<staticText>
+				<reportElement uuid="e612b6b0-5cf2-47c8-9310-9dd706e7e792" x="0" y="0" width="27" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[S.No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ced9f950-0559-474c-ae4e-b1587bc380d5" x="27" y="0" width="93" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b72b61d3-7f62-4a5a-b098-0fade5486bd8" x="120" y="0" width="42" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[No. of Days Claimed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="39bd576e-03f8-476a-9091-942bae1f57e5" x="162" y="0" width="29" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Per Day Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6baddb15-8ba4-48cf-89a0-af6b510377b4" x="191" y="0" width="42" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Claimed Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c970db4-f6b6-4028-826a-0615479a8b47" x="336" y="0" width="38" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="174f8267-2cf0-4979-9134-d79e0569b141" x="233" y="0" width="42" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[No. of Days Claimed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c0f15e9e-e733-47d7-a25e-a7890071c698" x="275" y="0" width="61" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Per Day Amt (Product Based)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="84f1d396-0319-4827-a7d8-64cfde012484" x="374" y="0" width="61" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Non Payable (Product Based)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3eed6b5d-7a6a-4481-a9a6-63e503d4d3b5" x="435" y="0" width="40" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Non Payable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="15b18c91-4ea7-44fc-99c8-b1f299c3b140" x="475" y="0" width="64" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Proportionate Deduction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e3d517ed-3d8c-46d7-be75-bbb179d01c0a" x="539" y="0" width="64" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Reasonable Deduction]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cad4dadc-6378-447f-90c1-afd603f90896" x="603" y="0" width="69" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Total Disallowances]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4be5792d-cb77-4faf-bd1c-5b19069c56c9" x="672" y="0" width="42" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Net Payable Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17ab7ed5-2da6-4746-a8e8-c6a43c9e3ac1" x="714" y="0" width="88" height="40"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Deductible / Non Payable Reason ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28">
+			<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="ea9efd6e-d3d0-4bbe-aed1-4297d4f74b9f" stretchType="RelativeToTallestObject" x="0" y="0" width="27" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sno} != null ? $V{sno} : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="d509e099-cd81-4c41-aaeb-52a2ac021ffb" stretchType="RelativeToTallestObject" x="27" y="0" width="93" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemName} != null ? $F{itemName}.trim() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41b511e2-0475-4675-87f2-fea757186c1c" stretchType="RelativeToTallestObject" x="120" y="0" width="42" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfDays} != null ? $F{noOfDays}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="88c6ec6b-2d1b-4fb6-998b-0073ccd30be2" stretchType="RelativeToTallestObject" x="162" y="0" width="29" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perDayAmt} != null ? $F{perDayAmt}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b3de7588-66f3-4c08-bba6-cc0ef549fc16" stretchType="RelativeToTallestObject" x="191" y="0" width="42" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemValue} != null ? $F{itemValue}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f11a1e1c-b171-4381-b270-481df6175115" stretchType="RelativeToTallestObject" x="233" y="0" width="42" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfDays} != null ? $F{noOfDays}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d1e1eb82-9d5d-4ed0-bd84-5d2b74aae976" stretchType="RelativeToTallestObject" x="275" y="0" width="61" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{perDayAmtProductBased} != null ? $F{perDayAmtProductBased}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="be20cf7a-84b3-42f8-a005-625a7ed3f84c" stretchType="RelativeToTallestObject" x="336" y="0" width="38" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountAllowableAmount} != null ? $F{amountAllowableAmount}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6c18a5d9-c4d4-441a-ac18-6e656dbd0865" stretchType="RelativeToTallestObject" x="374" y="0" width="61" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonPayableProductBased} != null ? $F{nonPayableProductBased}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2d1f5114-0480-48dc-86d5-d8f08a0618a7" stretchType="RelativeToTallestObject" x="435" y="0" width="40" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nonPayable} != null ? $F{nonPayable}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bd7c84f2-7fee-4446-868b-ed12dd31e222" stretchType="RelativeToTallestObject" x="475" y="0" width="64" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proportionateDeduction} != null ? $F{proportionateDeduction}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="21585028-21d8-42a0-8ecd-0458167d2c21" stretchType="RelativeToTallestObject" x="539" y="0" width="64" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{reasonableDeduction} != null ? $F{reasonableDeduction}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f1e7b667-fdf8-4f20-95df-c54d7386d065" stretchType="RelativeToTallestObject" x="603" y="0" width="69" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalDisallowances} != null ? $F{totalDisallowances}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="11517fe9-281d-42da-83d7-422c522a5070" stretchType="RelativeToTallestObject" x="672" y="0" width="42" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{netPayableAmount} != null ? $F{netPayableAmount}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="54c2a94e-2b30-4f50-ab1c-d758bc8e4a05" stretchType="RelativeToTallestObject" x="714" y="0" width="88" height="28">
+					<printWhenExpression><![CDATA[( $F{itemValue} != null && $F{itemValue} != 0 ) || ( $F{amountAllowableAmount} != null && $F{amountAllowableAmount}.intValue() != 0 )]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deductibleOrNonPayableReason} != null ? $F{deductibleOrNonPayableReason} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="20">
+			<staticText>
+				<reportElement uuid="9056bdb7-8a52-471c-82e1-14565e71bcae" x="27" y="0" width="93" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ecff5b0d-3155-4863-906a-c29ce534aa2f" x="0" y="0" width="27" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06e3a0a4-2d22-404f-a079-1cce2cff0850" x="120" y="0" width="42" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="65402c88-8756-4fa2-9cfa-0d634bb18f07" x="162" y="0" width="29" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1f57cae-1980-4e9a-8906-48c085061cc9" x="233" y="0" width="42" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="deb2223e-0a15-4a4c-966a-f47a8d8ecef9" x="275" y="0" width="61" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e7e8712c-3df7-436b-a150-c633a5894b0a" x="714" y="0" width="88" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="eb23d312-f7fe-422f-ad98-a8b5b7de16ed" x="191" y="0" width="42" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{claimdeAmtTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="52abc919-81c9-4c94-a059-9ab1c4d889c2" x="336" y="0" width="38" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{amountTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0d97927b-afda-4543-a2d8-6d9886a4fd89" x="374" y="0" width="61" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nonpayableProdTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ffb29513-6350-40e9-af3b-71bfe16b6baa" x="435" y="0" width="40" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nonpayableTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3e99ac54-ecab-4a63-ae93-5fcd9d79808e" x="475" y="0" width="64" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{propDecutTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="453271ad-cef6-4429-af5a-a5a85db23b03" x="539" y="0" width="64" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{reasonableDeducTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e0dde8f9-b435-4701-b16b-d4f2eebdaa10" x="603" y="0" width="69" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DisallowanceTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="64a0bc8f-56e1-4c50-b9b0-839958cdac76" x="672" y="0" width="42" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{netPayableAmtTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

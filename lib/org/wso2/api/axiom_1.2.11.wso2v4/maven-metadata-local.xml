@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.wso2.api</groupId>
+  <artifactId>axiom_1.2.11.wso2v4</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209071904</lastUpdated>
+  </versioning>
+</metadata>

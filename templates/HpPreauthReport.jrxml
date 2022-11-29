@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HpPreauthReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ae86c404-b5d6-4936-9043-bdb4be564d9c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="716"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="insuredDateOfBirth" class="java.util.Date">
+		<fieldDescription><![CDATA[insured.insuredDateOfBirth]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="proposerAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.proposerAddress]]></fieldDescription>
+	</field>
+	<field name="registeredMobileNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.registeredMobileNumber]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.product.value]]></fieldDescription>
+	</field>
+	<field name="healthCardNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[insured.healthCardNumber]]></fieldDescription>
+	</field>
+	<field name="dateOfAdmision" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfAdmision]]></fieldDescription>
+	</field>
+	<field name="attenterMobileNo" class="java.lang.String">
+		<fieldDescription><![CDATA[attenterMobileNo]]></fieldDescription>
+	</field>
+	<field name="attenterPhoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[attenterPhoneNo]]></fieldDescription>
+	</field>
+	<field name="ageAsOnDate" class="java.lang.String">
+		<fieldDescription><![CDATA[ageAsOnDate]]></fieldDescription>
+	</field>
+	<field name="value_1" class="java.lang.String">
+		<fieldDescription><![CDATA[admissionType.value]]></fieldDescription>
+	</field>
+	<field name="pastHistory" class="java.lang.String">
+		<fieldDescription><![CDATA[pastHistory]]></fieldDescription>
+	</field>
+	<field name="pastHistroyDTO" class="java.util.List">
+		<fieldDescription><![CDATA[pastHistroyDTO]]></fieldDescription>
+	</field>
+	<field name="patientContactNo" class="java.lang.String">
+		<fieldDescription><![CDATA[patientContactNo]]></fieldDescription>
+	</field>
+	<field name="diaganosisDTO" class="java.util.List">
+		<fieldDescription><![CDATA[diaganosisDTO]]></fieldDescription>
+	</field>
+	<field name="relavantClinical" class="java.lang.String">
+		<fieldDescription><![CDATA[relavantClinical]]></fieldDescription>
+	</field>
+	<field name="naturalOfIllness" class="java.lang.String">
+		<fieldDescription><![CDATA[naturalOfIllness]]></fieldDescription>
+	</field>
+	<field name="durationDays" class="java.lang.String">
+		<fieldDescription><![CDATA[durationDays]]></fieldDescription>
+	</field>
+	<field name="dateOfFirstConsulation" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfFirstConsulation]]></fieldDescription>
+	</field>
+	<field name="nameOfTreatingDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[nameOfTreatingDoctor]]></fieldDescription>
+	</field>
+	<field name="regNoAndStateCode" class="java.lang.String">
+		<fieldDescription><![CDATA[regNoAndStateCode]]></fieldDescription>
+	</field>
+	<field name="value_2" class="java.lang.String">
+		<fieldDescription><![CDATA[proposedLineOfTreatment.value]]></fieldDescription>
+	</field>
+	<field name="insuredCardId" class="java.lang.String">
+		<fieldDescription><![CDATA[insuredCardId]]></fieldDescription>
+	</field>
+	<field name="procedureDTO" class="java.util.List">
+		<fieldDescription><![CDATA[procedureDTO]]></fieldDescription>
+	</field>
+	<field name="doctorQualification" class="java.lang.String">
+		<fieldDescription><![CDATA[doctorQualification]]></fieldDescription>
+	</field>
+	<field name="doctorMobileNo" class="java.lang.String">
+		<fieldDescription><![CDATA[doctorMobileNo]]></fieldDescription>
+	</field>
+	<field name="doctorPhoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[doctorPhoneNo]]></fieldDescription>
+	</field>
+	<field name="injuryOrDiseasesCausedEtc" class="java.lang.String">
+		<fieldDescription><![CDATA[injuryOrDiseasesCausedEtc]]></fieldDescription>
+	</field>
+	<field name="regionalTransportAuthority" class="java.lang.String">
+		<fieldDescription><![CDATA[regionalTransportAuthority]]></fieldDescription>
+	</field>
+	<field name="dateOfAccident" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfAccident]]></fieldDescription>
+	</field>
+	<field name="reportedToPolice" class="java.lang.String">
+		<fieldDescription><![CDATA[reportedToPolice]]></fieldDescription>
+	</field>
+	<field name="firNo" class="java.lang.String">
+		<fieldDescription><![CDATA[firNo]]></fieldDescription>
+	</field>
+	<field name="injuryDetail" class="java.lang.String">
+		<fieldDescription><![CDATA[injuryDetail]]></fieldDescription>
+	</field>
+	<field name="provideDetail" class="java.lang.String">
+		<fieldDescription><![CDATA[provideDetail]]></fieldDescription>
+	</field>
+	<field name="inCaseOfMaternity" class="java.lang.String">
+		<fieldDescription><![CDATA[inCaseOfMaternity]]></fieldDescription>
+	</field>
+	<field name="dateOfDelivery" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfDelivery]]></fieldDescription>
+	</field>
+	<field name="icuResions" class="java.lang.String">
+		<fieldDescription><![CDATA[icuResions]]></fieldDescription>
+	</field>
+	<field name="routeOfDurgAdmnistration" class="java.lang.String">
+		<fieldDescription><![CDATA[routeOfDurgAdmnistration]]></fieldDescription>
+	</field>
+	<field name="familyPhysician" class="java.lang.String">
+		<fieldDescription><![CDATA[familyPhysician]]></fieldDescription>
+	</field>
+	<field name="familyPhysicianMobileNo" class="java.lang.String">
+		<fieldDescription><![CDATA[familyPhysicianMobileNo]]></fieldDescription>
+	</field>
+	<field name="familyPhysicaianPhoneNo" class="java.lang.String">
+		<fieldDescription><![CDATA[familyPhysicaianPhoneNo]]></fieldDescription>
+	</field>
+	<field name="mlcNo" class="java.lang.String">
+		<fieldDescription><![CDATA[mlcNo]]></fieldDescription>
+	</field>
+	<field name="remarks" class="java.lang.String">
+		<fieldDescription><![CDATA[remarks]]></fieldDescription>
+	</field>
+	<field name="noOfDay" class="java.lang.String">
+		<fieldDescription><![CDATA[noOfDay]]></fieldDescription>
+	</field>
+	<field name="value_3" class="java.lang.String">
+		<fieldDescription><![CDATA[roomType.value]]></fieldDescription>
+	</field>
+	<field name="dateOfBirth" class="java.util.Date">
+		<fieldDescription><![CDATA[dateOfBirth]]></fieldDescription>
+	</field>
+	<field name="claimedDetailsList" class="java.util.List">
+		<fieldDescription><![CDATA[requestAmountTableDTO.claimedDetailsList]]></fieldDescription>
+	</field>
+	<field name="value_4" class="java.lang.String">
+		<fieldDescription><![CDATA[patientName.value]]></fieldDescription>
+	</field>
+	<field name="timeOfAddmission" class="java.util.Date">
+		<fieldDescription><![CDATA[timeOfAddmission]]></fieldDescription>
+	</field>
+	<field name="gender" class="java.lang.String">
+		<fieldDescription><![CDATA[gender]]></fieldDescription>
+	</field>
+	<field name="claimedAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[claimedAmt]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="86" splitType="Stretch">
+			<image>
+				<reportElement uuid="ca74570b-8970-443a-801e-cec5f3ece6db" x="0" y="0" width="144" height="69"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+				<imageExpression><![CDATA[$P{resourcePath}+"StarLogo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="2a7815f2-8b9c-4187-8966-a6035db39213" x="144" y="6" width="411" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[STAR HEALTH AND ALLIED INSURANCE CO.Ltd.,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3a97f3b0-bb31-46b5-99ec-8562987c82a0" x="144" y="66" width="370" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Pre Auth Details]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="6b0164b5-4b85-4ded-ab42-54b9029baf6e" x="144" y="47" width="411" height="19"/>
+				<textElement/>
+			</textField>
+			<textField>
+				<reportElement uuid="a4ed360b-7d4d-4083-9694-b30e207499e3" x="144" y="26" width="411" height="20"/>
+				<textElement/>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="613" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="1929c11d-9474-4432-ad1c-4abb41199b5a" x="0" y="2" width="555" height="72"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b2249adc-f289-45ca-a19f-9b86a345da6e" x="11" y="7" width="75" height="20"/>
+				<textElement/>
+				<text><![CDATA[Policy Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="321d173a-f76c-465f-87d0-87c0851fcf37" x="8" y="42" width="58" height="32"/>
+				<textElement/>
+				<text><![CDATA[Insured ID Card No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd68570e-70db-4e0f-b515-f86b0bb3c410" x="181" y="42" width="64" height="20"/>
+				<textElement/>
+				<text><![CDATA[Employee ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7e98570e-ec5a-44c2-a704-a7087a627e18" x="181" y="7" width="74" height="20"/>
+				<textElement/>
+				<text><![CDATA[Proposer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f03c57a1-eae2-432f-8812-d7efc803f61b" x="313" y="7" width="68" height="20"/>
+				<textElement/>
+				<text><![CDATA[Insured Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e8d09a72-bf87-473e-8326-feb8c7e772b8" x="271" y="42" width="70" height="20"/>
+				<textElement/>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ea0928ac-d261-452f-ba45-87edc2a4cba4" x="410" y="7" width="41" height="20"/>
+				<textElement/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ff943e73-c582-418a-a476-cb000622cc8f" x="410" y="42" width="41" height="32"/>
+				<textElement/>
+				<text><![CDATA[Regd.Mobile No.(RMN)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ad79520-a8fd-4183-9766-0c77f98824bd" x="0" y="83" width="555" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Patient Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="836c54db-28ba-42b4-90a8-861f78977458" x="25" y="114" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name of the Patient]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="62a8dd51-4358-425a-8944-9f8c6dc320e1" x="24" y="149" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ba3f4dfa-6d7f-4d5f-9d9a-8d64a03ea5fb" x="24" y="214" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Age as on Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2359a0b6-a2c7-43d4-86fa-a7b7dd1ade3f" x="25" y="246" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Contact No. of Attender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="982cc851-28e9-4999-b91e-6f1bb9fe22e8" x="24" y="286" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Admission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="262ce603-82b1-4da7-a9fa-8909900c7941" x="24" y="320" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Time of Admission]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b9e650ec-be9a-4c90-9a7f-fea65ee9007d" x="24" y="355" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Admission Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f7845ee5-b05c-40a1-81f3-88b01d0d814a" x="24" y="389" width="116" height="20"/>
+				<textElement/>
+				<text><![CDATA[Provisional Diagnosis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e60c9f2e-59ba-42d9-a4ca-b7e496cecf4f" x="24" y="182" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Birth]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="968f6ca2-8abe-4348-8708-a62eecb20b02" positionType="Float" x="24" y="486" width="133" height="20"/>
+				<textElement/>
+				<text><![CDATA[Proposed line of Treatment]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1ebca7a-594d-48b8-bc70-9211fe47c62f" x="303" y="214" width="129" height="32"/>
+				<textElement/>
+				<text><![CDATA[Nature of Illness / Diseases with present compliant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e5f9d69-b13c-46c0-92d5-2de71a323d46" x="302" y="466" width="100" height="30"/>
+				<textElement/>
+				<text><![CDATA[Teating doctor Qualification]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4968b10f-fce1-450c-aeae-d63aeed5d20a" x="303" y="355" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="42958344-c9e7-470d-9983-223608792f5c" x="302" y="182" width="130" height="20"/>
+				<textElement/>
+				<text><![CDATA[Relavant Clinical Findings]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1612d2e3-ac0d-4aab-972f-0163ce706a67" x="303" y="254" width="129" height="32"/>
+				<textElement/>
+				<text><![CDATA[Duration of present ailment in days]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c703b1a2-656c-4ab3-be5f-8a35c447cbc8" x="303" y="323" width="119" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name of Treating Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f5fc3256-5f58-4c20-873d-caa03a20ebbf" x="302" y="146" width="108" height="28"/>
+				<textElement/>
+				<text><![CDATA[Past history of present
+ailment, if any]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e7161e52-679f-49d5-8aec-b107645d04f8" x="303" y="404" width="100" height="35"/>
+				<textElement/>
+				<text><![CDATA[Registration No.  with State Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="26e7af2f-8f57-4ba5-8d10-1171f47efb65" x="303" y="288" width="119" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of 1st consultation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02fa4c50-d695-4ee2-9df1-b5fd9da95c85" x="303" y="114" width="107" height="20"/>
+				<textElement/>
+				<text><![CDATA[Patient Contact No]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="ec857d15-0cc9-4eb9-ad95-9bcd376bc40c" x="86" y="7" width="84" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{policyNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a266bb78-534d-4eef-93b9-48ff58588003" x="66" y="42" width="80" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{healthCardNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="06ba244d-0886-46fe-87b2-cf726aa1a999" x="255" y="7" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerFirstName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="35db9ef7-b3ae-4d1c-a1f0-e0b8a39dd7f4" x="381" y="7" width="29" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d02e63c7-0a5c-4011-b2d7-3a997676ccef" x="451" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{proposerAddress}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="810941ed-d268-4e8f-9c61-6ddd3d03bd27" x="451" y="42" width="100" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{registeredMobileNumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f66d420-ee08-4716-bb87-c3e2aab57b62" x="341" y="42" width="69" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41042b31-57af-43ee-be82-a7c8f88acd9c" x="139" y="114" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="88b9218f-3f49-4ed1-b7db-70b1fcec884a" x="139" y="214" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ageAsOnDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79381a20-c058-4dab-af73-f52917a87491" x="139" y="355" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_1}!=null?$F{value_1}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cf31a566-78d9-41f1-b33e-7867d31ecc08" positionType="Float" x="157" y="486" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_2}!=null?$F{value_2}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ab4aadbe-0c0b-4a6c-adc0-ee487f717584" x="139" y="320" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{timeOfAddmission}!=null?$F{timeOfAddmission}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="15bf8f19-b0ac-426c-8ec4-30e6c967fc38" x="139" y="286" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfAdmision}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fbc93844-f6ec-47f3-bc4b-729fbb62f3be" x="139" y="246" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{attenterMobileNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b20e6d4-7bcc-4e3e-a040-454ebb44ef3d" x="139" y="266" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{attenterPhoneNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0e917850-dc28-42f2-b0b5-a053d3c4e1db" x="410" y="114" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{patientContactNo} != null ? $F{patientContactNo} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7f1d202a-070b-4e22-9494-06a8b4c7dc18" x="410" y="146" width="100" height="28"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{pastHistory}!=null?$F{pastHistory}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9cff5a58-2146-47f5-b1d7-b2188e2630d6" x="432" y="182" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{relavantClinical} !=null? $F{relavantClinical}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f0aeb52-92f4-46aa-9f36-354f674d342d" x="432" y="214" width="119" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{naturalOfIllness} != null? $F{naturalOfIllness}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9fc9d48c-f409-47db-bfae-a01461b3b99f" x="432" y="254" width="100" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{durationDays} !=null? $F{durationDays}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="eefa3459-158c-4d9c-93b1-9f092261772c" x="422" y="288" width="110" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfFirstConsulation} != null?$F{dateOfFirstConsulation}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="793f78ba-6398-4814-9838-2e615b31d81a" x="422" y="323" width="129" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nameOfTreatingDoctor}!=null?$F{nameOfTreatingDoctor}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e1d70166-aecc-4a39-83dc-4e0a8fc5b67f" x="402" y="355" width="130" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{doctorMobileNo}!=null? $F{doctorMobileNo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="23bfb131-39c1-4208-98a0-9dc818d36aec" x="402" y="375" width="130" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{doctorPhoneNo} !=null?$F{doctorPhoneNo} :""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="121f31ca-438c-428f-bb91-569fee382d3c" x="402" y="404" width="149" height="35"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{regNoAndStateCode}!=null?$F{regNoAndStateCode}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fe5287ad-326b-4b71-9ffc-78cd937f7ce7" x="402" y="466" width="149" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{doctorQualification}!=null?$F{doctorQualification}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3d516059-38c0-40fe-9fea-f5c9a8697b50" x="139" y="149" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d8333b18-3525-43f9-a227-3dc1c65d88d6" x="139" y="182" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfBirth}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="3f837505-700f-40b7-be36-51eccf6e69be" x="21" y="411" width="236" height="65"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{diaganosisDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath}+"HpdiagnoSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="c3cd94bf-7acd-4c2b-a2f3-c3b0b8daa885" x="25" y="509" width="230" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{procedureDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath}+"HpProcedureSubReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="365">
+			<staticText>
+				<reportElement uuid="1020e51d-4223-4932-bfc5-5ef857b0f818" x="289" y="215" width="119" height="20"/>
+				<textElement/>
+				<text><![CDATA[M.L.C No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c74b8ed4-116b-415f-820d-4d9271b75ae3" x="11" y="328" width="116" height="20"/>
+				<textElement/>
+				<text><![CDATA[ICU/Reasons]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ac02e34-117b-4b93-88c1-3c54e48dea4a" x="289" y="168" width="143" height="42"/>
+				<textElement/>
+				<text><![CDATA[Contact No. of Family Physician]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="13d6ae30-2e4b-43b0-a25b-e852e0e621cd" x="288" y="104" width="144" height="20"/>
+				<textElement/>
+				<text><![CDATA[Do you have Family Physician]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="47192415-0c4a-4c78-aaf6-eaece00fbd05" x="10" y="136" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Reported to Police]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be5ffb48-d47d-4789-af1b-d4188c71170c" x="288" y="75" width="144" height="20"/>
+				<textElement/>
+				<text><![CDATA[Route of Durg Admnistration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="31839ed4-f9f1-41e5-afa9-fc91dfe7f3d2" x="10" y="202" width="120" height="43"/>
+				<textElement/>
+				<text><![CDATA[Injury / Diseases caused
+due to substance abuse /
+ alcohol consumption]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b8863bf9-65bf-4f76-a494-4d84cf4f5957" x="10" y="71" width="115" height="28"/>
+				<textElement/>
+				<text><![CDATA[Is it Regional Transport Authority(RTA)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cfe07040-971d-404c-8b00-425dffad27f0" x="11" y="294" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Delivery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fb6f19da-435b-4b53-8dfc-b49fa1518d90" x="289" y="136" width="143" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name of the Family Physician]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cd416894-d686-4007-a3cd-625e357f147a" x="11" y="259" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[In case of maternity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="56f5e2fd-60ea-45be-b540-cdb8092570dc" x="11" y="36" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[How did injury occur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3dccea9d-d07d-4094-a922-d668a1cc58bf" x="10" y="104" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Accident]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a177f5ff-80bd-4e2b-8c01-468ae972565d" x="11" y="168" width="115" height="20"/>
+				<textElement/>
+				<text><![CDATA[FIR No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e3b602d-20ca-4c34-8951-f91a30c6334c" x="289" y="36" width="143" height="32"/>
+				<textElement/>
+				<text><![CDATA[If investigation & / or  medical
+management, provide details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="78fbeae4-803e-4d90-8eae-80d9c4132b02" x="288" y="259" width="119" height="20"/>
+				<textElement/>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="737d0697-13b4-4ebb-85dc-6a29ec5c394e" x="11" y="56" width="115" height="15"/>
+				<textElement/>
+				<text><![CDATA[In case of Accident]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="7fcff5ab-4d87-4b43-b144-a46ffc7edc21" x="130" y="202" width="115" height="43"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{injuryOrDiseasesCausedEtc}!=null?$F{injuryOrDiseasesCausedEtc}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9942e3e2-9901-4cfb-b7b2-cf9d210ed5fe" x="125" y="71" width="114" height="28"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{regionalTransportAuthority}!=null?$F{regionalTransportAuthority}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cbb68875-bb6a-43fb-98f3-f39363274cc3" x="432" y="36" width="100" height="32"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{provideDetail} !=null?$F{provideDetail}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c0ff71a3-5484-4c80-aad8-e81ab7e64b63" x="125" y="104" width="103" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfAccident}!=null? $F{dateOfAccident}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8ff1e11b-7ccf-4adc-a906-094ce5a3caef" x="125" y="136" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reportedToPolice}!=null?$F{reportedToPolice}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="31e759e0-92c0-4f09-aeac-d1d7dd5b4653" x="125" y="168" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{firNo}!=null?$F{firNo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="34a0ff84-6e7d-4438-8c7b-b9a1eae041ac" x="125" y="259" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{inCaseOfMaternity} !=null? $F{inCaseOfMaternity}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="766e505a-a49e-40d5-bb89-e85df805a972" x="125" y="294" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dateOfDelivery}!=null? $F{dateOfDelivery}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2127a6aa-bcfa-4c0f-af6b-97a2e23284a1" x="125" y="328" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{icuResions}!=null?$F{icuResions}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d88290c4-46e9-4812-9628-30fb42a461bb" x="432" y="75" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{routeOfDurgAdmnistration}!=null?$F{routeOfDurgAdmnistration}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79f27b6f-0f52-43c8-b52e-5c652c310371" x="432" y="136" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{familyPhysician}!=null?$F{familyPhysician}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ed6a684b-ce8a-467d-b68e-66b4a6e0975b" x="432" y="168" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{familyPhysicaianPhoneNo}!=null? $F{familyPhysicaianPhoneNo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d88873dd-9014-4cd8-819d-46c20482255a" x="432" y="188" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{familyPhysicianMobileNo}!=null?$F{familyPhysicianMobileNo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="88d27888-6670-46ab-85ad-5b860fb4564f" x="407" y="215" width="144" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{mlcNo}!=null?$F{icuResions}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb4a54e9-b479-4140-8f95-c6c8b2e713c7" x="407" y="259" width="144" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="c7027294-0918-4a40-a3bc-0db48bb96fa7" x="0" y="8" width="555" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Patient Other Details]]></text>
+			</staticText>
+		</band>
+		<band height="184">
+			<staticText>
+				<reportElement uuid="8bf6b743-2b41-462a-8214-c93ebd876e31" x="0" y="12" width="555" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Past History of Chronic Illness]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="8b830042-4469-4750-a419-3458e47b6f5c" x="0" y="49" width="491" height="100"/>
+				<subreportParameter name="resourcePath">
+					<subreportParameterExpression><![CDATA[$P{resourcePath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{pastHistroyDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "HpPastHistoryIllnessSubreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="202">
+			<staticText>
+				<reportElement uuid="90fd9ca0-ecf7-489b-aba4-ca93383a48a8" x="0" y="11" width="555" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Requested Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f65cab49-df5d-4ef9-8f83-a12ada1bd966" x="8" y="49" width="106" height="20"/>
+				<textElement/>
+				<text><![CDATA[Expected No. of Days]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="001d15ce-4c71-47ca-a229-28911c20f9ac" x="310" y="49" width="71" height="20"/>
+				<textElement/>
+				<text><![CDATA[Room Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5c686af3-fcab-47af-b8ad-28749c284368" x="381" y="49" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_3}!=null?$F{value_3}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e788a8e-37fd-4e25-9434-0466e3c7f095" x="114" y="49" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{noOfDay}!=null?$F{noOfDay}:""]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="9723cf84-bdaf-471d-9efa-54d0f0a5f99a" x="8" y="82" width="524" height="105"/>
+				<subreportParameter name="totalClaimedAmt">
+					<subreportParameterExpression><![CDATA[$F{claimedAmt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{claimedDetailsList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "HpRequestAmtSubreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="716">
+			<staticText>
+				<reportElement uuid="032aa825-3893-44a6-be14-8164e7b841dd" x="327" y="43" width="76" height="45"/>
+				<textElement/>
+				<text><![CDATA[Teating doctor Qualification]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d9f4672f-c693-4b79-a157-629bbe469503" x="6" y="43" width="50" height="45"/>
+				<textElement/>
+				<text><![CDATA[Name of Treating Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="40f9e1f7-e9a2-4985-a632-c53e1428da5a" x="134" y="43" width="75" height="45"/>
+				<textElement/>
+				<text><![CDATA[Registration No.  with State Code]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="2fee3478-93b5-4691-989d-95ad15fde0c2" x="402" y="43" width="144" height="45"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{doctorQualification}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="837a9cef-1a67-4d2c-90db-5df4da850df1" x="209" y="43" width="118" height="45"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{regNoAndStateCode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2a59890c-9ff8-4ecb-9585-693906c69402" x="56" y="43" width="78" height="45"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nameOfTreatingDoctor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="23cfc8a9-d00e-4419-8bce-b3bac2b50167" x="0" y="7" width="555" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Declaration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c2bc7960-4b40-4ffe-8150-c93dd3e019c9" x="6" y="101" width="321" height="20"/>
+				<textElement/>
+				<text><![CDATA[DECLARATION BY PATIENT / REPRESENTATIVE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ecd17639-7868-4cd1-8793-7ce4fbc2b9e8" x="6" y="136" width="540" height="279"/>
+				<textElement markup="html"/>
+				<text><![CDATA[1. I agree to allow the hospital to submit all original documents pertaining to hospitalization to the Insurer/T.P.A after the discharge, I agree to sign on the Final Bill & the Discharge Summary, before my discharge.<br>
+2. Payment to hospital is governed by the terms and conditions of the policy. In case the Insurer / TPA is not liable to settle the hospital bill, I undertake to settle the hospital bill.<br>
+3. All non-medical expenses and expenses not relevant to current hospitalization and the amounts over & above the limit authorized by the Insurer / T.P.A not governed by the terms and conditions of the policy will be paid by me. In case any clarification is needed on admissibility of a particular items shall contact T.P.A at the following toll free<br>
+4.I hereby declare to abide by the terms and conditions of the policy and if any time the facts disclosed by me are found to be false or incorrect I forfeit my claim and agree to indemnify the Insurer/T.P.A<br>
+5. I agree and understand that T.P.A is no way warranting the service of the hospital & that the Insurer/TPA is in no way guaranteeing that the services provided by the hospital will be of a particular quality or standard.<br>
+6. I hereby warrant the truth of the forgoing particulars in every respect and I agree that if I have made or shall make any false or untrue statement, suppression or concealment, my right to claim reimbursement of the said expenses shall be absolutely forfeited. I further declare that, in respect of the above treatment, no benefits are admissible under any other Medical Scheme or Insurance<br>
+7. I agree to indemnify the hospital against all expenses incurred on my behalf, which are not reimbursed by the Insurer/TPA.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="64a29200-d89e-48e5-8fdb-fcdf6e484094" x="118" y="431" width="139" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{value_4}!=null?$F{value_4}:""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="372ce05b-9dbb-4939-9398-341933514b0e" x="288" y="431" width="107" height="20"/>
+				<textElement/>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="146717d5-7988-4a69-89b7-d74a67e25157" x="395" y="431" width="129" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{patientContactNo}!=null?$F{patientContactNo}:""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="949cbe6a-6d35-4284-ad6d-fdafe15b843f" x="6" y="431" width="112" height="20"/>
+				<textElement/>
+				<text><![CDATA[Patient / Insured Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="55ab2f32-a5a3-47e0-89b4-7334f4f7c263" x="8" y="465" width="136" height="20"/>
+				<textElement/>
+				<text><![CDATA[HOSPITAL DECLARATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="51e77405-84be-4abc-a9b1-e1025ff4fb52" x="8" y="502" width="538" height="201"/>
+				<textElement markup="html"/>
+				<text><![CDATA[1. We have no objection to any authorized TPA/Insurance Company official verifying documents pertaining to hospitalization.<br>
+2. All valid original documents duly countersigned by the insured / patient as per the checklist below will be sent to TPA / Insurance Company within 7 days of the patient's discharge.<br>
+3. All non medical expenses, OR expenses not relevant to hospitalization or illness, OR expenses disallowed in the Authorization Letter of the TPA / Insurance Co, OR arising out of incorrect information in the pre-authorization form will be collected from the patient.<br>
+4. WE AGREE THAT TPA/INSURANCE COMPANY WILL NOT BE LIABLE TO MAKE THE PAYMENT IN THE EVENT OF ANY DISCREPANCY BETWEEN THE FACTS IN THIS FORM AND DISCHARGE SUMMARY or other documents.<br>
+5. The patient declaration has been signed by the patient or by his representative in our presence.<br>
+6. We agree to provide clarifications for the queries raised regarding this hospitalization and we take the sole responsibility for any delay in offering clarifications.<br>
+7. We will abide by the terms and conditions agreed in the MOU.]]></text>
+			</staticText>
+		</band>
+		<band height="209">
+			<staticText>
+				<reportElement uuid="91f76683-2da6-49eb-83ae-1bcdb7ab6fd7" x="14" y="40" width="532" height="114"/>
+				<textElement/>
+				<text><![CDATA[1. Detailed Discharge Summary and all Bills from the hospital<br>
+2. Cash Memos from the Hospitals / Chemists supported by proper prescription.<br>
+3. Receipts and Pathological Test Reports from Pathologists, supported by note from the attending Medical Practitioner/Surgeon recommending such pathological Tests.<br>
+4. Surgeon's Certificate stating nature of operation performed and Surgeon's Bill and Receipt.<br>
+5. Certificates from attending Medical practitioner /Surgeon that the patient is fully cured.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="883788d7-43ef-461d-a83c-690ecc449809" x="0" y="10" width="408" height="20"/>
+				<textElement/>
+				<text><![CDATA[DOCUMENTS TO BE PROVIDED BY THE HOSPITAL IN SUPPORT OF THE CLAIM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e098c49-a2b3-499c-8663-de4bf83976aa" x="17" y="176" width="366" height="20"/>
+				<textElement/>
+				<text><![CDATA[I agree terms and conditions]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

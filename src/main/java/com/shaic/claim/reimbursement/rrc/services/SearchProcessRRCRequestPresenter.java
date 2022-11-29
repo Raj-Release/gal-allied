@@ -1,0 +1,67 @@
+/**
+ * 
+ */
+package com.shaic.claim.reimbursement.rrc.services;
+
+/**
+ * @author ntv.vijayar
+ *
+ */
+
+/**
+ * 
+ */
+
+
+import javax.ejb.EJB;
+import javax.enterprise.event.Observes;
+
+import org.vaadin.addon.cdimvp.AbstractMVPPresenter;
+import org.vaadin.addon.cdimvp.AbstractMVPPresenter.ViewInterface;
+import org.vaadin.addon.cdimvp.CDIEvent;
+import org.vaadin.addon.cdimvp.ParameterDTO;
+
+
+
+/**
+ * @author ntv.narenj
+ *
+ */
+
+@ViewInterface(SearchProcessRRCRequestView.class)
+public class SearchProcessRRCRequestPresenter extends AbstractMVPPresenter<SearchProcessRRCRequestView>{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static final String SEARCH_BUTTON_CLICK_PROCESS_RRC_REQUEST = "doSearchForProcessRRC";
+	
+	
+	@EJB
+	private ProcessRRCRequestService searchService;
+
+	
+	@SuppressWarnings({ "deprecation" })
+	public void handleSearch(@Observes @CDIEvent(SEARCH_BUTTON_CLICK_PROCESS_RRC_REQUEST) final ParameterDTO parameters) {
+		
+		SearchProcessRRCRequestFormDTO searchFormDTO = (SearchProcessRRCRequestFormDTO) parameters.getPrimaryParameter();
+		
+		String userName=(String)parameters.getSecondaryParameter(0, String.class);
+		String passWord=(String)parameters.getSecondaryParameter(1, String.class);
+		
+		view.list(searchService.search(searchFormDTO,userName,passWord));
+	}
+	
+	
+	
+	
+	
+	@Override
+	public void viewEntered() {
+		
+		
+	}
+
+}

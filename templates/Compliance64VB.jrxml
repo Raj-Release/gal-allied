@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Compliance64VB" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="30e09117-5dfb-4a36-9772-d78a2d061329">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="240"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="claimId" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.claimId]]></fieldDescription>
+	</field>
+	<field name="proposerCode" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerCode]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="code" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.product.code]]></fieldDescription>
+	</field>
+	<field name="proposerAddress" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerAddress]]></fieldDescription>
+	</field>
+	<field name="proposerAddress1" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerAddress1]]></fieldDescription>
+	</field>
+	<field name="proposerAddress2" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerAddress2]]></fieldDescription>
+	</field>
+	<field name="proposerAddress3" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.proposerAddress3]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.policyNumber]]></fieldDescription>
+	</field>
+	<field name="policyFromDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.policyFromDate]]></fieldDescription>
+	</field>
+	<field name="policyToDate" class="java.util.Date">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.policyToDate]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.polOfficeAddr]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr1" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.polOfficeAddr1]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr2" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.polOfficeAddr2]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr3" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.polOfficeAddr3]]></fieldDescription>
+	</field>
+	<field name="homeOfficeCode" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.homeOfficeCode]]></fieldDescription>
+	</field>
+	<field name="totalPremium" class="java.lang.Double">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.policy.totalPremium]]></fieldDescription>
+	</field>
+	<field name="endorsement" class="java.util.List">
+		<fieldDescription><![CDATA[endorsement]]></fieldDescription>
+	</field>
+	<field name="reportId" class="java.lang.String">
+		<fieldDescription><![CDATA[reportId]]></fieldDescription>
+	</field>
+	<field name="paymentStatus" class="java.lang.String">
+		<fieldDescription><![CDATA[paymentStatus]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDto.newIntimationDto.organizationUnit.address]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="700" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c7733a3c-8daa-430d-8bf8-c79a3b368b67" x="0" y="0" width="555" height="106"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement uuid="9f54ba2b-d06d-4376-8af7-d77c6cf2c9d0" x="14" y="3" width="528" height="20"/>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font fontName="Times New Roman" size="12" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Star Health and Allied Insurance Company Limited]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a51706f6-942b-4363-b73f-063ce7957a02" x="155" y="34" width="266" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" size="12" isBold="true" isUnderline="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Compliance of Section 64 VB]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="54f48ae3-a6e5-4ab6-a7b1-0aa9fc5565ff" x="14" y="57" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[User Id]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7d59f88c-903b-49ea-9af3-a0745b8752fe" x="14" y="80" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Run Date]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="39a804dc-0b3d-4ab2-ba56-7b6ffe4944b0" x="351" y="57" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Report Id]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7514822b-ef57-4cb9-9ea2-e0d0ed440041" x="351" y="80" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Page No.]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="29d65b86-d412-405d-9e06-7fbb20f8cad1" x="114" y="57" width="138" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": "+"STAR"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ead4450b-a31c-47c5-afb1-31cb68ce6cea" x="114" y="80" width="138" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + new SimpleDateFormat("dd/MM/yyyy").format(new Date())]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="21e15258-f302-4f1f-bcda-74aeb07c4564" x="451" y="57" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": "+( $F{reportId} != null ? $F{reportId} : "")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="d8fcd5b2-cd3d-42b9-9d61-177f19f512d0" x="451" y="80" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + $V{PAGE_NUMBER} + " of " + $V{PAGE_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement uuid="1971131c-1ca2-4982-82fe-4e00c516d349" stretchType="RelativeToBandHeight" x="0" y="106" width="555" height="590"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement uuid="8f268a04-8dd3-4ab1-be50-efa1ee4c2787" x="14" y="22" width="75" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Claim No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="e34dd442-1a1e-4fea-8ebf-5635bd5cbaf9" x="14" y="42" width="75" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Department]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6ee88e70-66f9-4cd0-99bc-6a900df192f6" x="14" y="62" width="75" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Insured Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f9e2fafb-43eb-4f93-a0a5-3f75c16f5c17" x="14" y="82" width="75" height="28"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Insured Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="3b57a77e-b451-4732-a983-9df263a51c7f" x="231" y="62" width="67" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Issuing Office]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="975ec9c9-7663-445d-bebd-3d6a79a5b63a" x="231" y="22" width="67" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Policy No.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ca5cf248-4b2b-40d1-b6df-88a1ae7070d5" x="231" y="42" width="67" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Period From]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="5f42bb3e-3c59-4181-bb2a-e4b6e5de65dd" x="231" y="82" width="67" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Office Address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="00ab93cb-e6e0-4cc8-861d-3a049f0aa8a4" x="14" y="139" width="75" height="26"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Insured Address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ead248f1-b26f-4837-847c-627e2d0a36f4" x="14" y="110" width="75" height="29"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Product Code]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="82a476a3-6791-4f86-bd94-1534a3c648ed" x="0" y="183" width="555" height="1"/>
+					<graphicElement>
+						<pen lineWidth="1.0"/>
+					</graphicElement>
+				</line>
+				<staticText>
+					<reportElement uuid="bb72f284-3b33-4df5-a01a-ac55a72c1eaf" x="138" y="191" width="213" height="20"/>
+					<box>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Premium Collection Details]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ab28bbc8-7d28-4ae1-93ba-ca413569976a" x="14" y="222" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Premium Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1f1f288d-dd2a-4697-8c78-6370efa3e8d4" x="14" y="254" width="100" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Payment Status]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="445bf078-ce7e-4246-acfa-8f6f0e6fa1de" x="14" y="286" width="153" height="20"/>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Date of Realisation of Premium]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="df1f41df-4f82-4084-9d15-22906599306c" x="7" y="322" width="544" height="20"/>
+					<box>
+						<topPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+					</box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+					</textElement>
+					<text><![CDATA[Particulars of Endorsements, if any:]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="3b99d91d-0ff8-437e-bd72-9733f88499fc" x="89" y="22" width="138" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ($F{claimId} != null ? $F{claimId} : "")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="813267c9-7dc7-4b31-8ca5-29dd99b51632" x="89" y="42" width="138" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + "01 - Health "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="13a5febc-035d-40cf-9849-85ef99e254ce" x="89" y="82" width="138" height="28"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ($F{proposerFirstName} != null ? $F{proposerFirstName} : "")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="94de064d-ae1e-48a5-aed5-2bcb5b62bb1d" x="89" y="62" width="138" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ($F{proposerCode} != null ? $F{proposerCode} : "")]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="cd6e8e55-5611-4781-9863-cb09c5dc813f" x="89" y="110" width="138" height="29"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{code} != null ? $F{code} : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="a5e8eb61-b84f-4fc6-b289-40c4f69a4238" x="89" y="139" width="239" height="44"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{proposerAddress} != null ? $F{proposerAddress} : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="65fc2ebb-7348-48b3-a8ea-62149bbfe0b1" x="298" y="22" width="230" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{policyNumber} != null ? $F{policyNumber} : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="397f20ef-de85-46cb-8718-dd3454da0039" x="298" y="42" width="133" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{policyFromDate} != null ?( $F{policyFromDate}.getHours() + " : " + $F{policyFromDate}.getMinutes() + " Hrs on " ) + new SimpleDateFormat("dd-MM-yyyy").format($F{policyFromDate}) : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="26350f67-19cd-4883-9458-5f2d7ac67a2f" x="298" y="62" width="230" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{homeOfficeCode} != null ? $F{homeOfficeCode} : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="b2df5e85-4fb3-4946-90df-a19f42ffd4f9" x="298" y="82" width="253" height="49"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[": " + ( $F{address}!= null ? $F{address} : "" )]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="3ffa94ad-f963-4a98-9a10-5860108d8128" x="114" y="222" width="161" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{totalPremium} != null ? $F{totalPremium} : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1150e200-4037-4521-b085-4f8eef2fec9f" x="114" y="254" width="161" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{paymentStatus} != null ? $F{paymentStatus} : ""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="18cbae26-c669-45f7-9ac4-01340260e35e" x="167" y="286" width="161" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="597c5321-2b44-418d-9b66-93f0b0dd02d8" x="431" y="42" width="124" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{policyToDate} != null ? ( $F{policyToDate}.getHours() + " : " + $F{policyToDate}.getMinutes() + " Hrs on " ) + new SimpleDateFormat("dd-MM-yyyy").format($F{policyToDate}) : ""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<subreport>
+				<reportElement uuid="b61cbaa9-db20-4b67-ae5a-0ec402157085" x="7" y="456" width="529" height="70"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{endorsement})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "EndorsementSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="217fbf22-c197-4e33-95d0-8182de9a5f31" positionType="Float" x="443" y="630" width="112" height="20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Authorised Signatory]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3158c21c-1641-4dac-8530-c8dddbdd57bc" positionType="Float" x="0" y="546" width="102" height="36"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6936d3ff-f3e0-4bb4-8e6c-c3fa4ffb81da" positionType="Float" x="0" y="592" width="155" height="20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Section 64 VB complied with :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="18034f18-ee68-419d-8c1b-21668648eb39" positionType="Float" x="155" y="592" width="382" height="20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ceb33e4f-807c-4379-8d0c-3cbe8b37b68f" positionType="Float" x="102" y="546" width="435" height="36"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0a8c3724-f952-45d9-b438-b4d23be544ad" positionType="Float" x="211" y="630" width="100" height="20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Checked by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="92e9d32f-dff1-46c9-bfff-44c72456a05b" positionType="Float" x="0" y="630" width="100" height="20"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Prepared by]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fd785c65-e4fb-4ab2-a5a8-3c36f6729b95" positionType="Float" x="0" y="673" width="555" height="17"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[All the amounts mentioned in this report are in Indian Rupees]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<staticText>
+				<reportElement uuid="4cf67ab0-801f-4290-9276-8d3a844409b5" x="0" y="0" width="555" height="50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[IRDA Regn.No.129<br>
+Corporate Identity Number L66010TN2005PLC056649<br>
+Email ID : info@starhealth.in]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

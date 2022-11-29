@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Deductibel_NonPayable_Remarks_Subreport" language="groovy" pageWidth="595" pageHeight="180" columnWidth="575" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="44a35cd3-0c8f-4b44-91d4-d65d5f9371b8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="billNo" class="java.lang.String">
+		<fieldDescription><![CDATA[billNo]]></fieldDescription>
+	</field>
+	<field name="deductibleOrNonPayableReason" class="java.lang.String">
+		<fieldDescription><![CDATA[deductibleOrNonPayableReason]]></fieldDescription>
+	</field>
+	<field name="itemName" class="java.lang.String">
+		<fieldDescription><![CDATA[itemName]]></fieldDescription>
+	</field>
+	<field name="sno" class="java.lang.String">
+		<fieldDescription><![CDATA[sno]]></fieldDescription>
+	</field>
+	<columnHeader>
+		<band height="51">
+			<staticText>
+				<reportElement uuid="17c86e11-16e6-436f-90fa-5f8494796db6" x="0" y="26" width="30" height="25"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Note]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="679e2858-eb3b-40cf-844c-9962d7c6fec9" x="30" y="26" width="515" height="25"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Disallowance Reasons / Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="59b0d5b0-f48b-4ada-b458-181291307d14" x="0" y="1" width="545" height="25"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[# Remarks]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="90">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c68d4f3b-fc51-4749-81ae-aeeaa98f3beb" stretchType="RelativeToBandHeight" x="30" y="0" width="515" height="90" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="Times New Roman" size="10" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{deductibleOrNonPayableReason} != null ? ($F{deductibleOrNonPayableReason}.replaceAll("& ", " and ") + "<br>") :"")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+				<reportElement uuid="739476b4-86ef-466d-8ac1-1dff4707a2ab" stretchType="RelativeToBandHeight" x="0" y="0" width="30" height="90" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sno} != null ? $F{sno} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

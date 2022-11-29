@@ -1,0 +1,1306 @@
+package com.shaic.reimbursement.assigninvesigation;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.WeakHashMap;
+
+import javax.ejb.EJB;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
+import org.vaadin.addon.cdimvp.ViewComponent;
+import org.vaadin.dialogs.ConfirmDialog;
+
+import com.shaic.arch.SHAUtils;
+import com.shaic.arch.components.GComboBox;
+import com.shaic.arch.fields.dto.SelectValue;
+import com.shaic.claim.preauth.wizard.dto.DiagnosisDetailsTableDTO;
+import com.shaic.domain.MasterService;
+import com.shaic.domain.ReferenceTable;
+import com.shaic.domain.TmpInvestigation;
+import com.shaic.domain.preauth.MasPrivateInvestigator;
+import com.shaic.domain.service.PreMedicalService;
+import com.vaadin.v7.data.Container;
+import com.vaadin.v7.data.util.BeanItem;
+import com.vaadin.v7.data.util.BeanItemContainer;
+import com.vaadin.v7.data.util.IndexedContainer;
+import com.vaadin.v7.data.util.converter.Converter;
+import com.vaadin.server.ThemeResource;
+import com.vaadin.v7.shared.ui.label.ContentMode;
+import com.vaadin.v7.ui.AbstractField;
+import com.vaadin.v7.ui.AbstractSelect.ItemCaptionMode;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.v7.ui.ComboBox;
+import com.vaadin.ui.Component;
+import com.vaadin.v7.ui.DefaultFieldFactory;
+import com.vaadin.v7.ui.Field;
+import com.vaadin.v7.ui.HorizontalLayout;
+import com.vaadin.v7.ui.Label;
+import com.vaadin.v7.ui.Table;
+import com.vaadin.v7.ui.TextField;
+import com.vaadin.v7.ui.VerticalLayout;
+import com.vaadin.ui.themes.ValoTheme;
+
+public class AssignMutiInvestigatorTable extends ViewComponent {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@EJB
+	private MasterService masterService;
+	
+	@EJB
+	private PreMedicalService premedicalService;
+
+	
+	private Map<AssignInvestigatorDto, HashMap<String, AbstractField<?>>> tableItem = new HashMap<AssignInvestigatorDto, HashMap<String, AbstractField<?>>>();
+	
+	BeanItemContainer<AssignInvestigatorDto> data;
+	
+	private Table table;
+	
+	AssignInvestigatorDto bean;
+	
+	private Map<String, Object> referenceData;
+	
+	private List<String> errorMessages;
+	
+	public TextField dummyField;
+	
+	private BeanItemContainer<SelectValue> stateContainer;
+	
+	private BeanItemContainer<SelectValue> cityContainer;
+	
+	private BeanItemContainer<SelectValue> NameContainer;
+	
+	private BeanItemContainer<SelectValue> allocationToContainer;
+	
+	private BeanItemContainer<SelectValue> zoneContainer;
+	
+	private BeanItemContainer<SelectValue> invescoordinatorContainer;
+	
+	private BeanItemContainer<SelectValue> privateInvestigatorContainer;
+	
+	private WeakHashMap<Long, Object> contactMap;
+	private WeakHashMap<Long, Integer> countMap;
+
+	private Button btnAdd;
+
+	private Validator validator;
+
+	public List<AssignInvestigatorDto> deletedDTO;
+	
+	public TextField listenerField = new TextField();
+	
+	private WeakHashMap<Long, Object> privateInvestContactMap;
+	
+	private ArrayList<Component> mandatoryFields = new ArrayList<Component>();
+
+	public void init(AssignInvestigatorDto bean) {
+		this.bean = bean;
+		deletedDTO = new ArrayList<AssignInvestigatorDto>();
+		stateContainer = new BeanItemContainer<SelectValue>(this.bean.getStateList());
+		allocationToContainer = new BeanItemContainer<SelectValue>(this.bean.getAllocationToIdList());
+		zoneContainer = new BeanItemContainer<SelectValue>(this.bean.getZonalList());
+		NameContainer = new BeanItemContainer<SelectValue>(SelectValue.class);
+		List<TmpInvestigation> tmpInvestigationList = bean.getInvestigatorNameList();
+		List<MasPrivateInvestigator> privateInvesList = bean.getPrivateInvestigatorsList();
+		if(tmpInvestigationList != null && !tmpInvestigationList.isEmpty()){
+			contactMap = new WeakHashMap<Long, Object>();
+			countMap = new WeakHashMap<Long, Integer>();
+			for (TmpInvestigation tmpInvestigation : tmpInvestigationList) {
+				
+				NameContainer.addBean(new SelectValue(tmpInvestigation.getKey(), tmpInvestigation.getInvestigatorName(),tmpInvestigation.getInvestigatorCode()));
+				List<Long> contactList = new ArrayList<Long>();
+				contactList.add(tmpInvestigation.getMobileNumber());
+				contactList.add(tmpInvestigation.getPhoneNumber());
+				contactMap.put(tmpInvestigation.getKey(),contactList);
+				countMap.put(tmpInvestigation.getKey(), Integer.valueOf(tmpInvestigation.getMaxCount()));
+			}
+		}
+		
+		if(privateInvesList != null && !privateInvesList.isEmpty()){
+			privateInvestContactMap = new WeakHashMap<Long, Object>();
+			for (MasPrivateInvestigator masPrivateInvestigator : privateInvesList) {
+				NameContainer.addBean(new SelectValue(masPrivateInvestigator.getPrivateInvestigationKey(),masPrivateInvestigator.getInvestigatorName()));
+				List<Long> privateInvstContactList = new ArrayList<Long>();
+				privateInvstContactList.add(masPrivateInvestigator.getMobileNumberOne());
+				privateInvstContactList.add(masPrivateInvestigator.getMobileNumberTwo());
+				privateInvestContactMap.put(masPrivateInvestigator.getPrivateInvestigationKey(), privateInvstContactList);
+			}
+		}
+				
+		//this.procedureList = procedureList;
+		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+		validator = factory.getValidator();
+		this.errorMessages = new ArrayList<String>();
+		btnAdd = new Button();
+		btnAdd.setStyleName("link");
+		btnAdd.setIcon(new ThemeResource("images/addbtn.png"));
+		HorizontalLayout btnLayout = new HorizontalLayout(btnAdd);
+		btnLayout.setWidth("100%");
+		btnLayout.setComponentAlignment(btnAdd, Alignment.MIDDLE_RIGHT);
+
+		VerticalLayout layout = new VerticalLayout();
+		layout.addComponent(btnLayout);
+		layout.setMargin(true);
+       	initTable();
+       
+		
+		table.setWidth("100%");
+		table.setPageLength(table.getItemIds().size());
+
+		addListener();
+
+		layout.addComponent(table);
+
+		setCompositionRoot(layout);
+	}
+
+	private void addListener() {
+		btnAdd.addClickListener(new Button.ClickListener() {
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				AssignInvestigatorDto assignInvestTableDTO = new AssignInvestigatorDto();
+				BeanItem<AssignInvestigatorDto> addItem = data
+						.addItem(assignInvestTableDTO);
+				manageListeners();
+			}
+		});
+	}
+
+//	public void setReferenceData(Map<String, Object> referenceData) {
+//		this.referenceData = referenceData;
+//		stateContainer = (BeanItemContainer<SelectValue>)referenceData.get("stateContainer");
+//	}
+
+	void initTable() {
+		// Create a data source and bind it to a table
+		data = new BeanItemContainer<AssignInvestigatorDto>(AssignInvestigatorDto.class);
+		table = new Table("", data);
+		table.addStyleName("generateColumnTable");
+		table.setWidth("100%");
+		table.setPageLength(table.getItemIds().size());
+//		fireViewEvent(AssignInvestigatorPresenter.GET_STATE, null);
+
+		// Added for table height..
+		table.setHeight("160px");
+		table.setWidth("75%");
+		table.addGeneratedColumn("Delete", new Table.ColumnGenerator() {
+			private static final long serialVersionUID = 5936665477260011479L;
+
+			@Override
+			public Object generateCell(final Table source, final Object itemId,
+					Object columnId) {
+				final Button deleteButton = new Button("Delete");
+				AssignInvestigatorDto dto = (AssignInvestigatorDto) itemId;
+				deleteButton.setData(itemId);
+				deleteButton.addClickListener(new Button.ClickListener() {
+					private static final long serialVersionUID = 1L;
+
+					public void buttonClick(ClickEvent event) {
+						final AssignInvestigatorDto currentItemId = (AssignInvestigatorDto) event.getButton().getData();
+						if (table.getItemIds().size() > 1) {
+							
+							ConfirmDialog dialog = ConfirmDialog
+									.show(getUI(),
+											"Confirmation",
+											"Do you want to Delete ?",
+											"No", "Yes", new ConfirmDialog.Listener() {
+
+												public void onClose(ConfirmDialog dialog) {
+													if (!dialog.isConfirmed()) {
+														// Confirmed to continue
+														AssignInvestigatorDto dto =  (AssignInvestigatorDto)currentItemId;
+														if(dto.getKey() != null) {
+															deletedDTO.add((AssignInvestigatorDto)currentItemId);
+														}
+														table.removeItem(currentItemId);
+													} else {
+														// User did not confirm
+													}
+												}
+											});
+							dialog.setClosable(false);
+							
+						} else {
+							HorizontalLayout layout = new HorizontalLayout(
+									new Label("One Investigator is Mandatory."));
+							layout.setMargin(true);
+							final ConfirmDialog dialog = new ConfirmDialog();
+							dialog.setCaption("");
+							dialog.setClosable(true);
+							dialog.setContent(layout);
+							dialog.setResizable(false);
+							dialog.setModal(true);
+							dialog.show(getUI().getCurrent(), null, true);
+						}
+						
+					}
+				});
+				return deleteButton;
+			}
+		});
+		
+		table.setVisibleColumns(new Object[] {
+				"stateSelectValue", "citySelectValue", "allocationToSelectValue", "zoneSelectValue", "coordinatorSelectValue","investigatorNameListSelectValue", "investigatorTelNo", "investigatorMobileNo","Delete"});
+
+		table.setColumnHeader("stateSelectValue", "State");
+		table.setColumnHeader("citySelectValue", "City");
+		table.setColumnHeader("allocationToSelectValue", "Allocation");
+		table.setColumnHeader("zoneSelectValue", "Zone");
+		table.setColumnHeader("coordinatorSelectValue", "Investigation Coordinator");
+		table.setColumnHeader("investigatorNameListSelectValue", "Investigator Name");
+		table.setColumnHeader("investigatorTelNo", "investigator Telephone No");
+		table.setColumnHeader("investigatorMobileNo", "investigator Mobile No");
+		
+		table.setColumnWidth("stateSelectValue", 180);
+		table.setColumnWidth("citySelectValue", 180);
+		table.setColumnWidth("allocationToSelectValue", 120);
+		table.setColumnWidth("zoneSelectValue", 120);
+		table.setColumnWidth("coordinatorSelectValue", 320);
+		table.setColumnWidth("investigatorNameListSelectValue", 320);
+		table.setColumnWidth("investigatorTelNo", 158);
+		table.setColumnWidth("investigatorMobileNo", 148);
+		table.setColumnWidth("Delete",80);
+		
+		table.setEditable(true);
+
+		// Use a custom field factory to set the edit fields as immediate
+		// This is used when the table is in editable mode.
+		table.setTableFieldFactory(new ImmediateFieldFactory());
+
+//		manageListeners();
+
+	}
+	
+	
+	protected void manageListeners() {
+
+		for (AssignInvestigatorDto multiInvestTableDTO : tableItem.keySet()) {
+			HashMap<String, AbstractField<?>> combos = tableItem.get(multiInvestTableDTO);
+			
+			final ComboBox stateCombo = (ComboBox) combos.get("stateSelectValue");
+			final ComboBox cityCombo = (ComboBox) combos.get("citySelectValue");
+			final ComboBox allocationCombo = (ComboBox) combos.get("allocationToSelectValue");
+			final ComboBox investNameCombo = (ComboBox) combos.get("investigatorNameListSelectValue");
+			
+//			Long stateKey = multiInvestTableDTO.getStateSelectValue().getId();
+//			Long cityKey = multiInvestTableDTO.getCitySelectValue().getId();
+//			Long allocationKey = multiInvestTableDTO.getAllocationToSelectValue().getId();
+//			Long investKey = multiInvestTableDTO.getInvestigatorNameListSelectValue().getId();
+			
+			
+			addState(stateCombo,multiInvestTableDTO.getStateSelectValue());
+			
+			if(multiInvestTableDTO.getStateSelectValue() != null){
+				addCity(multiInvestTableDTO.getStateSelectValue().getId(), cityCombo,
+						multiInvestTableDTO.getCitySelectValue());
+			}
+			
+			if (multiInvestTableDTO.getStateSelectValue() != null && multiInvestTableDTO.getCitySelectValue() != null) {
+				if (allocationCombo != null) {
+					addAllocationTo(allocationCombo,
+							multiInvestTableDTO.getAllocationToSelectValue());
+				}
+			}
+			
+//			if (stateKey != null) {
+//				addCity(stateKey,
+//						cityCombo, multiInvestTableDTO.getCitySelectValue());
+//			}
+//			
+//			if (cityKey != null) {
+//				addAllocationTo(stateKey, cityKey,
+//						allocationCombo, multiInvestTableDTO.getAllocationToSelectValue());
+//			}
+//			
+//			if (allocationKey != null) {
+//				addInvestigator(stateKey, cityKey,allocationKey, 
+//						investNameCombo, multiInvestTableDTO.getInvestigatorNameListSelectValue());
+//			}
+
+		}
+	}
+
+	public class ImmediateFieldFactory extends DefaultFieldFactory {
+		private static final long serialVersionUID = 1L;
+
+		@Override
+		public Field<?> createField(Container container, Object itemId,
+				Object propertyId, Component uiContext) {
+			final AssignInvestigatorDto investigDto = (AssignInvestigatorDto) itemId;
+
+			Map<String, AbstractField<?>> tableRow = null;
+
+			if(tableItem.get(investigDto) == null)
+			{
+				tableItem.put(investigDto,
+						new HashMap<String, AbstractField<?>>());
+				
+			}
+			tableRow = tableItem.get(investigDto);
+
+			if ("stateSelectValue".equals(propertyId)) {
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				tableRow.put("stateSelectValue", box);
+				box.setData(investigDto);
+				addState(box,investigDto.getStateSelectValue());
+				addStateListener(box,investigDto);
+				return box;
+			} else if ("citySelectValue".equals(propertyId)) {
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				box.setData(investigDto);
+				tableRow.put("citySelectValue", box);
+				addCityListener(box, investigDto);
+				return box;
+			} else if ("allocationToSelectValue".equals(propertyId)) {
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				box.setData(investigDto);
+				tableRow.put("allocationToSelectValue", box);
+				addAllocationTo(box,investigDto.getAllocationToSelectValue());
+				addAllocationToListener(box,investigDto);
+				return box;
+			} else if("zoneSelectValue".equals(propertyId)){
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				box.setData(investigDto);
+				tableRow.put("zoneSelectValue",box);
+//				addZonalTo(box,investigDto.getZoneSelectValue());
+				addZonalToListener(box,investigDto);
+				return box;	
+			} else if("coordinatorSelectValue".equals(propertyId)){
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				if(investigDto.getAllocationToSelectValue() != null
+						&& !investigDto.getAllocationToSelectValue().getValue().equalsIgnoreCase("Private")){
+					box.setEnabled(false);
+					investigDto.setCoordinatorSelectValue(null);
+				}
+				box.setData(investigDto);
+				tableRow.put("coordinatorSelectValue", box);
+//				addCoordinatorTo(box,investigDto.getCoordinatorSelectValue());
+				addCoordinatorToListener(box,investigDto);
+				return box;	
+			} else if ("investigatorNameListSelectValue".equals(propertyId)) {
+				GComboBox box = new GComboBox();
+				box.setWidth("100%");
+				box.setData(investigDto);
+				tableRow.put("investigatorNameListSelectValue", box);
+				setNameContainer(NameContainer,box);
+				addInvestigatorListener(box,investigDto);
+				return box;
+			} else if ("investigatorTelNo".equals(propertyId)) {
+				final TextField field = new TextField();
+				field.setWidth("100%");
+				field.setNullRepresentation("");
+				field.setStyleName(ValoTheme.TEXTFIELD_BORDERLESS);
+				field.setEnabled(false);
+				field.setData(investigDto);
+				tableRow.put("investigatorTelNo", field);
+				return field;
+			} else if ("investigatorMobileNo".equals(propertyId)) {
+				TextField field = new TextField();
+				field.setEnabled(false);
+				field.setWidth("100%");
+				field.setNullRepresentation("");
+				field.setData(investigDto);
+				field.setStyleName(ValoTheme.TEXTFIELD_BORDERLESS);
+				tableRow.put("investigatorMobileNo", field);
+				return field;
+			} else {
+				Field<?> field = super.createField(container, itemId,
+						propertyId, uiContext);
+
+				if (field instanceof TextField)
+					field.setWidth("100%");
+				field.setEnabled(false);
+				return field;
+			}
+		}
+	}
+	
+//	@SuppressWarnings("unchecked")
+//	private void addCommonValues(ComboBox stateCombo, String tableColumnName) {
+//		
+////		stateContainer = (BeanItemContainer<SelectValue>) referenceData
+////				.get(tableColumnName);
+//		
+//		stateCombo.setContainerDataSource(stateContainer);
+//		stateCombo.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+//		stateCombo.setItemCaptionPropertyId("value");
+//	}
+		
+	private void showErrorPopup(ComboBox field, VerticalLayout layout) {
+		layout.setMargin(true);
+		layout.setSpacing(true);
+		final ConfirmDialog dialog = new ConfirmDialog();
+		dialog.setClosable(true);
+		dialog.setResizable(false);
+		dialog.setContent(layout);
+		dialog.setCaption("Error");
+		dialog.setClosable(true);
+		field.setValue(null);
+		dialog.show(getUI().getCurrent(), null, true);
+	}
+
+	public void addState(ComboBox stateCombo,
+			SelectValue value) {
+
+//		fireViewEvent(AssignInvestigatorPresenter.GET_STATE, null);
+
+		stateCombo.setContainerDataSource(stateContainer);
+		stateCombo.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		stateCombo.setItemCaptionPropertyId("value");
+
+//		for(int i=0;i<stateContainer.size();i++){
+//			if (value != null) {
+//				if(stateContainer.getIdByIndex(i).getValue().equalsIgnoreCase(value.getValue())){
+//					stateCombo.setValue(value);
+//					break;
+//				}	
+//			}
+//		}
+	}
+	
+	private void addStateListener(final ComboBox stateCombo,
+			AssignInvestigatorDto investigDto) {
+		if (stateCombo != null) {
+			stateCombo.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					
+					SelectValue selectedState = (SelectValue)component.getValue();
+					
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					ComboBox cityBox = (ComboBox) hashMap.get("citySelectValue");
+					if (selectedState != null) {
+							investigTableDTO.setStateSelectValue(selectedState);
+							if (selectedState != null && cityBox != null) {
+								addCity(selectedState.getId(), cityBox,
+										investigTableDTO.getCitySelectValue());
+							}
+					}
+				}
+			});			
+		}
+	}
+	
+	public void addCity(Long stateKey, ComboBox cityCombo,
+			SelectValue value) {
+
+		fireViewEvent(AssignInvestigatorPresenter.GET_CITY, stateKey,cityCombo,value);
+		
+	}
+
+	private void addCityListener(final ComboBox cityCombo,
+			AssignInvestigatorDto investigDto) {
+		if (cityCombo != null) {
+			cityCombo.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					
+					SelectValue selectedCity = (SelectValue)component.getValue();
+					
+					ComboBox stateBox = (ComboBox) hashMap.get("stateSelectValue");
+					SelectValue stateSelected = (SelectValue)stateBox.getValue();
+					ComboBox allocationBox = (ComboBox) hashMap.get("allocationToSelectValue");
+					if (investigTableDTO != null) {
+						if (stateSelected != null && selectedCity != null) {
+							
+							investigTableDTO.setStateSelectValue(stateSelected);
+							investigTableDTO.setCitySelectValue(selectedCity);
+							
+							if (allocationBox != null) {
+								addAllocationTo(allocationBox,
+										investigTableDTO.getAllocationToSelectValue());
+							}
+						}
+					}
+				}
+			});			
+		}
+	}
+	public void addAllocationTo(ComboBox allocationToCombo,
+			SelectValue value) {
+		
+//		fireViewEvent(AssignInvestigatorPresenter.GET_ALLOCATION_TO, stateKey,cityKey);
+ 	    
+	  allocationToCombo.setContainerDataSource(allocationToContainer);
+ 	  allocationToCombo.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+ 	  allocationToCombo.setItemCaptionPropertyId("value");
+
+ 	
+	for(int i=0;i<allocationToContainer.size();i++){
+		if (value != null) {
+			if(allocationToContainer.getIdByIndex(i).getValue().equalsIgnoreCase(value.getValue())){
+				allocationToCombo.setValue(allocationToContainer.getIdByIndex(i));
+				break;
+			}	
+		}
+	}
+	}
+
+	private void addAllocationToListener(final ComboBox allocationCombo,
+			AssignInvestigatorDto investigDto) {
+		if (allocationCombo != null) {
+			allocationCombo.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					
+					ComboBox stateCmbo = (ComboBox) hashMap.get("stateSelectValue");
+					SelectValue selectState = (SelectValue) stateCmbo.getValue();
+							
+					ComboBox cityCmbo = (ComboBox) hashMap.get("citySelectValue");
+					
+					SelectValue selectCity = (SelectValue) cityCmbo.getValue();
+					
+					SelectValue selectedallocationTo = (SelectValue)component.getValue();
+					
+					ComboBox allocationToCmb = (ComboBox) hashMap.get("allocationToSelectValue");
+					
+					investigTableDTO.setStateSelectValue(selectState);
+					investigTableDTO.setCitySelectValue(selectCity);
+					investigTableDTO.setAllocationToSelectValue(selectedallocationTo);
+					
+					if(selectedallocationTo != null && !selectedallocationTo.getValue().equalsIgnoreCase("Private")){
+						ComboBox zonalCmbo = (ComboBox) hashMap.get("zoneSelectValue");
+						/*zonalCmbo.setEnabled(false);
+						zonalCmbo.setValue(null);*/
+						ComboBox coordinatorComb = (ComboBox) hashMap.get("coordinatorSelectValue");
+						coordinatorComb.setEnabled(false);
+						coordinatorComb.setValue(null);
+						ComboBox investigatorNameComb = (ComboBox) hashMap.get("investigatorNameListSelectValue");
+						investigatorNameComb.setValue(null);
+						investigTableDTO.setInvestigatorNameList(null);
+						addZonalTo(selectedallocationTo.getValue(),zonalCmbo,investigTableDTO.getAllocationToSelectValue());
+						setNameContainer(NameContainer,investigatorNameComb);
+						
+						} else {
+							if(selectedallocationTo != null) {
+							ComboBox zonalCmbo = (ComboBox) hashMap.get("zoneSelectValue");
+							zonalCmbo.setEnabled(true);
+							ComboBox coordinatorComb = (ComboBox) hashMap.get("coordinatorSelectValue");
+							coordinatorComb.setEnabled(true);
+							ComboBox investigatorNameComb = (ComboBox) hashMap.get("investigatorNameListSelectValue");
+							investigatorNameComb.setValue(null);
+							investigTableDTO.setInvestigatorNameList(null);
+								if(investigTableDTO.getAllocationToSelectValue() != null){
+									addZonalTo(selectedallocationTo.getValue(),zonalCmbo,investigTableDTO.getAllocationToSelectValue());
+								}
+							}
+						}
+					
+//					ComboBox investigCmbo = (ComboBox) hashMap.get("investigatorNameListSelectValue");
+//					if (investigTableDTO != null) {
+//						if (investigTableDTO.getStateSelectValue() != null) {
+//							if (investigCmbo != null) {
+//								addInvestigator(selectState.getId(), selectCity.getId(), selectedallocationTo.getId(),  investigCmbo,
+//										investigTableDTO.getAllocationToSelectValue());
+//							}
+//						}
+//					}
+				}
+			});			
+		}
+	}
+	
+	public void addZonalTo(String selectesAllocationTo,ComboBox zonal,SelectValue value){
+		
+		/*zonal.setContainerDataSource(zoneContainer);
+		zonal.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+	 	zonal.setItemCaptionPropertyId("value");*/
+	 	fireViewEvent(AssignInvestigatorPresenter.GET_ZONE, selectesAllocationTo,zonal,value);
+	}
+	
+	public void addZonalToListener(final ComboBox zonalValue,AssignInvestigatorDto investigationDto){
+		
+		if(zonalValue != null){
+
+			zonalValue.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					
+					ComboBox stateCmbo = (ComboBox) hashMap.get("stateSelectValue");
+					SelectValue selectState = (SelectValue) stateCmbo.getValue();
+							
+					ComboBox cityCmbo = (ComboBox) hashMap.get("citySelectValue");
+					
+					SelectValue selectCity = (SelectValue) cityCmbo.getValue();
+					
+					SelectValue selectedallocationTo = (SelectValue)component.getValue();
+					
+					investigTableDTO.setStateSelectValue(selectState);
+					investigTableDTO.setCitySelectValue(selectCity);
+					investigTableDTO.setZoneSelectValue(selectedallocationTo);
+					
+					ComboBox zonalCmbo = (ComboBox) hashMap.get("zoneSelectValue");
+					SelectValue selectedZone = (SelectValue) zonalCmbo.getValue();
+					ComboBox coordinatorComb = (ComboBox) hashMap.get("coordinatorSelectValue");
+					ComboBox investigatorNameComb = (ComboBox) hashMap.get("investigatorNameListSelectValue");
+					investigatorNameComb.setValue(null);
+					investigTableDTO.setInvestigatorNameList(null);
+					if(selectedZone != null){
+						addCoordinatorTo(selectedZone.getValue(),coordinatorComb,investigTableDTO.getCoordinatorSelectValue());
+					}
+				}
+			});			
+		
+		}
+		
+	}
+	
+	public void addCoordinatorTo(String selectedZone,ComboBox coordinatorValue,SelectValue value){
+
+		/*coordinatorValue.setContainerDataSource(allocationToContainer);
+		coordinatorValue.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		coordinatorValue.setItemCaptionPropertyId("value");
+	 	
+		for(int i=0;i<allocationToContainer.size();i++){
+			if (value != null) {
+				if(allocationToContainer.getIdByIndex(i).getValue().equalsIgnoreCase(value.getValue())){
+					coordinatorValue.setValue(allocationToContainer.getIdByIndex(i));
+					break;
+				}	
+			}
+		}*/
+		fireViewEvent(AssignInvestigatorPresenter.GET_COORDINATOR, selectedZone,coordinatorValue,value);
+	
+	}
+	
+	public void addCoordinatorToListener(final ComboBox cooridnator,AssignInvestigatorDto investigationDto){
+		if(cooridnator != null){
+			cooridnator.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					
+					ComboBox stateCmbo = (ComboBox) hashMap.get("stateSelectValue");
+					SelectValue selectState = (SelectValue) stateCmbo.getValue();
+							
+					ComboBox cityCmbo = (ComboBox) hashMap.get("citySelectValue");
+					
+					SelectValue selectCity = (SelectValue) cityCmbo.getValue();
+					
+					SelectValue selectedallocationTo = (SelectValue)component.getValue();
+					
+					investigTableDTO.setStateSelectValue(selectState);
+					investigTableDTO.setCitySelectValue(selectCity);
+					investigTableDTO.setCoordinatorSelectValue(selectedallocationTo);
+					
+					ComboBox selectedCord = (ComboBox) hashMap.get("coordinatorSelectValue");
+					SelectValue selectCordValue = (SelectValue) selectedCord.getValue();
+					ComboBox privateInvestigatorComb = (ComboBox) hashMap.get("investigatorNameListSelectValue");
+					if(selectCordValue != null){
+						addPrivateInvestigator(selectCordValue.getCommonValue(),privateInvestigatorComb,investigTableDTO.getInvestigatorNameListSelectValue());
+					} else {
+						setNameContainer(NameContainer,privateInvestigatorComb);
+					}
+				}
+			});			
+		
+		
+		}
+	}
+	
+	public void setCoordinatorContainer(BeanItemContainer<SelectValue> coordinatorValues,ComboBox combCoordinator,SelectValue selectedCoordinator){
+		
+		if(invescoordinatorContainer != null){
+			invescoordinatorContainer = new BeanItemContainer<SelectValue>(SelectValue.class);
+		}
+		invescoordinatorContainer = coordinatorValues;
+		combCoordinator.setContainerDataSource(invescoordinatorContainer);
+		combCoordinator.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		combCoordinator.setItemCaptionPropertyId("value");
+		if(invescoordinatorContainer.size()<=1){
+			
+		}
+		
+		for(int i=0;i <invescoordinatorContainer.size();i++){
+			if(selectedCoordinator != null && !selectedCoordinator.getValue().isEmpty()){
+				if(invescoordinatorContainer.getIdByIndex(i).getValue().equalsIgnoreCase(selectedCoordinator.getValue())){
+					combCoordinator.setValue(invescoordinatorContainer.getIdByIndex(i));
+					break;
+				}
+			}
+		}
+	}
+	
+	public void setPrivateInvestigatorNameContainer(BeanItemContainer<SelectValue> investigatorNameValues,ComboBox combInvestigator,SelectValue selectedInvestigator){
+		if(privateInvestigatorContainer != null){
+			privateInvestigatorContainer = new BeanItemContainer<SelectValue>(SelectValue.class);
+		}
+		privateInvestigatorContainer = investigatorNameValues;
+		combInvestigator.setContainerDataSource(privateInvestigatorContainer);
+		combInvestigator.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		combInvestigator.setItemCaptionPropertyId("value");
+		for(int i=0;i<privateInvestigatorContainer.size();i++){
+			if(selectedInvestigator != null && selectedInvestigator.getValue() != null && !selectedInvestigator.getValue().isEmpty()) {
+				if(privateInvestigatorContainer.getIdByIndex(i).getValue().equalsIgnoreCase(selectedInvestigator.getValue())){
+					combInvestigator.setValue(privateInvestigatorContainer.getIdByIndex(i));
+					break;
+				}
+			}
+		}
+		
+	}
+	
+	public void setZonesContainer(BeanItemContainer<SelectValue> zoneNameValues,ComboBox cmbZone,SelectValue zoneSelected){
+		if(zoneContainer != null){
+			zoneContainer = new BeanItemContainer<SelectValue>(SelectValue.class);
+		}
+		zoneContainer = zoneNameValues;
+		cmbZone.setContainerDataSource(zoneContainer);
+		cmbZone.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		cmbZone.setItemCaptionPropertyId("value");
+		for(int i=0;i<zoneContainer.size();i++){
+			if(zoneSelected != null && zoneSelected.getValue() != null && !zoneSelected.getValue().isEmpty()){
+				if(zoneContainer.getIdByIndex(i).getValue().equalsIgnoreCase(zoneSelected.getValue())){
+					cmbZone.setValue(zoneContainer.getIdByIndex(i));
+				}
+			}
+		}
+	}
+	
+	public void addPrivateInvestigator(String coordinatorselectValue,ComboBox combInvestigator,SelectValue investigatorSelectValue){
+		
+		fireViewEvent(AssignInvestigatorPresenter.GET_PRIVATE_INVESTIGATOR, coordinatorselectValue,combInvestigator,investigatorSelectValue);
+	}
+	
+//	public void addInvestigator(Long stateKey, Long cityKey, Long allocationKey, ComboBox investigatorCombo,
+//			SelectValue value) {
+//
+//		fireViewEvent(AssignInvestigatorPresenter.GET_INVESTIGATOR,
+//				stateKey, cityKey, allocationKey,investigatorCombo);
+//
+//	}
+	
+	private void addInvestigatorListener(final ComboBox investigCombo,
+			AssignInvestigatorDto investigDto) {
+		if (investigCombo != null) {
+			investigCombo.addListener(new Listener() {
+				private static final long serialVersionUID = 1L;
+
+				@Override
+				public void componentEvent(Event event) {
+					ComboBox component = (ComboBox) event.getComponent();
+					AssignInvestigatorDto investigTableDTO = (AssignInvestigatorDto) component
+							.getData();
+					HashMap<String, AbstractField<?>> hashMap = tableItem
+							.get(investigTableDTO);
+					System.out.println("---the hashmap---"+hashMap);
+					
+					SelectValue selectedInvestigator = (SelectValue)component.getValue();
+					
+					TextField investigMob = (TextField) hashMap.get("investigatorMobileNo");
+					TextField investigTel = (TextField) hashMap.get("investigatorTelNo");
+					if (selectedInvestigator != null && selectedInvestigator.getValue() != null) {
+						
+						ComboBox stateCmbo = (ComboBox) hashMap.get("stateSelectValue");
+						SelectValue selectState = (SelectValue) stateCmbo.getValue();
+								
+						ComboBox cityCmbo = (ComboBox) hashMap.get("citySelectValue");
+						
+						SelectValue selectCity = (SelectValue) cityCmbo.getValue();
+						
+						ComboBox allocationCmbo = (ComboBox) hashMap.get("allocationToSelectValue");
+						
+						SelectValue selectedAllocation = (SelectValue) allocationCmbo.getValue();
+						
+						investigTableDTO.setStateSelectValue(selectState);
+						investigTableDTO.setCitySelectValue(selectCity);
+						investigTableDTO.setAllocationToSelectValue(selectedAllocation);
+						
+						investigTableDTO.setInvestigatorNameListSelectValue(selectedInvestigator);
+						investigTableDTO.setInvestigatorName(selectedInvestigator.getValue());
+						
+						List<Long> contactList = (List<Long>)contactMap.get(selectedInvestigator.getId());
+						Integer maxcount = (Integer)countMap.get(selectedInvestigator.getId());
+						
+						List<Long> privateInvestigatorContactList = (List<Long>)privateInvestContactMap.get(selectedInvestigator.getId());
+						
+						investigTableDTO.setMaxCount(maxcount);
+						
+						if(contactList != null &&  !contactList.isEmpty()){
+							if (investigMob != null && contactList.get(0) != null) {
+									investigMob.setValue(String.valueOf(contactList.get(0)));
+									investigTableDTO.setInvestigatorMobileNo(String.valueOf(contactList.get(0)));
+							}
+							if (investigTel != null && contactList.get(1) != null) {
+								investigTel.setValue(String.valueOf(contactList.get(1)));
+								investigTableDTO.setInvestigatorTelNo(String.valueOf(contactList.get(1)));
+							}
+						} else if(privateInvestigatorContactList != null && !privateInvestigatorContactList.isEmpty()){
+							if(investigMob != null && privateInvestigatorContactList.get(0) != null){
+								investigMob.setValue(String.valueOf(privateInvestigatorContactList.get(0)));
+								investigTableDTO.setInvestigatorMobileNo(String.valueOf(privateInvestigatorContactList.get(0)));
+							}
+							if (investigTel != null && privateInvestigatorContactList.get(1) != null) {
+								investigTel.setValue(String.valueOf(privateInvestigatorContactList.get(1)));
+								investigTableDTO.setInvestigatorTelNo(String.valueOf(privateInvestigatorContactList.get(1)));
+							}
+						}
+					}
+				}
+			});			
+		}
+	}
+	
+//	public void setstateContainer(
+//			BeanItemContainer<SelectValue> stateSelectValueContainer) {
+//		stateContainer = stateSelectValueContainer;
+//	}
+
+	public void setCityContainer(
+			BeanItemContainer<SelectValue> citySelectValueContainer,ComboBox cityCmbo,SelectValue selectedCity) {
+		
+		if(cityContainer == null){
+			cityContainer = new BeanItemContainer<SelectValue>(SelectValue.class);
+		}
+		
+		cityContainer = citySelectValueContainer;
+		
+		cityCmbo.setContainerDataSource(cityContainer);
+		cityCmbo.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		cityCmbo.setItemCaptionPropertyId("value");
+
+		for(int i=0;i<cityContainer.size();i++){
+			if (selectedCity != null) {
+				if(cityContainer.getIdByIndex(i).getValue().equalsIgnoreCase(selectedCity.getValue())){
+					cityCmbo.setValue(cityContainer.getIdByIndex(i));
+					break;
+				}	
+			}
+		}
+	}
+
+//	public void setAllocationContainer(
+//			BeanItemContainer<SelectValue> allocationSelectValueContainer) {
+//		allocationToContainer = allocationSelectValueContainer;
+//	}
+	
+//	public void setInvestigatorDetails(List<TmpInvestigation> tmpInvestigationList, ComboBox investigatorCombo){
+//		
+//		if(tmpInvestigationList != null && tmpInvestigationList.isEmpty()){
+//			contactMap = new WeakHashMap<Long, Object>();
+//			for (TmpInvestigation tmpInvestigation : tmpInvestigationList) {
+//				
+//				NameContainer.addBean(new SelectValue(tmpInvestigation.getKey(), tmpInvestigation.getInvestigatorName()));
+//				List<Long> contactList = new ArrayList<Long>();
+//				contactList.add(tmpInvestigation.getMobileNumber());
+//				contactList.add(tmpInvestigation.getPhoneNumber());
+//				contactMap.put(tmpInvestigation.getKey(),contactList); 
+//			}
+//			setNameContainer(NameContainer,investigatorCombo);
+//		}
+//	}
+	
+	public void setNameContainer(
+			BeanItemContainer<SelectValue> nameSelectValueContainer,ComboBox investigatorCombo) {
+		NameContainer = nameSelectValueContainer;
+		
+		investigatorCombo.setContainerDataSource(NameContainer);
+		investigatorCombo.setItemCaptionMode(ItemCaptionMode.PROPERTY);
+		investigatorCombo.setItemCaptionPropertyId("value");
+
+//		for (int i = 0; i < NameContainer.size(); i++) {
+//			if (value != null) {
+//				if (NameContainer.getIdByIndex(i).getValue()
+//						.equalsIgnoreCase(value.getValue())) {
+//					investigatorCombo.setValue(value);
+//					break;
+//				}
+//			}
+//		}
+	}
+	
+	public List<AssignInvestigatorDto> getValues() {
+		@SuppressWarnings("unchecked")
+		List<AssignInvestigatorDto> itemIds = (List<AssignInvestigatorDto>) this.table
+				.getItemIds();
+		if(itemIds.isEmpty()) {
+			itemIds = new ArrayList<AssignInvestigatorDto>();
+		}
+		return itemIds;
+	}
+	
+	public void removeAllItems(){
+		table.removeAllItems();
+	}
+
+	public void addBeanToList(AssignInvestigatorDto investigDTO) {
+		data.addItem(investigDTO);
+		manageListeners();
+	}
+
+	public boolean isValid() {
+		boolean hasError = false;
+		errorMessages.removeAll(getErrors());
+		@SuppressWarnings("unchecked")
+		Collection<AssignInvestigatorDto> itemIds = (Collection<AssignInvestigatorDto>) table
+				.getItemIds();
+		Map<Long, String> valuesMap = new HashMap<Long, String>();
+		Map<Long, String> validationMap = new HashMap<Long, String>();
+		for (AssignInvestigatorDto bean : itemIds) {
+			
+		if (bean.getInvestigatorNameListSelectValue() == null
+					|| (bean.getInvestigatorNameListSelectValue()  != null
+					&& bean.getInvestigatorNameListSelectValue().getId() == null)) {
+				hasError = true;
+				errorMessages.add("Please Select Investigator Name Details");
+			}  
+		}
+		
+		return !hasError;
+	}
+
+	public List<String> getErrors() {
+		return this.errorMessages;
+	}
+	
+	private Converter<Object, Object> getConverter(final Object object) {
+		return new Converter<Object, Object>() {
+
+			@Override
+			public Object convertToModel(Object itemId,
+					Class<? extends Object> targetType, Locale locale)
+					throws com.vaadin.v7.data.util.converter.Converter.ConversionException {
+				if (itemId != null) {
+					IndexedContainer c = (IndexedContainer) object;
+					Object propertyId = c.getContainerPropertyIds().iterator()
+							.next();
+					
+					Object name = c.getItem(itemId).getItemProperty(propertyId)
+							.getValue();
+					return (Object) name;
+					
+				}
+				
+				return null;
+			}
+
+			@Override
+			public Object convertToPresentation(Object value,
+					Class<? extends Object> targetType, Locale locale)
+					throws com.vaadin.v7.data.util.converter.Converter.ConversionException {
+				if (value != null) {
+					IndexedContainer c = (IndexedContainer) object;
+					Object propertyId = c.getContainerPropertyIds().iterator()
+							.next();
+					for (Object itemId : c.getItemIds()) {
+						Object name = c
+								.getContainerProperty(itemId, propertyId)
+								.getValue();
+						if (value.equals(name)) {
+							return itemId;
+						}
+					}
+				}
+				return null;
+			}
+
+			@Override
+			public Class<Object> getModelType() {
+				// TODO Auto-generated method stub
+				return Object.class;
+				
+			}
+
+			@Override
+			public Class<Object> getPresentationType() {
+				// TODO Auto-generated method stub
+				return Object.class;
+			}
+		};
+	}
+	
+	
+	private Converter<Object, String> getCustomConverter(final Object object) {
+		return new Converter<Object, String>() {
+
+			@Override
+			public String convertToModel(Object itemId,
+					Class<? extends String> targetType, Locale locale)
+					throws com.vaadin.v7.data.util.converter.Converter.ConversionException {
+				if (itemId != null) {
+					IndexedContainer c = (IndexedContainer) object;
+					Object propertyId = c.getContainerPropertyIds().iterator()
+							.next();
+					
+					Object name = c.getItem(itemId).getItemProperty(propertyId)
+							.getValue();
+					SelectValue selValue = (SelectValue)name;
+					return (String) selValue.getValue();
+					
+				}
+				return null;
+			}
+			
+			@Override
+			public Object convertToPresentation(String value,
+					Class<? extends Object> targetType, Locale locale)
+					throws com.vaadin.v7.data.util.converter.Converter.ConversionException {
+				if (value != null) {
+					IndexedContainer c = (IndexedContainer) object;
+					Object propertyId = c.getContainerPropertyIds().iterator()
+							.next();
+					for (Object itemId : c.getItemIds()) {
+						Object name = c
+								.getContainerProperty(itemId, propertyId)
+								.getValue();
+						if (value.equals(name)) {
+							return itemId;
+						}
+					}
+				}
+				return null;
+			}
+
+			@Override
+			public Class<String> getModelType() {
+				// TODO Auto-generated method stub
+				return String.class;
+				
+			}
+
+			@Override
+			public Class<Object> getPresentationType() {
+				// TODO Auto-generated method stub
+				return Object.class;
+			}
+
+		};
+	}
+
+	public void enableOrDisableDeleteButton(final Boolean isEnable) {
+		table.removeGeneratedColumn("Delete");
+		table.addGeneratedColumn("Delete", new Table.ColumnGenerator() {
+			private static final long serialVersionUID = 5936665477260011479L;
+
+			@Override
+			public Object generateCell(final Table source, final Object itemId,
+					Object columnId) {
+				final Button deleteButton = new Button("Delete");
+				DiagnosisDetailsTableDTO dto = (DiagnosisDetailsTableDTO) itemId;
+				deleteButton.setEnabled(isEnable);
+				if (!isEnable) {
+					if(dto.getRecTypeFlag() != null && !dto.getRecTypeFlag().toLowerCase().equalsIgnoreCase("c")) {
+						deleteButton.setEnabled(true);
+					}
+//					if (dto.getEnableOrDisable() != null) {
+//						deleteButton.setEnabled(dto.getEnableOrDisable());
+//					}
+				}
+				deleteButton.setData(itemId);
+				deleteButton.addClickListener(new Button.ClickListener() {
+					private static final long serialVersionUID = 6100598273628582002L;
+
+					public void buttonClick(ClickEvent event) {
+						final Object currentItemId = event.getButton().getData();
+						if (table.getItemIds().size() > 1) {
+							ConfirmDialog dialog = ConfirmDialog
+									.show(getUI(),
+											"Confirmation",
+											"Do you want to Delete ?",
+											"No", "Yes", new ConfirmDialog.Listener() {
+
+												public void onClose(ConfirmDialog dialog) {
+													if (!dialog.isConfirmed()) {
+														// Confirmed to continue
+														AssignInvestigatorDto dto =  (AssignInvestigatorDto)currentItemId;
+														if(dto.getInvestigatorNameListSelectValue() != null && dto.getInvestigatorNameListSelectValue().getId() != null) {
+															deletedDTO.add((AssignInvestigatorDto)currentItemId);
+														}
+														table.removeItem(currentItemId);
+														listenerField.setValue("true");
+													} else {
+														// User did not confirm
+													}
+												}
+											});
+							
+						} else {
+							HorizontalLayout layout = new HorizontalLayout(
+									new Label("One Investigator is Mandatory."));
+							layout.setMargin(true);
+							final ConfirmDialog dialog = new ConfirmDialog();
+							dialog.setCaption("");
+							dialog.setClosable(true);
+							dialog.setContent(layout);
+							dialog.setResizable(false);
+							dialog.setModal(true);
+							dialog.show(getUI().getCurrent(), null, true);
+						}
+					}
+				});
+				deleteButton.addStyleName(ValoTheme.BUTTON_DANGER);
+				return deleteButton;
+			}
+		});
+	}
+			
+	
+	public void clearObject(){
+		setClearTableItem(tableItem);
+		SHAUtils.setClearReferenceData(referenceData);
+		masterService = null;
+		premedicalService = null;
+		data = null;
+		errorMessages = null;
+		cityContainer = null;
+		allocationToContainer = null;
+		zoneContainer =null;
+		NameContainer = null;
+	}	
+
+	public void setClearTableItem(Map<AssignInvestigatorDto, HashMap<String, AbstractField<?>>> referenceData){
+		
+		if(referenceData != null){
+    	
+	    	Iterator<Entry<AssignInvestigatorDto, HashMap<String, AbstractField<?>>>> iterator = referenceData.entrySet().iterator();
+	    	try{
+		        while (iterator.hasNext()) {
+		            Map.Entry pair = (Map.Entry)iterator.next();
+		            Object object = pair.getValue();
+		            object = null;
+		            pair = null;	
+		        }
+	    	}catch(Exception e){
+	    		e.printStackTrace();
+	    	}
+	       referenceData.clear();
+	       referenceData = null;
+		}
+    	
+    }
+	
+public boolean validatePage() {
+		
+		Boolean hasError = false;
+		
+		@SuppressWarnings("unchecked")
+		Collection<AssignInvestigatorDto> itemIds = (Collection<AssignInvestigatorDto>) table
+				.getItemIds();
+		Map<Long, String> valuesMap = new HashMap<Long, String>();
+		Map<Long, String> validationMap = new HashMap<Long, String>();
+		StringBuffer eMsg = new StringBuffer();
+		for (AssignInvestigatorDto bean : itemIds) {
+			
+			 if(bean.getAllocationToSelectValue() == null
+						|| (bean.getAllocationToSelectValue() != null && bean.getAllocationToSelectValue().getId() == null)){
+				 	hasError = true;
+					eMsg.append("Please Select Allocation Details");
+					break;
+				} else if(bean.getZoneSelectValue() == null
+						|| (bean.getZoneSelectValue() != null && bean.getZoneSelectValue().getId() == null)) {
+					hasError = true;
+					eMsg.append("Please Select Zone Details");
+					break;
+				} else if(bean.getInvestigatorNameListSelectValue() == null 
+						|| (bean.getInvestigatorNameListSelectValue() != null && bean.getInvestigatorNameListSelectValue().getId() == null)){
+					hasError = true;
+					eMsg.append("Please Select Investigator Name");
+					break;
+				} else if(bean.getAllocationToSelectValue().getValue() != null 
+						&& bean.getAllocationToSelectValue().getValue().equalsIgnoreCase("Private") 
+						&& (bean.getCoordinatorSelectValue() == null || (bean.getCoordinatorSelectValue() != null && bean.getCoordinatorSelectValue().getId() == null))){
+					hasError = true;
+					eMsg.append("Please Select Investigation Coordinator");
+					break;
+				}
+		}
+				
+		if (hasError) {
+			setRequired(true);
+			Label label = new Label(eMsg.toString(), ContentMode.HTML);
+			label.setStyleName("errMessage");
+			VerticalLayout layout = new VerticalLayout();
+			layout.setMargin(true);
+			layout.addComponent(label);
+
+			ConfirmDialog dialog = new ConfirmDialog();
+			dialog.setCaption("Errors");
+			dialog.setClosable(true);
+			dialog.setContent(layout);
+			dialog.setResizable(true);
+			dialog.setModal(true);
+			dialog.show(getUI().getCurrent(), null, true);
+
+			hasError = true;
+			return !hasError;
+		}
+		 return true;
+}
+	
+	@SuppressWarnings("unused")
+	private void setRequired(Boolean isRequired) {
+
+		if (!mandatoryFields.isEmpty()) {
+			for (int i = 0; i < mandatoryFields.size(); i++) {
+				AbstractField<?> field = (AbstractField<?>) mandatoryFields
+						.get(i);
+				field.setRequired(isRequired);
+			}
+		}
+	}
+	
+}
+
+
+
+
+

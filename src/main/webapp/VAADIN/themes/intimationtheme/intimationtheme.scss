@@ -1,0 +1,792 @@
+/* Import the reindeer theme. */
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+// Use white background color for embedding
+
+$v-app-loading-text: "Loading IMS...";
+$v-line-height: 1.5;
+$v-field-caption : 600;
+$v-default-field-width: 180px;
+$v-font-size: 12px;
+$v-font-weight : 440;
+$v-caption-font-size : 12.5px;
+$v-caption-font-weight : 600;
+$v-font-family: Times New Roman;
+$v-layout-spacing-vertical: 6px;
+
+// Component Features
+$v-border-radius: 3px;
+$v-border: 1px solid v-tone;
+$v-gradient: v-linear 20%;
+$v-focus-style: 0 0 0 1px v-tint;
+
+$header_blue:#003366;
+$gold-fish-color: #F38630;
+$light-cream-color: #fbf2e6;
+$light-blue-color: #C5E0DC;
+$blue-color-font:#273478;
+$blue-color-table-row: #c5e0dc; /*#4DBCE9; */ 
+$mint-color-table-hover: #1faba3; /*#4ED4CC; */
+$white-color-table-row:#FFFFFF;
+
+$v-galaxy-information-grid-backgroud: #D3D3D3 /*#d8d6d6*/;
+$v-galaxy-information-grid-text-color: #062169;
+$beach_strome: #E0E4CC;
+	
+@import "../valo/valo";
+
+/* This contains all of your theme. */
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin intimationtheme {
+  /* Include all the styles from the reindeer theme */
+  @include valo;
+
+ tr {
+  &.v-table-row-odd:hover {
+    background-color: #81A8B8;
+  }
+  &.v-table-row-odd {
+  		 background-color: #C2CBCE;
+   }
+   &.v-table-row:hover {
+    background-color: #81A8B8;
+  }
+  &.v-table-row-select {
+  		 background-color:#E0D1B3;
+   }   
+    &.v-table-row-none { 
+  		 background-color:#FFFFFF;
+   }
+    &.v-table-row-red {
+  		 background-color:rgb(238,26,50);
+   }
+   
+   &.v-table-row-yellow {
+  		 background-color:rgb(255,255,0);
+   }
+   
+   &.v-table-row-green {
+  		 background-color:rgb(60,179,113);
+   }
+   
+    &.v-table-row-amber {
+  		 background-color:rgb(255,194,0);
+   }
+   
+     &.v-table-row-orange {
+  		 background-color:rgb(255,69,0);
+   }
+}
+
+.g-search-panel{
+	background-color: #DBE6EC;
+	background: #DBE6EC;
+	color: $blue-color-font;
+}
+.g-tree {
+	background-color:#E8F3F8;
+	background: #E8F3F8;
+	
+}   
+
+.layout-with-border {
+    border: 1px solid black;
+}
+
+.logo
+{
+  padding: 0;
+  margin: 0;
+  position: relative;
+  top: -23px;
+  left: 0px;
+}
+.toolbar {
+  background: $header_blue;
+}
+
+.v-table-row-odd:hover {
+  background: $mint-color-table-hover;
+}
+.v-table-row-event:hover{
+	background: $mint-color-table-hover;
+}
+/*
+.v-table-tableheight .v-table-cell-content {
+  //height: 50px;
+  white-space: normal;
+  vertical-align: top;
+}
+
+.v-table .v-table-tableheight .v-table-focus .v-table-cell-wrapper {
+  white-space: normal;
+}
+*/
+.v-panel-deco {
+  height: 9px;
+  background: transparent url(../runo/panel/img/bottom-right.png) repeat-x right top;
+  margin-left: 9px;
+  display: none;
+}
+
+.v-table-cell-wrapper {
+  white-space: normal;
+  overflow: hidden;
+ // line-height: 23px;
+  //padding: 3px 0 0 0;
+}
+
+.v-table-wordwrap-headers .v-table-header-wrap, .v-table-footer-wrap, .v-table-header-drag {
+	border: 1px solid #c1c1c1;
+	background-color: #fafafa;
+	background-image: -webkit-linear-gradient(top, #fbfbfb 2%, #e0e0e0 98%);
+	background-image: linear-gradient(to bottom,#fbfbfb 2%, #e0e0e0 98%);
+	white-space: wrap;
+	font-size: 10px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.v-button-blueLink {
+  border: none;
+  text-align: left !important;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ie-user-select: text;
+  user-select: text;
+}
+
+.v-button-blueLink:focus {
+  outline-offset: -3px;
+}
+
+.v-button-blueLink .v-button-caption {
+  text-decoration: none;
+  color: blue;
+  text-align: center;
+}
+
+ .v-button-blueLink .v-button-wrap, .v-disabled.v-button-blueLink .v-button-wrap,.v-button-blueLink:active .v-button-wrap,  .v-disabled.v-button-pressedv-button-blueLink .v-button-wrap {
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: 13px;
+	-webkit-box-shadow: none;
+	-mox-box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-shadow: none;
+}
+
+ .v-button-blueLink:focus {
+	outline: 1px dotted #4897dc;
+}
+
+.v-button-blueLink:focus .v-button-wrap {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.v-button-redLink {
+  border: none;
+  text-align: left !important;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ie-user-select: text;
+  user-select: text;
+}
+
+.v-button-querybtn{
+    background-image: linear-gradient(to bottom, #fbfbfb 2%, #4DC3F7 98%);
+    background: -webkit-linear-gradient(#fbfbfb, #4DC3F7); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#fbfbfb, #4DC3F7); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#fbfbfb, #4DC3F7); /* For Firefox 3.6 to 15 */
+    background: -ms-linear-gradient(#fbfbfb, #4DC3F7);/* IE */
+    background: linear-gradient(#fbfbfb, #4DC3F7); /* Standard syntax (must be last) */   	
+}
+
+.v-button-redLink:focus {
+  outline-offset: -3px;
+}
+
+.v-button-redLink .v-button-caption {
+  text-decoration: none;
+  color: red;
+  text-align: center;
+}
+
+ .v-button-redLink .v-button-wrap, .v-disabled.v-button-redLink .v-button-wrap,.v-button-redLink:active .v-button-wrap,  .v-disabled.v-button-pressedv-button-redLink .v-button-wrap {
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: 13px;
+	-webkit-box-shadow: none;
+	-mox-box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-shadow: none;
+}
+
+ .v-button-redLink:focus {
+	outline: 1px dotted #4897dc;
+}
+
+.v-button-redLink:focus .v-button-wrap {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+
+
+.v-button-greenLink {
+  border: none;
+  text-align: left !important;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ie-user-select: text;
+  user-select: text;
+}
+
+.v-button-greenLink:focus {
+  outline-offset: -3px;
+}
+
+.v-button-greenLink .v-button-caption {
+  text-decoration: none;
+  color: green;
+  text-align: center;
+}
+
+ .v-button-greenLink .v-button-wrap, .v-disabled.v-button-greenLink .v-button-wrap,.v-button-greenLink:active .v-button-wrap,  .v-disabled.v-button-pressedv-button-greenLink .v-button-wrap {
+	border: none;
+	background: transparent;
+	padding: 0;
+	font-size: 13px;
+	-webkit-box-shadow: none;
+	-mox-box-shadow: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	text-shadow: none;
+}
+
+ .v-button-greenLink:focus {
+	outline: 1px dotted #4897dc;
+}
+
+.v-button-greenLink:focus .v-button-wrap {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.v-loading-indicator,
+.v-loading-indicator-delay,
+.v-loading-indicator-wait {
+align: center;
+width: 100%;
+position: absolute;
+top: 50%;
+right: 50%;
+
+z-index: 30001;
+width: 128px;
+height: 128px;	
+background: transparent url("images/151.GIF")no-repeat;
+margin-top: 5px;
+margin-left: 50%
+}
+
+.v-formlayout-captioncell {
+	text-align: left;
+	white-space: nowrap;
+}
+.errMessage{
+    color:red;
+  }
+  
+  .alertMessage{
+  	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    color:black;
+    
+  }
+  
+.v-textfield-policyNumberUpperCase {
+    text-transform: uppercase;
+}
+.v-label-labelHeader {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+	color: white;
+  	font-size: 28px;
+  	text-align: center;
+}
+
+.v-label-labelDesign {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+	color: red;
+  font-size: 24px;
+}
+.v-label-labelHighlight {
+	-webkit-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	user-select: text;
+  font-size: 16px;
+}
+
+.v-panel-caption .v-panel-caption-panelHeader {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 10px;
+	line-height: 29px;
+	/*border-bottom: 1px solid $gold-fish-color;*/
+	background-color: #A4BCC2;
+	/*background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
+	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%);*/
+	color: #464646;
+	font-weight: 600;
+	font-size: 15px;
+	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
+	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border-radius: 3px 3px 0 0;
+}
+.v-panel-caption-panelHeader {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0 10px;
+	line-height: 29px;
+/*	border-bottom: 1px solid $gold-fish-color;*/
+	background-color: #A4BCC2;
+	
+	/* background-image: -webkit-linear-gradient(top, #fafafa 2%, #f6f6f6 98%);
+	background-image: linear-gradient(to bottom,#fafafa 2%, #f6f6f6 98%); **/
+	color: #464646;
+	font-weight: 600;
+	font-size: 15px;
+	-webkit-box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
+	box-shadow: inset 0 1px 0 white, inset 0 -1px 0 #eeeeee;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+	border-radius: 3px 3px 0 0;
+}
+
+
+.v-select-optiongroup-inlineStyle .v-select-option {
+    display: inline-block;
+}
+/* Avoid wrapping if the layout is too tight */
+.v-select-optiongroup-inlineStyle {
+    white-space: nowrap;
+}
+/* Some extra spacing is needed */
+.v-select-optiongroup-inlineStyle .v-select-option.v-radiobutton {
+    padding-right: 10px;
+}
+
+.v-textfield, .v-filterselect, .v-datefield, .v-autocomplete  {
+    height: 22px;
+  }
+  
+  .v-textarea {
+	  	
+  }
+  
+  .v-textarea-Boldstyle {  
+        font-size: 15px !important;
+        font-weight: bold !important;
+    }
+  
+  .v-horizontallayout .v-horizontallayout-readOnlyFields {
+    	background-color: $light-cream-color;
+	background: $light-cream-color;
+   }
+   
+.v-panel .v-panel-policyinfogrid {
+	background-color: $v-galaxy-information-grid-backgroud;
+	color: $v-galaxy-information-grid-text-color;
+}
+.v-verticallayout .v-verticallayout-tpabackground {
+	color: $v-galaxy-information-grid-text-color;
+}
+.info-panel
+{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom-style: dotted;
+}
+.v-verticallayout .v-verticallayout-policyinfogrid {
+	background-color: #B0B0B0;
+}
+   .v-horizontallayout .v-horizontallayout-policyinfogrid {
+    	background-color: #D8D8D8;
+   }
+   .v-gridlayout-info-panel {
+    /* border-style: dotted; */
+    background:gray;
+	}
+	.v-gridlayout-info-panel div {
+	   border-bottom-style:solid;
+	   border-width:1px;	
+	   font-size:xx-small; 
+	}
+   .v-gridlayout-readOnlyFields {
+   		background-color: #D6D5C0;
+   }
+   
+	.v-table-caption-container {
+		font-size: 12px;
+		font-weight:normal;
+		color: white;
+		
+	}	
+	.v-table-header{
+		background: $header_blue;
+		color:$gold-fish-color;
+	}
+   	.v-table-cell-content {
+   		font-size: 12px;
+   		font-weight:400;
+   	}
+    .v-window-header{
+   		color: #090909;
+		font-size: large;
+   	}
+   	.v-window-topalignment {
+   	    margin-left: 0px;
+    	margin-top: 0px;
+    	left: 135px;
+    	top: 70px; 
+    	z-index: 10000;
+    	visibility: visible;
+    	position: absolute;
+    	width: 80%;
+    	height: 480px;
+   	}
+   	.v-label{
+		  font-weight: bold;
+   	}
+  	.v-table-caption-container{
+ 		 text-align:center;
+  	}
+ .v-formlayout-layoutDesign{
+		width:100%; 
+		border-collapse:collapse; 
+  	}
+	.v-formlayout-layoutDesign td{
+		 border:#FFFFFF 0px solid;
+	}
+	.v-formlayout-layoutDesign tr{
+		background: $blue-color-table-row;
+		text-align: right;
+	}
+	/*  Define the background color for all the ODD background rows  */
+	.v-formlayout-layoutDesign tr:nth-child(odd){ 
+		background: $blue-color-table-row;
+	}
+	/*  Define the background color for all the EVEN background rows  */
+	.v-formlayout-layoutDesign tr:nth-child(even){
+		background: $white-color-table-row;
+	} 
+ 	.v-horizontallayout{
+ 		border-collapse:collapse; 
+	 } 
+ 	.v-gridlayout-gridBorder {
+ 		border-style: solid;
+    	border-width: 1px;
+    	background-color: rgb(221, 246, 252);
+	}
+	.v-gridlayout-gridBorder .v-gridlayout-margin {
+    	border-style: solid;
+    	border-width: 1px; 
+    	background-color: rgb(221, 246, 252);
+	}
+	
+	.v-panel-content-girdBorder{
+	background-color: rgb(221, 246, 252);
+	}
+	
+	.v-panel-content-girdBorder1{
+	background-color: #EDB161;
+	}
+	
+	.v-panel-content-girdBorder2{
+	background-color: rgb(255, 0, 0);
+	}
+	
+	.v-textfield-fail {
+    background-color: #FF7B7C;
+    outline: none;
+    background-image: none !important;
+	}
+	
+	.v-textfield-gridAlignment {
+       	width: 180px;
+    	left: 0px;
+    	padding-top: 10px;
+    	height: 22px;
+    	top: 0px;
+	}
+	
+	.v-datefield-gridAlignment {
+       	width: 130px;
+    	left: 0px;
+    	padding-top: 0px;
+    	height: 22px;
+    	top: 0px;
+	}
+	
+	.v-textfield-txtgridAlignment {
+    	width: 40px;
+   		left: 139px;
+    	padding-top: 0px;
+    	height: 22px;
+    	top: 0px;
+	}
+	
+	.boxshadow 
+	{
+  	-moz-box-shadow: 3px 3px 5px #535353;
+ 	 -webkit-box-shadow: 3px 3px 5px #535353;       
+ 	 box-shadow: 3px 3px 5px #535353;
+	}
+	
+	 .v-panel-caption-panelStyle {    
+    	background-image: linear-gradient(to bottom, #FAFAFA 2%, #F38484 98%);
+    background: -webkit-linear-gradient(#FAFAFA, #F38484); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FAFAFA, #F38484); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FAFAFA, #F38484); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FAFAFA, #F38484); /* Standard syntax (must be last) */   	
+	}
+	.v-verticallayout-background, .v-formlayout-background{
+		background-color: rgb(221, 246, 252);
+	}
+	
+	.v-table .v-selected[class*="-row"] {
+	 	background: $mint-color-table-hover;
+	}
+
+	
+	.v-button-friendly:hover{	
+		box-shadow: 1px 0px 15px 4px rgba(0, 82, 0, 1);
+    
+	}
+	.v-button-friendly:focus{	
+	box-shadow: 1px 0px 15px 4px rgba(0, 82, 0, 1);
+  
+	}
+	.v-button-danger:hover{	
+		box-shadow: 1px 0px 15px 4px rgba(230, 46, 0, 1);
+    
+	}
+	.v-button-danger:focus{	
+	box-shadow: 1px 0px 15px 4px rgba(230, 46, 0, 1);
+  
+	}
+	.v-button-primary:hover{	
+		box-shadow: 1px 0px 15px 4px rgba(0, 82, 204, 1);
+    
+	}
+	.v-button-primary:focus{	
+		box-shadow: 1px 0px 15px 4px rgba(0, 82, 204, 1);    
+	}
+	.v-button:hover{	
+		box-shadow: 1px 0px 15px 4px rgba(102, 102, 102, 1);
+    
+	}
+	.v-button:focus{	
+		box-shadow: 1px 0px 15px 4px rgba(102, 102, 102, 1);    
+	}
+	
+	.v-button-link.v-button-caption:hover{
+		box-shadow: 1px 0px 15px 4px rgba(255, 255, 255, 0);  
+		text-shadow: 1px 0px 15px 4px rgba(76, 76, 76, 1);
+	}
+ .linkButton {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  color: #669900;
+  text-decoration: underline;
+  font-weight: inherit;
+  -webkit-transition: color 140ms;
+  -moz-transition: color 140ms;
+  transition: color 140ms;
+}
+
+.linkButtonColor {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  color: #FC0303;
+  text-decoration: underline;
+  font-weight: inherit;
+  -webkit-transition: color 140ms;
+  -moz-transition: color 140ms;
+  transition: color 140ms;
+}
+.toolbar .v-button span {
+	font-size: 15px;
+	color: #FAFAFA;
+}
+
+.logoutButton:hover{
+	box-shadow: 1px 0px 25px 4px rgba(255, 255, 255, 1);
+	
+}
+.gridth{
+	background-color:#003366;
+	color:white;
+	margin:inherit;
+	border:solid;
+	border-color:#003366;
+	border-width:8px;
+}
+
+.borderLayout{
+	border:solid;
+	border-color:#09090A;
+	border-width:2px;
+}
+
+.gridbg{
+	background-color:#EBEBE6;
+
+}
+
+.v-horizontallayout .v-horizontallayout-mainScreenUpperPanel {
+    background-color:#EBEBE6;
+}
+
+.textContent {
+	font-size: 76%;
+	font-family: Verdana;
+	background: #eee;
+	padding: 50px 0;
+}
+
+.v-table-rowheight .v-table-cell-content {
+	height: 30%;
+}	
+
+
+.v-margin-top{
+	padding-top: 0px;
+}
+
+.v-caption {
+    white-space: pre;
+}
+
+.v-textfield-fontColour {
+    color: rgb(107,142,35);
+}
+.v-textfield-preferred {
+    background-color: #F29941;
+    outline: none;
+	}
+	
+	.v-textfield-yellow {
+    background-color:rgb(255,255,0);
+    outline: none;
+	}
+	
+	.v-textfield-green {
+    background-color:rgb(60,179,113);
+    outline: none;
+	}
+	
+	.v-textfield-red {
+   background-color:rgb(238,26,50);
+    outline: none;
+	}
+	
+	tr {
+.v-table-cell-content-olive .v-table-cell-wrapper {
+	color: green;
+	background-image: url("images/olive.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: 20px;
+	width: 25px;
+    height: 25px;
+   
+}
+}
+
+tr {
+.v-table-cell-content-vip .v-table-cell-wrapper {
+	color: green;
+	background-image: url("images/VIP_Image.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: 20px;
+	width: 25px;
+    height: 25px;
+   
+}
+}
+
+tr {
+.v-table-cell-content-crmvip .v-table-cell-wrapper {
+	color: green;
+	background-image: url("images/CRM_VIP.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	text-indent: 20px;
+	width: 25px;
+    height: 25px;
+   
+}
+}
+
+.myresponsive {
+    padding: 5px;
+    line-height: 36pt;
+}
+
+/* Small size */
+.myresponsive[width-range~="0-300px"] {
+    background: orange;
+    font-size: 16pt;
+}
+
+/* Medium size */
+.myresponsive[width-range~="301px-600px"] {
+    background: azure;
+    font-size: 24pt;
+}
+
+/* Anything bigger */
+.myresponsive[width-range~="601px-"] {
+    background: palegreen;
+    font-size: 36pt;
+}
+
+}

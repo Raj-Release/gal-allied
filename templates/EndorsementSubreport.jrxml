@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EndorsementSubreport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="40" topMargin="2" bottomMargin="2" uuid="a31d8328-75bc-47ef-8109-7f895a265e4e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="endoresementDate" class="java.util.Date">
+		<fieldDescription><![CDATA[endoresementDate]]></fieldDescription>
+	</field>
+	<field name="endorsementNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[endorsementNumber]]></fieldDescription>
+	</field>
+	<field name="premium" class="java.lang.Double">
+		<fieldDescription><![CDATA[premium]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20">
+			<staticText>
+				<reportElement uuid="f44d5e61-c574-4bb4-96cd-3e514a0605c3" x="0" y="0" width="91" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Endorsement No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e02041fc-9400-4a17-823a-8a786be9c0bf" x="117" y="0" width="61" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Endt. Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="86a3aaa2-2331-4895-88f8-3b6f1fe5aaa2" x="178" y="0" width="148" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Name of Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="94580244-bb31-4dea-9342-2441bf972f56" x="326" y="0" width="126" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Collection No./Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="01d9dfca-f4cf-439a-ae16-798f6aba7415" x="452" y="0" width="87" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement uuid="1bd62ef6-3e4a-4949-8a9c-164ebe702fc9" x="0" y="0" width="117" height="43"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endorsementNumber} != null ? $F{endorsementNumber} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="026b3fe9-3790-4640-b220-bec67d48f113" x="117" y="0" width="61" height="43"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endoresementDate} != null ? new SimpleDateFormat("dd/MM/yyyy").format($F{endoresementDate}) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ff3c91fb-63c4-4f8b-8fd9-c236fba7247d" x="178" y="0" width="148" height="43"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proposerFirstName} != null ? $F{proposerFirstName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0368de36-40a1-4daf-9450-e508687b4c6a" x="326" y="0" width="126" height="43"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d7e1153d-0d71-49f4-9f2c-461761617b00" x="452" y="0" width="87" height="43"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{premium} != null ? $F{premium} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

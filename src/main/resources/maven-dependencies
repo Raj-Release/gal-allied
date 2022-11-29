@@ -1,0 +1,64 @@
+
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=wlthint3client -Dfile=/Users/tukobit/Downloads/wlthint3client.jar 
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=xmlparserv2 -Dfile=D:/Team/Saravanan/xmlparserv2.jar
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=xml -Dfile=D:/Team/Saravanan/xml.jar
+
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=orai18n-mapping -Dfile=/Users/tukobit/Downloads/orai18n-mapping.jar
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=galaxy-wizard -Dfile=D:/Team/Saravanan/galaxy-wizard-1.0-SNAPSHOT.jar
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=galaxy-wizard -Dfile=C:/Users/Nallan-Saravanna/new-workspace/PreauthWizard/PreauthWizard/src/main/galaxy-wizard/1.0-SNAPSHOT.jar
+
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-bo-interface -Dfile=/Users/tukobit/work/lib/star-soa-bo-interface.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-bo-interface -Dfile=C:/Users/Nallan-Saravanna/Desktop/star-soa-bo-interface.jar -DlocalRepositoryPath=E:/sarvan/new-workspace/Project/R4-NEW/Sprint5/claims-core/lib
+
+
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=wlthint3client -Dfile=/Users/tukobit/work/lib/wlthint3client.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=xmlparserv2 -Dfile=/Users/tukobit/work/lib/xmlparserv2.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=xml -Dfile=/Users/tukobit/work/lib/xml.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=galaxy-wizard -Dfile=./target/galaxy-wizard-1.0-SNAPSHOT.jar -DlocalRepositoryPath=../../ims/lib/
+mvn install:install-file -DgroupId=com.oracle.soa -Dversion=12.1.3.0.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=orai18n-mapping -Dfile=/Users/tukobit/work/lib/orai18n-mapping.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+#Saravana machine
+
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-bo-interface -Dfile=E:/star-soa-interface-reimb.jar  -DlocalRepositoryPath=E:/sarvan/new-workspace/Project/R4-NEW/claims-core/lib
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-interface-reimb -Dfile=E:/star-soa-interface-reimb.jar  -DlocalRepositoryPath=E:/sarvan/new-workspace/Project/R4-NEW/Sprint5/claims-core/lib
+
+mvn install:install-file -DgroupId=com.oracle.jdbc -Dversion=10.2.0.4.0 -Dpackaging=jar -DgeneratePom=true -DartifactId=ojdbc14 -Dfile=/Users/tukobit/work/lib/ojdbc14.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+#Siva machine
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-interface-reimb -Dfile=/Users/tukobit/work/lib/star-soa-interface-reimb.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-interface -Dfile=C:/Users/Nallan-Saravanna/Documents/Backup/star-soa-interface.jar  -DlocalRepositoryPath=C:/New folder/claims-core/lib
+
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=star-soa-interface -Dfile=/Users/tukobit/work/lib/star-soa-interface.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=com.shaic -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=dms-galaxy-ejb-client -Dfile=/Users/tukobit/work/lib/DMSGalaxyEJBClient.jar  -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+#DMSGalaxyEJBClient.jar
+#Installing WSO2 dependencies
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=authenticator_0.7.0.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/authenticator_0.7.0.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=axiom_1.2.11.wso2v4 -Dfile=/Users/tukobit/work/lib/wso2/axiom_1.2.11.wso2v4.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=axis2_1.6.1.wso2v10 -Dfile=/Users/tukobit/work/lib/wso2/axis2_1.6.1.wso2v10.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=axis2-jaxbri_1.6.1.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/axis2-jaxbri_1.6.1.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=axis2-jibx_1.6.1.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/axis2-jibx_1.6.1.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=axis2-transport-jms_1.1.0.wso2v9 -Dfile=/Users/tukobit/work/lib/wso2/axis2-transport-jms_1.1.0.wso2v9.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=commons-codec_1.4.0.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/commons-codec_1.4.0.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=commons-fileupload_1.2.2.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/commons-fileupload_1.2.2.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=commons-httpclient_3.1.0.wso2v2 -Dfile=/Users/tukobit/work/lib/wso2/commons-httpclient_3.1.0.wso2v2.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=httpcore_4.1.0.wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/httpcore_4.1.0.wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=js_1.7.0.R4wso2v1 -Dfile=/Users/tukobit/work/lib/wso2/js_1.7.0.R4wso2v1.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=zip -DgeneratePom=true -DartifactId=jsr172 -Dfile=/Users/tukobit/work/lib/wso2/jsr172.jar.zip -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=jstl_1.2.1.wso2v2 -Dfile=/Users/tukobit/work/lib/wso2/jstl_1.2.1.wso2v2.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=neethi_2.0.4.wso2v4 -Dfile=/Users/tukobit/work/lib/wso2/neethi_2.0.4.wso2v4.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.authenticator.proxy_4.2.0 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.authenticator.proxy_4.2.0.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.authenticator.stub_4.2.0 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.authenticator.stub_4.2.0.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.logging_4.2.0 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.logging_4.2.0.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.um.ws.api_4.2.2 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.um.ws.api_4.2.2.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.user.api_4.2.0 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.user.api_4.2.0.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.carbon.user.core -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.carbon.user.core_4.2.0.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=org.wso2.securevault_1.0.0.wso2v2 -Dfile=/Users/tukobit/work/lib/wso2/org.wso2.securevault_1.0.0.wso2v2.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=wsdl4j_1.6.2.wso2v4 -Dfile=/Users/tukobit/work/lib/wso2/wsdl4j_1.6.2.wso2v4.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=wss4j_1.5.11.wso2v6 -Dfile=/Users/tukobit/work/lib/wso2/wss4j_1.5.11.wso2v6.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/
+mvn install:install-file -DgroupId=org.wso2.api -Dversion=1.0-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -DartifactId=XmlSchema_1.4.7.wso2v2 -Dfile=/Users/tukobit/work/lib/wso2/XmlSchema_1.4.7.wso2v2.jar -DlocalRepositoryPath=/Users/tukobit/work/Clients/star/gitdownloads/ims/lib/

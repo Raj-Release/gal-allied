@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="BillSummary_FHO_New_MCI_CritiCare_Comprehen" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="20" bottomMargin="20" uuid="fb89ad20-4345-46af-b214-2850d14b2f2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="1022"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[newIntimationDTO.policy.policyType.value]]></fieldDescription>
+	</field>
+	<field name="admissionDate" class="java.util.Date">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.admissionDate]]></fieldDescription>
+	</field>
+	<field name="dischargeDate" class="java.util.Date">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.dischargeDate]]></fieldDescription>
+	</field>
+	<field name="noOfDays" class="java.lang.String">
+		<fieldDescription><![CDATA[preauthDataExtractionDetails.noOfDays]]></fieldDescription>
+	</field>
+	<field name="netPayableAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.netPayableAmt]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="preauthAppAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.preauthAppAmt]]></fieldDescription>
+	</field>
+	<field name="payableToHospitalAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToHospitalAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="tdsAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.tdsAmt]]></fieldDescription>
+	</field>
+	<field name="payableToHospitalAftTDSAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToHospitalAftTDSAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[hospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="amountConsidered" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.amountConsidered]]></fieldDescription>
+	</field>
+	<field name="copayAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.copayAmt]]></fieldDescription>
+	</field>
+	<field name="netPayable" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.netPayable]]></fieldDescription>
+	</field>
+	<field name="availableSIAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.availableSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="restrictedSIAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.restrictedSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="payableAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableAmt]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[preHospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="netPayable_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.netPayable]]></fieldDescription>
+	</field>
+	<field name="eligibleAmt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.eligibleAmt]]></fieldDescription>
+	</field>
+	<field name="payableAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableAmt]]></fieldDescription>
+	</field>
+	<field name="copayAmt_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.copayAmt]]></fieldDescription>
+	</field>
+	<field name="netPayable_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.netPayable]]></fieldDescription>
+	</field>
+	<field name="maxPayable" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.maxPayable]]></fieldDescription>
+	</field>
+	<field name="avaliableSumInsuredAftHosp" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.avaliableSumInsuredAftHosp]]></fieldDescription>
+	</field>
+	<field name="restrictedSIAftHosp_1" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.restrictedSIAftHosp]]></fieldDescription>
+	</field>
+	<field name="netAmount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.netAmount]]></fieldDescription>
+	</field>
+	<field name="claimRestrictionAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.claimRestrictionAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableToInsAmt]]></fieldDescription>
+	</field>
+	<field name="balancePremiumAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.balancePremiumAmt]]></fieldDescription>
+	</field>
+	<field name="payableToInsuredAftPremiumAmt_2" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.payableToInsuredAftPremiumAmt]]></fieldDescription>
+	</field>
+	<field name="billEntryDetailsDTO" class="java.util.List">
+		<fieldDescription><![CDATA[billEntryDetailsDTO]]></fieldDescription>
+	</field>
+	<field name="diagnosisProcedureDtoList" class="java.util.List">
+		<fieldDescription><![CDATA[diagnosisProcedureDtoList]]></fieldDescription>
+	</field>
+	<field name="prehospitalizationDTO" class="java.util.List">
+		<fieldDescription><![CDATA[prehospitalizationDTO]]></fieldDescription>
+	</field>
+	<field name="postHospitalizationDTO" class="java.util.List">
+		<fieldDescription><![CDATA[postHospitalizationDTO]]></fieldDescription>
+	</field>
+	<field name="previousRodPostHospamt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[postHospitalizationCalculationDTO.previousRodPostHospamt]]></fieldDescription>
+	</field>
+	<field name="sublimitAndSIAmt" class="java.lang.Double">
+		<fieldDescription><![CDATA[sublimitAndSIAmt]]></fieldDescription>
+	</field>
+	<field name="amountConsidered_1" class="java.lang.String">
+		<fieldDescription><![CDATA[amountConsidered]]></fieldDescription>
+	</field>
+	<field name="balanceSI" class="java.lang.Double">
+		<fieldDescription><![CDATA[balanceSI]]></fieldDescription>
+	</field>
+	<field name="balanceSumInsuredAfterCoPay" class="java.lang.Double">
+		<fieldDescription><![CDATA[balanceSumInsuredAfterCoPay]]></fieldDescription>
+	</field>
+	<field name="coPayValue" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coPayValue]]></fieldDescription>
+	</field>
+	<field name="amountConsidedAfterCoPay" class="java.lang.Double">
+		<fieldDescription><![CDATA[amountConsidedAfterCoPay]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="89fc58b1-3968-4cdb-b7eb-65c5729c1bc2" x="0" y="0" width="822" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill Assessment Sheet ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="329" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f58ca87a-bcc9-4ea7-90c5-d34b3779d47f" x="0" y="10" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[A Table]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ad7f7b0a-c6c3-41ec-a3e1-d5ba51ebf636" x="0" y="40" width="126" height="20"/>
+				<textElement/>
+				<text><![CDATA[Hospitalisation Expenses]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5dbd0e22-b2a2-4ecc-a27e-c0cd4646e986" positionType="Float" x="0" y="202" width="220" height="20"/>
+				<textElement/>
+				<text><![CDATA[C Sub limits, Package & SI Restriction Table]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="0499da41-e3bd-4c6c-9146-afff250c822c" x="0" y="68" width="822" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{billEntryDetailsDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "FHO_New_MCI_CompreHen_Criticare_BillSummary_SubReport.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="85f3c209-cdcc-4844-8b60-600f90a21878" positionType="Float" x="0" y="229" width="822" height="100"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{diagnosisProcedureDtoList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Sublimits_Package_SI_Restriction_SubReport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="337">
+			<staticText>
+				<reportElement uuid="c574de7d-2fcf-490d-b206-b2adf1e3ae2c" x="0" y="9" width="133" height="20"/>
+				<textElement/>
+				<text><![CDATA[A. Amount Claimed Table]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca27a870-6695-4133-a750-b28f746dee8d" x="55" y="29" width="78" height="20"/>
+				<textElement/>
+				<text><![CDATA[Co-Pay %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="acb3f9de-331e-49f8-a484-4204451766d5" x="55" y="49" width="78" height="20"/>
+				<textElement/>
+				<text><![CDATA[Co-Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="96a38c65-873c-4486-91a9-7268f9c59244" x="257" y="9" width="166" height="20"/>
+				<textElement/>
+				<text><![CDATA[B. Available Balance Sum Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="abaedda0-37f9-48dc-849f-79bd1e10a97f" x="343" y="29" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Co-Pay %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3f5d5d9-6d1e-4c42-9537-8c779c87a147" x="343" y="49" width="80" height="20"/>
+				<textElement/>
+				<text><![CDATA[Co-Pay Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7a191bc1-0c6d-464c-ae17-a8fa26cb6ac2" x="553" y="9" width="155" height="40"/>
+				<textElement/>
+				<text><![CDATA[C. Sub limits, Package & SI Restriction amount after Co-pay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="91a1eab5-cd63-40e8-92a7-41ff472fbc42" x="55" y="112" width="165" height="20"/>
+				<textElement/>
+				<text><![CDATA[Final Approved amount ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f1968bd-e042-4bfb-b8be-edf8546fa74a" x="55" y="149" width="165" height="28"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Net Payable/Eligible amount  after copay ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d5ce834-6ea0-4f8e-a992-fba50b096472" x="55" y="177" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Claim Restriction Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a3d267e1-13f5-4b32-aeb5-920e937252fe" x="55" y="197" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Preauth approved amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="75a996f9-0200-4be2-afe1-8a0b45cb5ccc" x="55" y="217" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Paid/Payable to Hospital]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c61df175-df2c-488e-9567-f248a7787feb" x="55" y="237" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="99c2eabb-79f3-41a6-aa2c-ae667fbbf91e" x="55" y="257" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[TDS Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="72b9aa58-6d99-4f34-8f00-6271c484968a" x="55" y="277" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Payable to Hospital after TDS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c064fd36-2293-4d57-babc-7ae6e5544da6" x="55" y="297" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Balance premium to be collected]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29ea2523-33ef-45b4-a906-dd477d1c9728" x="55" y="317" width="165" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Payable to Insured after premium]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="3761bc33-084d-40bc-b2b1-3131781d0fc0" x="220" y="112" width="123" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netPayableAmt} != null ? $F{netPayableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6656b641-fc2a-4791-8f90-e7374e6842dd" x="220" y="149" width="123" height="28"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netPayableAmt} != null ? $F{netPayableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="862f35ae-35b4-4533-a65a-d8fe6a79883c" x="220" y="177" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt} != null ? $F{claimRestrictionAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30b0347b-273c-4a1c-aed9-c55a5f8ef74e" x="220" y="197" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{preauthAppAmt} != null ? $F{preauthAppAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e2df18c1-51ea-4216-982f-f7192b397473" x="220" y="217" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToHospitalAmt} != null ? $F{payableToHospitalAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b971157b-b8e3-422e-8e1d-5e1371a6a09d" x="220" y="237" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt} != null ? $F{payableToInsAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d07cea41-ac5f-41b9-a204-bac618f41061" x="220" y="257" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{tdsAmt} != null ? $F{tdsAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f1f04ff8-af4b-4139-80bb-510f02060f59" x="220" y="277" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToHospitalAftTDSAmt} != null ? $F{payableToHospitalAftTDSAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="91263bce-7697-44eb-8b78-c3b75b7c32a5" x="220" y="297" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt} != null ? $F{balancePremiumAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bef7e2eb-7a16-4891-825d-4954841ca15b" x="220" y="317" width="123" height="20"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt} != null ? $F{payableToInsuredAftPremiumAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f2cf6377-4ead-4bb5-9ea2-35ab985cc9ab" positionType="Float" x="708" y="9" width="107" height="40"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sublimitAndSIAmt} != null ? $F{sublimitAndSIAmt}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ef466aa-612c-4ff8-9e6d-bc843961ae7c" positionType="Float" x="133" y="49" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{amountConsidered_2} != null && $F{amountConsidedAfterCoPay} != null && $F{amountConsidedAfterCoPay}.intValue() < Integer.parseInt($F{amountConsidered_2}) ) ? ( Integer.parseInt($F{amountConsidered_2}) - $F{amountConsidedAfterCoPay}.intValue() ): ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6f4fd172-0fd8-4902-92c0-3c381344eaf8" positionType="Float" x="423" y="9" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balanceSI} != null ? $F{balanceSI}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="839334b3-456f-449e-b050-4d00cdb7f53a" positionType="Float" x="133" y="69" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountConsidedAfterCoPay} != null ? $F{amountConsidedAfterCoPay} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1b3bb29c-97c6-4907-a0ff-6e6461e861ae" positionType="Float" x="133" y="9" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountConsidered_2} != null ? $F{amountConsidered_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7bd10cf2-ec7e-48f0-a677-526e5c45d333" positionType="Float" x="423" y="29" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coPayValue} != null ? $F{coPayValue}.toString() + "%" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e3fb1ec9-9f2f-4247-b41b-8442ba0697bc" positionType="Float" x="133" y="29" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coPayValue} != null ? $F{coPayValue}.toString() + "%" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6946bc79-64c5-4286-95b4-17915bbcaa91" positionType="Float" x="423" y="69" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balanceSumInsuredAfterCoPay} != null ? $F{balanceSumInsuredAfterCoPay}.intValue() : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6df3d80b-72d9-4d93-a1ea-4d7f87354a35" positionType="Float" x="423" y="49" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{balanceSI} != null && $F{balanceSumInsuredAfterCoPay} != null && $F{balanceSI}.intValue() > $F{balanceSumInsuredAfterCoPay}.intValue() ) ? ( $F{balanceSI}.intValue() - $F{balanceSumInsuredAfterCoPay}.intValue() ) : ""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="482">
+			<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="f69f7904-fae1-40d3-84f5-912071f73941" x="0" y="5" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Post-Hospitalisation]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="04eec178-0d17-464c-851d-939a36463ee5" x="0" y="31" width="822" height="100">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{postHospitalizationDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Post_Hospital_Bill_FHO_New_MCI_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="0ddb091c-a3d3-4024-a0b9-132d47a684d4" x="55" y="345" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Net Payable / Eligible  Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9b981fd5-8428-4b80-b3c7-b3c44821a457" x="55" y="265" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Net Payable / Eligible  Amt * (After Co-pay)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2e3448ba-8870-4f92-a1a4-28bd63b9c32c" x="55" y="325" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Restricted Sum Insured after Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bd7399f5-b72d-43ce-813c-75d212c1c42a" x="55" y="245" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Co-Pay Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="88a0f480-8a1c-4dfb-adf8-8477145c4fa4" x="55" y="197" width="216" height="28">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Eligible Amt (As per Policy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ff4ff1e-91d3-476f-b4d5-09f938271084" x="55" y="225" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Amount payable]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8bc2112c-2f6c-47a4-a6bb-c8ab22f43eb9" x="55" y="305" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Available Sum insured after Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4704f036-e999-400f-9b14-1cf7db4d6965" x="55" y="365" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Claim Restriction (As per Policy)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fbb003ce-c36c-4d64-a16d-44e75c117b00" x="55" y="285" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Maximum Payable as per Policy Limit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="908190a9-30da-424b-bcd3-4a1dda5083dc" x="55" y="150" width="165" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Net Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08d942cf-1283-4ef3-9dbb-1946ad725744" x="55" y="416" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="73738743-8bc1-4e6f-8595-3c03bab939d0" x="440" y="150" width="198" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Post Hospitalisation Amt already Claimed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="acfc2e82-7e58-4dd6-8ab8-bec506ec25f9" x="55" y="436" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Bal premium to be deducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bb3e1321-3689-4c32-9ff6-a5693163172d" x="55" y="456" width="216" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Payable to insured (after premium)]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cc8c971d-687f-43bc-9d21-985859ef95fc" x="220" y="150" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netAmount} != null ? $F{netAmount} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1a6047b8-6ae4-4856-8a09-d24b559e92d1" x="271" y="197" width="100" height="28">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{eligibleAmt} != null ? $F{eligibleAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="db9b2992-e698-4a22-9ce3-dfca29805a5f" x="271" y="225" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableAmt_1} != null ? $F{payableAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a3a5c6b9-0d84-4faf-acf0-be8978fac5d5" x="271" y="245" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{copayAmt_1} != null ? $F{copayAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="89ccc342-b8ae-4b5c-baba-891114dd03c0" x="271" y="265" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netPayable_2} != null ? $F{netPayable_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8951f422-dcfd-4c21-bc19-6c2360524524" x="271" y="285" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{maxPayable} != null ? $F{maxPayable} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b6196e3c-37b7-4af4-9836-9c53c84a9794" x="271" y="305" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{avaliableSumInsuredAftHosp} != null ? $F{avaliableSumInsuredAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9f505e3d-63be-4e70-9444-6026988f909b" x="271" y="325" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{restrictedSIAftHosp_1} != null ? $F{restrictedSIAftHosp_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="83717048-57f6-4d57-800b-ddbd528cdf0f" x="271" y="345" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netAmount} != null ? $F{netAmount} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a12ac18b-0caf-4f98-b71d-846968d9a0be" x="271" y="365" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt_2} != null ? $F{claimRestrictionAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3934d997-9daa-448d-8129-e057657f6a0c" x="638" y="150" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+			</textField>
+			<textField>
+				<reportElement uuid="79f4aa37-7fce-4977-8e99-8927449e04c7" x="271" y="416" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt_2} != null ? $F{payableToInsAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="244c8fd0-e330-4be5-8ef4-0d0c867928ca" x="271" y="436" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt_2} != null ? $F{balancePremiumAmt_2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="544d82fd-6a5b-44ab-bf73-7324e4b3dcfb" x="271" y="456" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{postHospitalizationDTO} != null && $F{postHospitalizationDTO}.size() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt_2} != null ? $F{payableToInsuredAftPremiumAmt_2} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="455">
+			<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size() > 0]]></printWhenExpression>
+			<staticText>
+				<reportElement uuid="ca39cd19-ad5e-40ef-851d-e0a82f433651" x="0" y="10" width="100" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Pre-Hospitalisation]]></text>
+			</staticText>
+			<subreport>
+				<reportElement uuid="1d4d8a42-1d83-47ed-8c54-730a55524b19" x="0" y="37" width="822" height="100">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{prehospitalizationDTO})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "Pre_Hospital_Bill_FHO_New_MCI_Subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement uuid="7a576bf3-2b98-4d98-b2f0-af8dae0a90ce" x="38" y="310" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Net Payable / Eligible  Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="27225087-10da-40bc-b9ab-da1120ceb354" x="38" y="406" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Bal premium to be deducted]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d883f5b5-3acb-4101-82f8-dc3d40f1d2c3" x="38" y="250" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Net Payable / Eligible  Amt * (After Co-pay)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b3493252-b854-4efb-8eac-b9a6c654d86d" x="38" y="175" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Amount Considered]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7db40edb-ba15-4896-a2fe-3e4ff408e153" x="38" y="290" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Restricted Sum Insured after Hospitalisation  & Post hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="71ec2e19-14c3-4983-964a-6c7e30e09480" x="38" y="426" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Payable to insured (after premium)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="29174fd2-b4a9-42ee-b70a-89080052d76e" x="38" y="386" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Payable to Insured]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="20f381fb-0ce3-48d5-b163-e1957c2c7638" x="38" y="270" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Available Sum insured after Hospitalisation& Post Hospitalisation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="847a6c86-ea0e-40bd-a288-e8906927817e" x="38" y="230" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Co-Pay Amt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="76d116a8-5aad-480b-88ff-51d6cb1cfb80" x="38" y="330" width="318" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<text><![CDATA[Claim Restriction (As per Policy)]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="26db3214-54db-47ea-a7f8-1b6bb22f521d" x="356" y="175" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{amountConsidered} != null ? $F{amountConsidered} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="01130c2f-afb6-4a74-b776-866a90a3351c" x="356" y="230" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{copayAmt} != null ? $F{copayAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9e42e443-8098-4bc5-bb2a-a9e9fea9f811" x="356" y="250" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{netPayable} != null ? $F{netPayable} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="603aa55f-65ea-42b2-81a1-759522aea2b2" x="356" y="270" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{availableSIAftHosp} != null ? $F{availableSIAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a4138f09-9881-4dd2-b90e-479959b06bb0" x="356" y="290" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{restrictedSIAftHosp} != null ? $F{restrictedSIAftHosp} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7a95b933-2452-48d3-b027-47364313b839" x="356" y="310" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableAmt} != null ? $F{payableAmt} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="95b60334-1eba-4cce-866b-16c0fb3b213b" x="356" y="330" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{claimRestrictionAmt_1} != null ? $F{claimRestrictionAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c0c95720-56ef-47d2-953c-85d19c139a33" x="356" y="386" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsAmt_1} != null ? $F{payableToInsAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="702c3b5e-3d6e-4c50-b51e-99b77ac35ba9" x="356" y="406" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{balancePremiumAmt_1} != null ? $F{balancePremiumAmt_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0be7be49-e943-484c-a16c-3ec8c166e61d" x="356" y="426" width="197" height="20">
+					<printWhenExpression><![CDATA[$F{prehospitalizationDTO} != null && $F{prehospitalizationDTO}.size > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{payableToInsuredAftPremiumAmt_1} != null ? $F{payableToInsuredAftPremiumAmt_1} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

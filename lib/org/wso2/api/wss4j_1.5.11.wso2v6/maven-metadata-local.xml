@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>org.wso2.api</groupId>
+  <artifactId>wss4j_1.5.11.wso2v6</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20141209072059</lastUpdated>
+  </versioning>
+</metadata>

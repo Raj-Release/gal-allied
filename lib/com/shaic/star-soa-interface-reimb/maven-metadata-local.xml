@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.shaic</groupId>
+  <artifactId>star-soa-interface-reimb</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160809081623</lastUpdated>
+  </versioning>
+</metadata>

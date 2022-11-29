@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DocumentsListSubreport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="570" leftMargin="5" rightMargin="20" topMargin="5" bottomMargin="5" uuid="c01d7afe-9607-465e-81bc-25c11ed1812b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="mandatoryDocFlag" class="java.lang.String">
+		<fieldDescription><![CDATA[mandatoryDocFlag]]></fieldDescription>
+	</field>
+	<field name="requiredDocType" class="java.lang.String">
+		<fieldDescription><![CDATA[requiredDocType]]></fieldDescription>
+	</field>
+	<field name="remarks" class="java.lang.String">
+		<fieldDescription><![CDATA[remarks]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[receivedStatus.value]]></fieldDescription>
+	</field>
+	<field name="value_1" class="java.lang.String">
+		<fieldDescription><![CDATA[value]]></fieldDescription>
+	</field>
+	<field name="slNo" class="java.lang.String">
+		<fieldDescription><![CDATA[slNo]]></fieldDescription>
+	</field>
+	<field name="noOfDocuments" class="java.lang.Long">
+		<fieldDescription><![CDATA[noOfDocuments]]></fieldDescription>
+	</field>
+	<variable name="sno" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[( ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy") ) ?  new Integer(1): new Integer(0) )]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="42" splitType="Immediate">
+			<staticText>
+				<reportElement uuid="570568f8-5e14-45e7-81b8-3ed058a987c0" x="276" y="0" width="65" height="42"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Received Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="799704b4-859f-4293-8b8f-3d83a36618a8" x="341" y="0" width="207" height="42"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2db5dd4f-69fa-47f2-a42d-bb4205ca1a51" x="11" y="0" width="29" height="42"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d14f27e0-7520-4ffb-bdc0-eea6b3c416e9" x="40" y="0" width="166" height="42"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Particulars]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c96324eb-41e1-4383-80fc-f925322bfd0d" x="206" y="0" width="70" height="42"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11" isBold="true" pdfFontName="Times-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[No. of. Pages]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Immediate">
+			<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="8d80b409-ac66-4084-8e15-c3bdda868261" x="341" y="0" width="207" height="30">
+					<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{remarks} != null ? $F{remarks} : " "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b5f6f8c-e9ff-4592-87f0-20c475f1b4cc" x="276" y="0" width="65" height="30">
+					<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value} != null ? $F{value} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0acc0fce-b897-4b3a-b9bd-41a77d81917d" x="40" y="0" width="166" height="30">
+					<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value_1} != null ? $F{value_1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9c3c6b8e-f87f-41f3-bba3-c3408dcf3abc" x="11" y="0" width="29" height="30">
+					<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="111f2836-3291-4961-b5a5-80e697fe9fee" x="206" y="0" width="70" height="30">
+					<printWhenExpression><![CDATA[$F{value} != null && ( $F{value}.toLowerCase().contains("original") || $F{value}.toLowerCase().contains("photocopy"))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+					<paragraph leftIndent="3" rightIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noOfDocuments} != null ? $F{noOfDocuments} : ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CoveringLetterFromInsured" language="groovy" pageWidth="595" pageHeight="842" columnWidth="520" leftMargin="40" rightMargin="35" topMargin="20" bottomMargin="20" scriptletClass="net.sf.jasperreports.engine.JRDefaultScriptlet" uuid="d6290c63-ddbd-464b-88a1-e80216edad54">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="resourcePath" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$P{resourcePath}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="polOfficeAddr1" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.policy.polOfficeAddr1]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr2" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.policy.polOfficeAddr2]]></fieldDescription>
+	</field>
+	<field name="polOfficeAddr3" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.policy.polOfficeAddr3]]></fieldDescription>
+	</field>
+	<field name="polTelephoneNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.policy.polTelephoneNumber]]></fieldDescription>
+	</field>
+	<field name="proposerFirstName" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.policy.proposerFirstName]]></fieldDescription>
+	</field>
+	<field name="intimationId" class="java.lang.String">
+		<fieldDescription><![CDATA[claimDTO.newIntimationDto.intimationId]]></fieldDescription>
+	</field>
+	<field name="documentCheckList" class="java.util.List">
+		<fieldDescription><![CDATA[documentDetails.documentCheckList]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement uuid="df39e512-56ac-4db3-9e9a-81b66a0fa786" x="375" y="3" width="145" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date: " + new SimpleDateFormat("dd/MMM/yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="545" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="f3c0bbe4-cde9-46dd-b405-517be2102999" x="0" y="0" width="22" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[To,]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="feb86184-dc89-49b6-9e4e-bbebecce6848" x="0" y="17" width="262" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STAR HEALTH AND ALLIED INSURANCE CO. LTD,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7fdc3fb2-5c14-442a-be1b-2523a3c15cf0" x="0" y="33" width="262" height="16" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{polOfficeAddr1} != null ? $F{polOfficeAddr1} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a7ddd98c-631a-408c-bf68-4eeecd5c590c" x="0" y="49" width="262" height="16" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{polOfficeAddr2} != null ? $F{polOfficeAddr2} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bb17b11d-b6ff-4b85-85db-e7ad96ef5ce1" x="0" y="65" width="262" height="16" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{polOfficeAddr3} != null ? $F{polOfficeAddr3} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fcc058a7-6466-46e6-a4e2-5f457c706474" x="0" y="81" width="262" height="16" isRemoveLineWhenBlank="true"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{polTelephoneNumber} != null ? $F{polTelephoneNumber} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9365055a-23e2-45d2-89ad-c742da962298" x="22" y="110" width="498" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Sub: Submission of Documents – Claims Process –  " +
+($F{intimationId} != null ? $F{intimationId} : "")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2155f198-e695-46a2-b818-2b84d4202713" x="0" y="137" width="91" height="16"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Dear Sir/Madam,]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="f96f9803-73e8-4bd5-a766-8fb8faa96629" x="0" y="159" width="520" height="39"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["This is  in reference to the Claim No : " +
+($F{intimationId} != null ? ($F{intimationId} + " dated ") : "") +
+new SimpleDateFormat("dd/MM/yyyy").format(new Date())+
+", I hereby submit the following documents which I have uploaded against the claim(Online)."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="dc1ef6f2-31b6-4079-9772-a0f5dcccca24" positionType="Float" x="0" y="465" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Signature of the Insured"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4b9d19c9-961f-431f-9ace-461f3532ee0e" positionType="Float" x="0" y="485" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{proposerFirstName} != null ? $F{proposerFirstName} : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="09a6c0c2-7a4a-426a-b822-9babdc27f63a" positionType="Float" x="0" y="525" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Place:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e811910-0a6f-4516-87bf-73a5f7adaf3b" positionType="Float" x="0" y="505" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date: " + new SimpleDateFormat("dd-MM-yyyy").format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ccd51d5f-b1a7-4b7c-b71d-aa5f08f4d8b8" positionType="Float" x="0" y="426" width="100" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Yours Truly,"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="b0064045-5cdd-4b4c-ab8f-4acf833607a3" x="0" y="206" width="520" height="91"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{documentCheckList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{resourcePath} + "OnlineInsuredDocListSubreport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement uuid="01dde069-fa07-4a13-8886-cc986e65c9ee" positionType="Float" x="0" y="315" width="110" height="20"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Declaration"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bfcc057f-b944-4486-9fc2-73b43b118428" positionType="Float" x="0" y="335" width="520" height="77"/>
+				<textElement markup="styled">
+					<font fontName="Times New Roman" pdfFontName="Times-Roman" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<style>I hereby declare that the information furnished in this claim form is true and correct to the best of my knowledge and belief. If I have made any false or untrue statement, suppression or concealment of any material fact, my right to claim reimbursement shall be forfeited. I also consent and authorize TPA/insurance company, to seek necessary medical information/documents from any hospital/ Medical Practitioner who has attended on the person against whom this claim is made. I hereby declare that I have included all the bills/receipts for the purpose of this claim and that I will not be making any supplementary claim except the pre/post -hospitalisation claim, if any.</style>"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

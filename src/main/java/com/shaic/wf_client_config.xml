@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workflowServicesClientConfiguration xmlns="http://xmlns.oracle.com/bpel/services/client">
+ <server name="appserver" default="true" clientType="REMOTE">
+    <remoteClient>
+        <serverURL>t3://192.168.2.165:7101</serverURL>
+        <userName>weblogic</userName>
+        <password>welcome1</password>
+        <initialContextFactory>weblogic.jndi.WLInitialContextFactory</initialContextFactory>
+        <participateInClientTransaction>false</participateInClientTransaction>
+    </remoteClient>
+ </server>
+</workflowServicesClientConfiguration>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="HpPastHistoryIllnessSubreport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="525" leftMargin="10" rightMargin="60" topMargin="0" bottomMargin="0" uuid="baaa439a-65a6-4806-8f7e-e832a2e0776a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<field name="particulars" class="java.lang.String">
+		<fieldDescription><![CDATA[particulars]]></fieldDescription>
+	</field>
+	<field name="remarks" class="java.lang.String">
+		<fieldDescription><![CDATA[remarks]]></fieldDescription>
+	</field>
+	<field name="yesOrNo" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[yesOrNo]]></fieldDescription>
+	</field>
+	<field name="duration_1" class="java.lang.String">
+		<fieldDescription><![CDATA[duration]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5e6f3222-2539-43dd-939e-96c50a9a1170" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Particulars]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="79102b0b-8f59-4d41-8038-276e07f4d5f7" x="100" y="0" width="58" height="20"/>
+				<textElement/>
+				<text><![CDATA[Yes/No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ce841ba-e457-4ea6-87cd-d6587910bde0" x="258" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c4f6c5c-889f-4232-82fb-89871cc6abd4" x="158" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Duration]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="75c7f8ce-37f0-45bc-976c-5d37dc949e8f" x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{particulars}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="79a8f8fe-b9d1-4f19-b29f-fe26627f2cd7" x="100" y="0" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{yesOrNo} != null ? ( $F{yesOrNo} ? "Yes" : "No" ) : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3ee7494d-5bdb-4cd8-9945-a56f24ae3900" x="258" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ad7dbd98-a9af-416b-8916-7a4d065a4ff2" x="158" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{duration}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

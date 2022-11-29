@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+	<persistence-unit name="PERSISTENCE_UNIT_NAME"
+		transaction-type="JTA">
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:/OracleServer71DS</jta-data-source>
+		<class>com.shaic.domain.Intimation</class>
+		<class>com.shaic.domain.Claim</class>
+		<class>com.shaic.domain.Reimbursement</class>
+		<class>com.shaic.domain.preauth.Coordinator</class>
+		<class>com.shaic.domain.preauth.FieldVisitRequest</class>
+		<class>com.shaic.domain.preauth.HospitalAcknowledge</class>
+		<class>com.shaic.domain.preauth.NewInitiatePedEndorsement</class>
+		<class>com.shaic.domain.preauth.OldInitiatePedEndorsement</class>
+		<class>com.shaic.domain.preauth.PedValidation</class>
+		<class>com.shaic.domain.preauth.PreauthEscalate</class>
+		<class>com.shaic.domain.preauth.PreauthQuery</class>
+		<class>com.shaic.domain.preauth.Preauth</class>
+		<class>com.shaic.domain.preauth.Procedure</class>
+		<class>com.shaic.domain.preauth.PedSpecialist</class>
+		<class>com.shaic.domain.preauth.Speciality</class>
+		<class>com.shaic.domain.preauth.StageInformation</class>
+		<class>com.shaic.domain.preauth.PreauthStatus</class>
+		<class>com.shaic.domain.preauth.HospitalPackage</class>
+		<class>com.shaic.domain.preauth.ProcedureMaster</class>
+		<class>com.shaic.domain.preauth.Diagnosis</class>
+		<class>com.shaic.domain.preauth.IcdBlock</class>
+		<class>com.shaic.domain.preauth.IcdChapter</class>
+		<class>com.shaic.domain.preauth.IcdCode</class>
+		<class>com.shaic.domain.preauth.PreExistingDisease</class>
+		<class>com.shaic.domain.preauth.Stage</class>
+		<class>com.shaic.domain.preauth.HmsHospitalPackage</class>
+		<class>com.shaic.domain.UpdateHospital</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />
+			<property name="hibernate.hbm2ddl.auto" value="validate" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name='hibernate.format_sql' value='false' />
+			<property name='hibernate.use_sql_comments' value='true' />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" />
+			<property name="hibernate.c3p0.min_size" value="5"></property>
+			<property name="hibernate.c3p0.max_size" value="20"></property>
+			<property name="hibernate.c3p0.timeout" value="300"></property>
+			<property name="hibernate.c3p0.max_statements" value="100"></property>
+			<property name="hibernate.c3p0.idle_test_period" value="3000"></property>
+			<property name="hibernate.enable_lazy_load_no_trans" value="true"></property>
+			<property name="org.hibernate.flushMode" value="COMMIT"/> 
+			<!-- <property name="hibernate.connection.provider_class" value='org.hibernate.connection.C3P0ConnectionProvider'/> 
+				<property name="hibernate.c3p0.min_size" value='10'/> <property name="hibernate.c3p0.max_size" 
+				value='70'/> <property name="hibernate.c3p0.timeout" value='1800'/> <property 
+				name="hibernate.c3p0.max_statements" value='50'/> <property name="hibernate.c3p0.idle_test_period" 
+				value='1000'/> <property name="hibernate.c3p0.validate" value ='true'/> -->
+			<!--<property name="hibernate.connection.provider_class" value ='org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider'/> -->
+			<!-- <property name="hibernate.bytecode.use_reflection_optimizer" value="true" 
+				/> -->
+		</properties>
+	</persistence-unit>
+</persistence>
